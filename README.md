@@ -4,10 +4,10 @@
 
 自动检测链接是否有效, 最终生成集合不包含无效模块
 
-👉 [点此下载最新 allinone.fwd](https://raw.githubusercontent.com/gr294949/forward/refs/heads/main/allinone.fwd)
+👉 [点此下载最新 allinone.fwd](https://github.com/gr294949/Forward-widgets/raw/547bc79152fcb8dd941a88bc6c3e77be3e661c7c/allinone.fwd)
 
 ## 感谢以下原始仓库作者
-- [GOCD Other Widgets](https://github.com/gr294949/Forwardwidgets-sync)
+- [GOLD's Widgets](https://github.com/gr294949/Forward-Widgets)
 - [pack1r's Widgets](https://github.com/pack1r/ForwardWidgets)
 - [huangxd's Widgets](https://github.com/huangxd-/ForwardWidgets)
 - [2Kuai Widgets - 影视资源](https://github.com/2kuai/ForwardWidgets)
