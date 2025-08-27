@@ -125,7 +125,7 @@ for widget in all_widgets:
 result = {
     "title": "GOLD's AllInOne Widgets",
     "description": "合并自 module.json 中定义的多个 FW Widgets 源(30% off code: GOLD)",
-    "icon": "https://avatars.githubusercontent.com/u/25606004",
+    "icon": "https://raw.githubusercontent.com/gr294949/Forward-Widgets/main/gold.png",
     "widgets": list(merged.values())
 }
 
@@ -138,7 +138,7 @@ print(f"✅ 合并完成，共 {len(result['widgets'])} 个 widget，已生成 {
 readme_content = "# GOLD's AllInOne Widgets\n\n" \
     "本仓库自动合并多个 ForwardWidgets 源，方便统一使用。(30% off code: GOLD)\n\n" \
     "自动检测链接是否有效, 最终生成集合不包含无效模块\n\n" \
-    f"👉 [点此下载最新 allinone.fwd](https://raw.githubusercontent.com/gr294949/forward/refs/heads/main/allinone.fwd)\n\n" \
+    f"👉 [点此下载最新 allinone.fwd](https://raw.githubusercontent.com/gr294949/Forward-Widgets/refs/heads/main/allinone.fwd)\n\n" \
     "## 感谢以下原始仓库作者\n" \
     + "\n".join(thanks) + "\n"
 
