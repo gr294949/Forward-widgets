@@ -13,4 +13,3 @@
 - [2Kuai Widgets - 影视资源](https://github.com/2kuai/ForwardWidgets)
 - [𝓑𝓾𝓽𝓽𝓮𝓻𝓯𝓵𝔂 ‘𝓼 𝓦𝓲𝓭𝓰𝓮𝓽𝓼](https://github.com/pack1r/ForwardWidgets)
 - [HUANGXD'S 模块合集](https://github.com/huangxd-/ForwardWidgets)
-- [𝓑𝓾𝓽𝓽𝓮𝓻𝓯𝓵𝔂 ‘𝓼 𝓦𝓲𝓭𝓰𝓮𝓽𝓼 - 瑟瑟合集](https://widgets-xd.vercel.app/Porn.fwd)

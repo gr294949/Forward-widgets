@@ -22,6 +22,15 @@
       "url": "https://raw.githubusercontent.com/gr294949/Forward-Widgets/refs/heads/main/other/xtream_api.js"
     },
     {
+      "id": "missav",
+      "title": "MissAV",
+      "description": "⚝七折码：GOLD⚝",
+      "requiredVersion": "0.0.1",
+      "version": "0.0.1",
+      "author": "GOLD",
+      "url": "https://raw.githubusercontent.com/gr294949/Forward-widgets/refs/heads/main/other/MissAV.js"
+    },
+    {
       "id": "forward.combined.media.lists",
       "title": "影视榜单",
       "description": "聚合豆瓣、TMDB、IMDB和Bangumi的影视动画榜单",
@@ -204,11 +213,11 @@
     {
       "id": "jable",
       "title": "Jable",
-      "description": "获取 Jable 视频",
-      "requiredVersion": "0.0.2",
-      "version": "1.0.9",
+      "description": "获取Jable全站视频",
+      "requiredVersion": "0.0.1",
+      "version": "1.0.6",
       "author": "nibiru",
-      "url": "https://widgets-xd.vercel.app/Widgets/Jable.js"
+      "url": "https://raw.githubusercontent.com/pack1r/ForwardWidgets/refs/heads/main/widgets/jable.js"
     },
     {
       "id": "91porn",
@@ -217,7 +226,7 @@
       "requiredVersion": "0.0.1",
       "version": "0.9.4",
       "author": "Baran",
-      "url": "https://release-assets.githubusercontent.com/github-production-release-asset/997847335/4fb4feaf-6163-448a-9a29-c52d16226110?sp=r&sv=2018-11-09&sr=b&spr=https&se=2025-08-27T11%3A28%3A35Z&rscd=attachment%3B+filename%3D91porn.js&rsct=application%2Foctet-stream&skoid=96c2d410-5711-43a1-aedd-ab1947aa7ab0&sktid=398a6654-997b-47e9-b12b-9515b896b4de&skt=2025-08-27T10%3A28%3A29Z&ske=2025-08-27T11%3A28%3A35Z&sks=b&skv=2018-11-09&sig=ZpEWC47YPyZjdDtXOweBQwp5FX9dFMTsOzJzE4bNq0w%3D&jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmVsZWFzZS1hc3NldHMuZ2l0aHVidXNlcmNvbnRlbnQuY29tIiwia2V5Ijoia2V5MSIsImV4cCI6MTc1NjI5MjEyOSwibmJmIjoxNzU2MjkxODI5LCJwYXRoIjoicmVsZWFzZWFzc2V0cHJvZHVjdGlvbi5ibG9iLmNvcmUud2luZG93cy5uZXQifQ.xvnQxcJhCxtmDhA8oTFXyMLKc66JMJSBVFvElScxkxY&response-content-disposition=attachment%3B%20filename%3D91porn.js&response-content-type=application%2Foctet-stream"
+      "url": "https://release-assets.githubusercontent.com/github-production-release-asset/997847335/4fb4feaf-6163-448a-9a29-c52d16226110?sp=r&sv=2018-11-09&sr=b&spr=https&se=2025-08-27T12%3A08%3A54Z&rscd=attachment%3B+filename%3D91porn.js&rsct=application%2Foctet-stream&skoid=96c2d410-5711-43a1-aedd-ab1947aa7ab0&sktid=398a6654-997b-47e9-b12b-9515b896b4de&skt=2025-08-27T11%3A07%3A58Z&ske=2025-08-27T12%3A08%3A54Z&sks=b&skv=2018-11-09&sig=cH1Fm8APYb62PjxohS4RyQpM4mf532Z3Yd755f9wb7A%3D&jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmVsZWFzZS1hc3NldHMuZ2l0aHVidXNlcmNvbnRlbnQuY29tIiwia2V5Ijoia2V5MSIsImV4cCI6MTc1NjI5NDA4NiwibmJmIjoxNzU2MjkzNzg2LCJwYXRoIjoicmVsZWFzZWFzc2V0cHJvZHVjdGlvbi5ibG9iLmNvcmUud2luZG93cy5uZXQifQ.dLbOJVphiFqHmdMsNo0BE-OUuTkS1a1SQE-Q2JjoFdM&response-content-disposition=attachment%3B%20filename%3D91porn.js&response-content-type=application%2Foctet-stream"
     },
     {
       "id": "Pornhub",
@@ -253,16 +262,7 @@
       "requiredVersion": "0.0.1",
       "version": "0.9.4",
       "author": "匿名",
-      "url": "https://release-assets.githubusercontent.com/github-production-release-asset/997847335/2189ea06-9c66-41ef-a91c-fe93bc535d11?sp=r&sv=2018-11-09&sr=b&spr=https&se=2025-08-27T11%3A30%3A23Z&rscd=attachment%3B+filename%3Dxvideos.js&rsct=application%2Foctet-stream&skoid=96c2d410-5711-43a1-aedd-ab1947aa7ab0&sktid=398a6654-997b-47e9-b12b-9515b896b4de&skt=2025-08-27T10%3A29%3A49Z&ske=2025-08-27T11%3A30%3A23Z&sks=b&skv=2018-11-09&sig=WpZhNf7RClKU5ygBqLs4Ae%2Fdaj13wyJUwZW499oVV1U%3D&jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmVsZWFzZS1hc3NldHMuZ2l0aHVidXNlcmNvbnRlbnQuY29tIiwia2V5Ijoia2V5MSIsImV4cCI6MTc1NjI5MjEzMCwibmJmIjoxNzU2MjkxODMwLCJwYXRoIjoicmVsZWFzZWFzc2V0cHJvZHVjdGlvbi5ibG9iLmNvcmUud2luZG93cy5uZXQifQ.hi2UPv2ysEkrA_S1iA1aZGnaxemQfBIytkoHwQPOjn0&response-content-disposition=attachment%3B%20filename%3Dxvideos.js&response-content-type=application%2Foctet-stream"
-    },
-    {
-      "id": "missav",
-      "title": "MissAV",
-      "description": "获取 MissAV 推荐",
-      "requiredVersion": "0.0.2",
-      "version": "1.0.0",
-      "author": "𝓑𝓾𝓽𝓽𝓮𝓻𝓯𝓵𝔂",
-      "url": "https://widgets-xd.vercel.app/Widgets/MissAV.js"
+      "url": "https://release-assets.githubusercontent.com/github-production-release-asset/997847335/2189ea06-9c66-41ef-a91c-fe93bc535d11?sp=r&sv=2018-11-09&sr=b&spr=https&se=2025-08-27T12%3A05%3A55Z&rscd=attachment%3B+filename%3Dxvideos.js&rsct=application%2Foctet-stream&skoid=96c2d410-5711-43a1-aedd-ab1947aa7ab0&sktid=398a6654-997b-47e9-b12b-9515b896b4de&skt=2025-08-27T11%3A05%3A35Z&ske=2025-08-27T12%3A05%3A55Z&sks=b&skv=2018-11-09&sig=ZQIKI0Km6MXrvKEGoT7j%2BIJUPFsu%2FEHzMZBGTVRq%2F88%3D&jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmVsZWFzZS1hc3NldHMuZ2l0aHVidXNlcmNvbnRlbnQuY29tIiwia2V5Ijoia2V5MSIsImV4cCI6MTc1NjI5NDA4NiwibmJmIjoxNzU2MjkzNzg2LCJwYXRoIjoicmVsZWFzZWFzc2V0cHJvZHVjdGlvbi5ibG9iLmNvcmUud2luZG93cy5uZXQifQ.dLbOJVphiFqHmdMsNo0BE-OUuTkS1a1SQE-Q2JjoFdM&response-content-disposition=attachment%3B%20filename%3Dxvideos.js&response-content-type=application%2Foctet-stream"
     }
   ]
 }
