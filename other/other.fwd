@@ -1,5 +1,5 @@
 {
-    "title": "OCD's Other Widgets",
+    "title": "GOCD's Other Widgets",
     "description": "其余本地 Widgets",
     "icon": "https://avatars.githubusercontent.com/u/25606004",
     "widgets": [
@@ -10,7 +10,7 @@
             "requiredVersion": "0.0.1",
             "version": "1.1.0",
             "author": "Discount Code：VEUS",
-            "url": "https://raw.githubusercontent.com/ocd0711/forward_module/refs/heads/master/other/wallpaper.js"
+            "url": "https://raw.githubusercontent.com/gr294949/Forwardwidgets-sync/refs/heads/master/other/wallpaper.js"
         },
         {
             "id": "xtream_api_en",
@@ -19,7 +19,7 @@
             "requiredVersion": "0.0.1",
             "version": "2.1.2",
             "author": "Discount Code：VEUS",
-            "url": "https://raw.githubusercontent.com/ocd0711/forward_module/refs/heads/master/other/xtream_api.js"
+            "url": "https://raw.githubusercontent.com/gr294949/Forwardwidgets-sync/refs/heads/master/other/xtream_api.js"
         }
     ]
 }
