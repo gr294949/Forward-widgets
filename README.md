@@ -4,7 +4,7 @@
 
 自动检测链接是否有效, 最终生成集合不包含无效模块
 
-👉 [点此下载最新 allinone.fwd](https://github.com/ocd0711/forward_module/allinone.fwd)
+👉 [点此下载最新 allinone.fwd](https://github.com/gr294949/Forwardwidgets-sync/allinone.fwd)
 
 ## 感谢以下原始仓库作者
 - [OCD Other Widgets](https://github.com/ocd0711/forward_module)
