@@ -8,7 +8,7 @@
       "title": "🖼️ ✨wallpaper",
       "description": "✨ Dynamic wallpaper For Topshelf",
       "requiredVersion": "0.0.1",
-      "version": "1.1.0",
+      "version": "2.3.0",
       "author": "Discount Code：GOLD",
       "url": "https://raw.githubusercontent.com/gr294949/Forward-Widgets/refs/heads/main/other/wallpaper.js"
     },
@@ -22,9 +22,36 @@
       "url": "https://raw.githubusercontent.com/gr294949/Forward-Widgets/refs/heads/main/other/xtream_api.js"
     },
     {
+      "id": "91porn",
+      "title": "91porn",
+      "description": "Discount Code：GOLD",
+      "requiredVersion": "0.0.1",
+      "version": "0.9.4",
+      "author": "Baran",
+      "url": "https://raw.githubusercontent.com/gr294949/Forward-Widgets/refs/heads/main/other/91porn.js"
+    },
+    {
+      "id": "91porny",
+      "title": "91porny",
+      "description": "Discount Code：GOLD",
+      "requiredVersion": "0.0.1",
+      "version": "0.9.4",
+      "author": "Baran",
+      "url": "https://raw.githubusercontent.com/gr294949/Forward-Widgets/refs/heads/main/other/91porny.js"
+    },
+    {
+      "id": "xvideos",
+      "title": "xvideos",
+      "description": "Discount Code：GOLD",
+      "requiredVersion": "0.0.1",
+      "version": "0.9.4",
+      "author": "海带",
+      "url": "https://raw.githubusercontent.com/gr294949/Forward-Widgets/refs/heads/main/other/xvideos.js"
+    },
+    {
       "id": "missav",
       "title": "MissAV",
-      "description": "⚝七折码：GOLD⚝",
+      "description": "Discount Code：GOLD",
       "requiredVersion": "0.0.1",
       "version": "0.0.1",
       "author": "GOLD",
@@ -179,7 +206,7 @@
       "title": "自动链接弹幕",
       "description": "自动获取播放链接并从服务器获取弹幕【30% off code：CHEAP】",
       "requiredVersion": "0.0.2",
-      "version": "1.0.17",
+      "version": "1.0.18",
       "author": "huangxd",
       "url": "https://raw.githubusercontent.com/huangxd-/ForwardWidgets/refs/heads/main/widgets/danmu_auto.js"
     },
@@ -188,7 +215,7 @@
       "title": "手动链接弹幕",
       "description": "从指定播放链接和服务器获取弹幕【30% off code：CHEAP】",
       "requiredVersion": "0.0.2",
-      "version": "1.0.7",
+      "version": "1.0.8",
       "author": "huangxd",
       "url": "https://raw.githubusercontent.com/huangxd-/ForwardWidgets/refs/heads/main/widgets/danmu_playurl.js"
     },
@@ -211,58 +238,76 @@
       "url": "https://raw.githubusercontent.com/2kuai/ForwardWidgets/refs/heads/main/Widgets/ddys.js"
     },
     {
-      "id": "jable",
-      "title": "Jable",
-      "description": "获取Jable全站视频",
+      "id": "Bitch",
+      "title": "Bitch Lives",
+      "description": "🎥 Bitch Lives",
       "requiredVersion": "0.0.1",
-      "version": "1.0.6",
-      "author": "nibiru",
-      "url": "https://raw.githubusercontent.com/pack1r/ForwardWidgets/refs/heads/main/widgets/jable.js"
-    },
-    {
-      "id": "91porn",
-      "title": "91Porn",
-      "description": "获取 91Porn 视频",
-      "requiredVersion": "0.0.1",
-      "version": "0.9.4",
-      "author": "Baran",
-      "url": "https://release-assets.githubusercontent.com/github-production-release-asset/997847335/4fb4feaf-6163-448a-9a29-c52d16226110?sp=r&sv=2018-11-09&sr=b&spr=https&se=2025-08-27T12%3A08%3A54Z&rscd=attachment%3B+filename%3D91porn.js&rsct=application%2Foctet-stream&skoid=96c2d410-5711-43a1-aedd-ab1947aa7ab0&sktid=398a6654-997b-47e9-b12b-9515b896b4de&skt=2025-08-27T11%3A07%3A58Z&ske=2025-08-27T12%3A08%3A54Z&sks=b&skv=2018-11-09&sig=cH1Fm8APYb62PjxohS4RyQpM4mf532Z3Yd755f9wb7A%3D&jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmVsZWFzZS1hc3NldHMuZ2l0aHVidXNlcmNvbnRlbnQuY29tIiwia2V5Ijoia2V5MSIsImV4cCI6MTc1NjI5NDA4NiwibmJmIjoxNzU2MjkzNzg2LCJwYXRoIjoicmVsZWFzZWFzc2V0cHJvZHVjdGlvbi5ibG9iLmNvcmUud2luZG93cy5uZXQifQ.dLbOJVphiFqHmdMsNo0BE-OUuTkS1a1SQE-Q2JjoFdM&response-content-disposition=attachment%3B%20filename%3D91porn.js&response-content-type=application%2Foctet-stream"
-    },
-    {
-      "id": "Pornhub",
-      "title": "Pornhub",
-      "description": "在线观看Pornhub",
-      "requiredVersion": "0.0.1",
-      "version": "1.0.5",
-      "author": "海带",
-      "url": "https://raw.githubusercontent.com/Madai-v/ForwardWidgets/refs/heads/main/Widgets/ph.js"
+      "version": "0.0.1",
+      "author": "Discount Code：VEUS",
+      "url": "https://gist.githubusercontent.com/MrRegret/61a5cbf0637b95a0d800994a51860fb2/raw"
     },
     {
       "id": "ti.bemarkt.javday",
       "title": "JAVDay",
-      "description": "获取 JAVDay 推荐",
+      "description": "🔞 JAVDay Porn",
       "requiredVersion": "0.0.1",
       "version": "1.1.0",
-      "author": "Ti",
+      "author": "Discount Code：VEUS",
       "url": "https://raw.githubusercontent.com/pack1r/ForwardWidgets/refs/heads/main/widgets/javday.js"
     },
     {
       "id": "ti.bemarkt.javrate",
-      "title": "JAVRate",
-      "description": "获取 JAVRate 推荐",
+      "title": "🔞 JAVRate",
+      "description": "JAVRate Porn",
       "requiredVersion": "0.0.1",
       "version": "2.1.0",
-      "author": "Ti",
+      "author": "Discount Code：VEUS",
       "url": "https://raw.githubusercontent.com/pack1r/ForwardWidgets/refs/heads/main/widgets/javrate.js"
+    },
+    {
+      "id": "🔞 jable",
+      "title": "Jable",
+      "description": "Jable porn",
+      "requiredVersion": "0.0.1",
+      "version": "1.0.6",
+      "author": "Discount Code：VEUS",
+      "url": "https://raw.githubusercontent.com/pack1r/ForwardWidgets/refs/heads/main/widgets/jable.js"
+    },
+    {
+      "id": "Pornhub",
+      "title": "Pornhub",
+      "description": "🔞 Pornhub",
+      "requiredVersion": "0.0.1",
+      "version": "1.0.5",
+      "author": "Discount Code：VEUS",
+      "url": "https://raw.githubusercontent.com/Madai-v/ForwardWidgets/refs/heads/main/Widgets/ph.js"
+    },
+    {
+      "id": "wuming.VOD",
+      "title": "Keword VOD",
+      "description": "🔍 Qurey Keword for VOD",
+      "requiredVersion": "0.0.1",
+      "version": "1.0.0",
+      "author": "Discount Code：VEUS",
+      "url": "https://raw.githubusercontent.com/xbzl/Forward/refs/heads/main/Widgets/wuming.js"
     },
     {
       "id": "unknow.baranwang.xvideos",
       "title": "XVideos",
-      "description": "Xvideos",
+      "description": "🔞 XVideos Porn",
       "requiredVersion": "0.0.1",
       "version": "0.9.4",
-      "author": "匿名",
-      "url": "https://release-assets.githubusercontent.com/github-production-release-asset/997847335/2189ea06-9c66-41ef-a91c-fe93bc535d11?sp=r&sv=2018-11-09&sr=b&spr=https&se=2025-08-27T12%3A05%3A55Z&rscd=attachment%3B+filename%3Dxvideos.js&rsct=application%2Foctet-stream&skoid=96c2d410-5711-43a1-aedd-ab1947aa7ab0&sktid=398a6654-997b-47e9-b12b-9515b896b4de&skt=2025-08-27T11%3A05%3A35Z&ske=2025-08-27T12%3A05%3A55Z&sks=b&skv=2018-11-09&sig=ZQIKI0Km6MXrvKEGoT7j%2BIJUPFsu%2FEHzMZBGTVRq%2F88%3D&jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmVsZWFzZS1hc3NldHMuZ2l0aHVidXNlcmNvbnRlbnQuY29tIiwia2V5Ijoia2V5MSIsImV4cCI6MTc1NjI5NDA4NiwibmJmIjoxNzU2MjkzNzg2LCJwYXRoIjoicmVsZWFzZWFzc2V0cHJvZHVjdGlvbi5ibG9iLmNvcmUud2luZG93cy5uZXQifQ.dLbOJVphiFqHmdMsNo0BE-OUuTkS1a1SQE-Q2JjoFdM&response-content-disposition=attachment%3B%20filename%3Dxvideos.js&response-content-type=application%2Foctet-stream"
+      "author": "Discount Code：VEUS",
+      "url": "https://release-assets.githubusercontent.com/github-production-release-asset/997847335/2189ea06-9c66-41ef-a91c-fe93bc535d11?sp=r&sv=2018-11-09&sr=b&spr=https&se=2025-08-27T16%3A57%3A31Z&rscd=attachment%3B+filename%3Dxvideos.js&rsct=application%2Foctet-stream&skoid=96c2d410-5711-43a1-aedd-ab1947aa7ab0&sktid=398a6654-997b-47e9-b12b-9515b896b4de&skt=2025-08-27T15%3A56%3A57Z&ske=2025-08-27T16%3A57%3A31Z&sks=b&skv=2018-11-09&sig=UUNcctfyD1%2BubFSi1xKcIPCnNBz40jXGBVbbzzJdWJQ%3D&jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmVsZWFzZS1hc3NldHMuZ2l0aHVidXNlcmNvbnRlbnQuY29tIiwia2V5Ijoia2V5MSIsImV4cCI6MTc1NjMxMTE1MSwibmJmIjoxNzU2MzEwODUxLCJwYXRoIjoicmVsZWFzZWFzc2V0cHJvZHVjdGlvbi5ibG9iLmNvcmUud2luZG93cy5uZXQifQ.ujXpnRqM8ctK_MW-8dCO_UNHcRR7aG6UeCKBDjJMGak&response-content-disposition=attachment%3B%20filename%3Dxvideos.js&response-content-type=application%2Foctet-stream"
+    },
+    {
+      "id": "cloud_cinema",
+      "title": "云端影院",
+      "description": "☁️ YUNDUAN MOvies",
+      "requiredVersion": "0.0.1",
+      "version": "1.0.0",
+      "author": "Discount Code：VEUS",
+      "url": "https://raw.githubusercontent.com/2kuai/ForwardWidgets/refs/heads/main/Widgets/CloudCinema.js"
     }
   ]
 }
