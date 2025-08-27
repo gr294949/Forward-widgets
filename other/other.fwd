@@ -20,6 +20,15 @@
             "version": "2.1.2",
             "author": "Discount Code：GOLD",
             "url": "https://raw.githubusercontent.com/gr294949/Forward-Widgets/refs/heads/main/other/xtream_api.js"
+        },
+        {
+            "id": "missav",
+            "title": "MissAV",
+            "description": "⚝七折码：GOLD⚝",
+            "requiredVersion": "0.0.1",
+            "version": "0.0.1",
+            "author": "GOLD",
+            "url": "https://raw.githubusercontent.com/gr294949/Forward-widgets/refs/heads/main/other/MissAV.js"
         }
     ]
 }
