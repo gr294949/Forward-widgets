@@ -1,6 +1,6 @@
 # GOLDs AllInOne Widgets
 
-本仓库自动合并多个 ForwardWidgets 源，方便统一使用。(30% off code: OCD)
+本仓库自动合并多个 ForwardWidgets 源，方便统一使用。(30% off code: GOLD)
 
 自动检测链接是否有效, 最终生成集合不包含无效模块
 
