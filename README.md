@@ -1,4 +1,4 @@
-# OCD's AllInOne Widgets
+# GOLDs AllInOne Widgets
 
 本仓库自动合并多个 ForwardWidgets 源，方便统一使用。(30% off code: OCD)
 
