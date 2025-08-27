@@ -10,7 +10,7 @@
             "requiredVersion": "0.0.1",
             "version": "1.1.0",
             "author": "Discount Code：GOLD",
-            "url": "https://raw.githubusercontent.com/gr294949/Forwardwidgets-sync/refs/heads/main/other/wallpaper.js"
+            "url": "https://raw.githubusercontent.com/gr294949/Forward-widgets/refs/heads/main/other/wallpaper.js"
         },
         {
             "id": "xtream_api_en",
@@ -19,7 +19,7 @@
             "requiredVersion": "0.0.1",
             "version": "2.1.2",
             "author": "Discount Code：GOLD",
-            "url": "https://raw.githubusercontent.com/gr294949/Forwardwidgets-sync/refs/heads/main/other/xtream_api.js"
+            "url": "https://raw.githubusercontent.com/gr294949/Forward-widgets/refs/heads/main/other/xtream_api.js"
         }
     ]
 }
