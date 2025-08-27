@@ -2,8 +2,8 @@ var WidgetMetadata = {
   id: "yuanqi.wallpaper",
   title: "🖼️ ✨wallpaper",
   description: "✨ Dynamic wallpaper For Topshelf",
-  author: "🎁 Discount Code：VEUS",
-  site: "🎁 Discount Code：VEUS",
+  author: "🎁 Discount Code：GOLD",
+  site: "🎁 Discount Code：GOLD",
   version: "2.3.0",
   requiredVersion: "0.0.1",
   modules: [
