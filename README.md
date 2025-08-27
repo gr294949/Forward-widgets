@@ -7,6 +7,7 @@
 👉 [点此下载最新 allinone.fwd](https://raw.githubusercontent.com/gr294949/forward/refs/heads/main/allinone.fwd)
 
 ## 感谢以下原始仓库作者
+- [GOCD Other Widgets](https://github.com/gr294949/Forwardwidgets-sync)
 - [pack1r's Widgets](https://github.com/pack1r/ForwardWidgets)
 - [huangxd's Widgets](https://github.com/huangxd-/ForwardWidgets)
 - [2Kuai Widgets - 影视资源](https://github.com/2kuai/ForwardWidgets)
