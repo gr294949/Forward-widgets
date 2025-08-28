@@ -123,7 +123,7 @@ for widget in all_widgets:
             merged[wid] = widget
 
 result = {
-    "title": "Forward最全模块合集",
+    "title": "𝓰𝓸𝓵𝓭'𝓼 𝓦𝓲𝓭𝓰𝓮𝓽𝓼",
     "description": "折扣码: GOLD",
     "icon": "https://raw.githubusercontent.com/gr294949/Forward-Widgets/main/gold.png",
     "widgets": list(merged.values())
