@@ -124,7 +124,7 @@ for widget in all_widgets:
 
 result = {
     "title": "Forward最全模块合集",
-    "description": "折扣码: GOLD)",
+    "description": "折扣码: GOLD",
     "icon": "https://raw.githubusercontent.com/gr294949/Forward-Widgets/main/gold.png",
     "widgets": list(merged.values())
 }
