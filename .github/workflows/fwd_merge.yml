@@ -1,4 +1,4 @@
-name: Merge Widgets
+name: 同步模块
 
 on:
   workflow_dispatch:
