@@ -219,7 +219,7 @@ if os.path.exists(old_fwd_file):
 result = {
     "title": "GOLD's AllInOne Widgets",
     "description": "折扣码: GOLD)",
-    "icon": "https://avatars.githubusercontent.com/u/25606004",
+    "icon": "https://github.com/gr294949/Forward-widgets/raw/main/gold.png",
     "widgets": list(merged.values())
 }
 
