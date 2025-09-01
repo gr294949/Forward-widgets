@@ -58,12 +58,80 @@ def normalize_version(v: str):
     except Exception:
         return version.parse("0.0.0")
 
+def _detect_branch(base_dir: str) -> str:
+    # 1) 优先用 GitHub Actions 的环境变量
+    if os.getenv("GITHUB_REF_NAME"):
+        return os.getenv("GITHUB_REF_NAME")
+    if os.getenv("GITHUB_REF"):  # e.g. refs/heads/master
+        return os.getenv("GITHUB_REF").split("/")[-1]
+
+    # 2) 本地仓库：从 .git/HEAD 读取当前分支
+    head_file = os.path.join(base_dir, ".git", "HEAD")
+    try:
+        with open(head_file, "r", encoding="utf-8") as f:
+            line = f.read().strip()
+            # 形如: ref: refs/heads/master
+            if line.startswith("ref:"):
+                return line.split("/")[-1]
+    except Exception:
+        pass
+
+    # 3) 兜底：多数仓库默认还是 master
+    return "master"
+
+def _detect_owner_repo() -> str:
+    # GitHub Actions 提供 GITHUB_REPOSITORY=owner/repo
+    return os.getenv("GITHUB_REPOSITORY", "ocd0711/forward_module")
+
+OWNER_REPO = _detect_owner_repo()
+BRANCH = _detect_branch(BASE_DIR)
+
 def url_to_repo(raw_url: str) -> str:
     m = re.match(r"https://raw\.githubusercontent\.com/([^/]+)/([^/]+)/", raw_url)
     if m:
         user, repo = m.groups()
         return f"https://github.com/{user}/{repo}"
     return raw_url
+
+def download_and_replace_url(widget, base_dir):
+    url = widget.get("url")
+    if not url:
+        return widget
+
+    try:
+        resp = requests.get(url, headers=HEADERS, timeout=20, stream=True)
+        resp.raise_for_status()
+
+        # 获取原始文件名
+        filename = os.path.basename(url.split("?")[0])
+        if not filename or filename.lower() == "raw":
+            filename = f"{widget.get('id')}.js"
+
+        # 确保 widgets 文件夹存在
+        local_dir = os.path.join(base_dir, "widgets")
+        os.makedirs(local_dir, exist_ok=True)
+        local_path = os.path.join(local_dir, filename)
+
+        # 如果已存在同名文件（别的 widget 保存过），用 id 保证唯一
+        if os.path.exists(local_path):
+            name, ext = os.path.splitext(filename)
+            filename = f"{widget.get('id')}{ext}"
+            local_path = os.path.join(local_dir, filename)
+
+        # 保存文件
+        with open(local_path, "wb") as f:
+            for chunk in resp.iter_content(chunk_size=8192):
+                f.write(chunk)
+
+        # 替换为仓库 RAW 地址
+        repo_url = f"https://raw.githubusercontent.com/{OWNER_REPO}/{BRANCH}/widgets/{filename}"
+        widget["url"] = repo_url
+
+        print(f"  💾 已保存 {widget.get('id')} -> {filename}")
+    except Exception as e:
+        print(f"  ⚠️ 下载失败 {widget.get('id')} ({url}): {e}")
+
+    return widget
 
 # 读取 module.json
 with open(os.path.join(BASE_DIR, "module.json"), "r", encoding="utf-8") as f:
@@ -90,6 +158,7 @@ for name, url in modules.items():
     except Exception as e:
         print(f"  ⚠️ 无法读取 {name}: {e}")
 
+# 只保留每个 widget 的最新版本
 merged = {}
 for widget in all_widgets:
     wid = widget.get("id")
@@ -122,10 +191,35 @@ for widget in all_widgets:
         if cur_ver > old_ver:
             merged[wid] = widget
 
+# 下载并替换 URL
+for wid, widget in merged.items():
+    merged[wid] = download_and_replace_url(widget, BASE_DIR)
+
+# === 保留旧的 allinone.fwd 中丢失但本地有备份的 widgets ===
+old_fwd_file = os.path.join(BASE_DIR, "allinone.fwd")
+if os.path.exists(old_fwd_file):
+    try:
+        with open(old_fwd_file, "r", encoding="utf-8") as f:
+            old_data = json.load(f)
+            for old_widget in old_data.get("widgets", []):
+                wid = old_widget.get("id")
+                if not wid:
+                    continue
+                if wid not in merged:
+                    old_url = old_widget.get("url", "")
+                    filename = os.path.basename(old_url.split("?")[0])
+                    if filename:
+                        local_path = os.path.join(BASE_DIR, "widgets", filename)
+                        if os.path.exists(local_path):
+                            merged[wid] = old_widget
+                            print(f"  ♻️ 保留本地备份 widget: {wid} -> {filename}")
+    except Exception as e:
+        print(f"⚠️ 读取旧的 allinone.fwd 失败: {e}")
+        
 result = {
-    "title": "𝓰𝓸𝓵𝓭'𝓼 𝓦𝓲𝓭𝓰𝓮𝓽𝓼",
-    "description": "折扣码: GOLD",
-    "icon": "https://raw.githubusercontent.com/gr294949/Forward-Widgets/main/gold.png",
+    "title": "GOLD's AllInOne Widgets",
+    "description": "折扣码: GOLD)",
+    "icon": "https://avatars.githubusercontent.com/u/25606004",
     "widgets": list(merged.values())
 }
 
