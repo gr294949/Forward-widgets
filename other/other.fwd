@@ -9,7 +9,7 @@
             "description": "✨ Dynamic wallpaper For Topshelf",
             "requiredVersion": "0.0.1",
             "version": "2.3.0",
-            "author": "Discount Code：GOLD",
+            "author": "折扣码：GOLD",
             "url": "https://raw.githubusercontent.com/gr294949/Forward-Widgets/refs/heads/main/other/wallpaper.js"
         },
         {
@@ -18,13 +18,13 @@
             "description": "Fetch live channels via official Xtream-Codes REST API with keyword search",
             "requiredVersion": "0.0.1",
             "version": "2.1.2",
-            "author": "Discount Code：GOLD",
+            "author": "折扣码：GOLD",
             "url": "https://raw.githubusercontent.com/gr294949/Forward-Widgets/refs/heads/main/other/xtream_api.js"
         },
         {
             "id": "91porn",
             "title": "91porn",
-            "description": "Discount Code：GOLD",
+            "description": "折扣码：GOLD",
             "requiredVersion": "0.0.1",
             "version": "0.9.4",
             "author": "Baran",
@@ -33,29 +33,11 @@
         {
             "id": "91porny",
             "title": "91porny",
-            "description": "Discount Code：GOLD",
+            "description": "折扣码：GOLD",
             "requiredVersion": "0.0.1",
             "version": "0.9.4",
             "author": "Baran",
             "url": "https://raw.githubusercontent.com/gr294949/Forward-Widgets/refs/heads/main/other/91porny.js"
-        },
-        {
-            "id": "unknow.baranwang.xvideos",
-            "title": "xvideos",
-            "description": "Discount Code：GOLD",
-            "requiredVersion": "0.0.1",
-            "version": "0.9.4",
-            "author": "海带",
-            "url": "https://raw.githubusercontent.com/gr294949/Forward-Widgets/refs/heads/main/other/xvideos.js"
-        },
-        {
-            "id": "missav",
-            "title": "MissAV",
-            "description": "Discount Code：GOLD",
-            "requiredVersion": "0.0.1",
-            "version": "0.0.1",
-            "author": "GOLD",
-            "url": "https://raw.githubusercontent.com/gr294949/Forward-widgets/refs/heads/main/other/MissAV.js"
         }
     ]
 }
