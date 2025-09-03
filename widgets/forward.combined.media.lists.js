@@ -1,6 +1,6 @@
 // =============UserScript=============
 // @name         影视聚合查询组件
-// @version      1.3.5
+// @version      1.3.6
 // @description  聚合查询豆瓣/TMDB/IMDB/BGM影视数据
 // @author       阿米诺斯
 // =============UserScript=============
@@ -10,7 +10,7 @@ WidgetMetadata = {
   description: "聚合豆瓣、TMDB、IMDB和Bangumi的影视动画榜单",
   author: "阿米诺斯",
   site: "https://widgets-xd.vercel.app",
-  version: "1.3.5",
+  version: "1.3.6",
   requiredVersion: "0.0.2",
   detailCacheDuration: 3600,
   modules: [
@@ -23,6 +23,20 @@ WidgetMetadata = {
       functionName: "loadTodayHotTV",
       cacheDuration: 3600,
       params: [
+        { 
+          name: "sort_by", 
+          title: "地区", 
+          type: "enumeration", 
+          enumOptions: [
+            { title: "全部地区", value: "" },
+            { title: "中国", value: "CN" },
+            { title: "美国", value: "US" },
+            { title: "韩国", value: "KR" },
+            { title: "日本", value: "JP" },
+            { title: "英国", value: "GB" }
+          ], 
+          value: "" 
+        },
         { name: "language", title: "语言", type: "language", value: "zh-CN" },
         { name: "page", title: "页码", type: "page" }
       ]
@@ -34,6 +48,20 @@ WidgetMetadata = {
       functionName: "loadTodayHotMovies",
       cacheDuration: 3600,
       params: [
+        { 
+          name: "sort_by", 
+          title: "地区", 
+          type: "enumeration", 
+          enumOptions: [
+            { title: "全部地区", value: "" },
+            { title: "中国", value: "CN" },
+            { title: "美国", value: "US" },
+            { title: "韩国", value: "KR" },
+            { title: "日本", value: "JP" },
+            { title: "英国", value: "GB" }
+          ], 
+          value: "" 
+        },
         { name: "language", title: "语言", type: "language", value: "zh-CN" },
         { name: "page", title: "页码", type: "page" }
       ]
@@ -365,10 +393,10 @@ WidgetMetadata = {
           title: "🎯 操作模式",
           type: "enumeration",
           description: "选择操作类型",
-          value: "search_and_block",
+          value: "search_only",
           enumOptions: [
-            { title: "搜索并屏蔽", value: "search_and_block" },
             { title: "仅搜索", value: "search_only" },
+            { title: "搜索并屏蔽", value: "search_and_block" },
             { title: "手动屏蔽ID", value: "manual_block" }
           ]
         },
@@ -405,10 +433,10 @@ WidgetMetadata = {
           title: "🎭 媒体类型",
           type: "enumeration",
           description: "选择媒体类型（手动屏蔽模式使用）",
-          value: "movie",
+          value: "tv",
           enumOptions: [
-            { title: "电影", value: "movie" },
-            { title: "剧集", value: "tv" }
+            { title: "剧集", value: "tv" },
+            { title: "电影", value: "movie" }
           ]
         }
       ]
@@ -428,8 +456,8 @@ WidgetMetadata = {
           value: "view",
           enumOptions: [
             { title: "查看黑名单", value: "view" },
-            { title: "取消屏蔽", value: "unblock" },
             { title: "清空黑名单", value: "clear" },
+            { title: "取消屏蔽", value: "unblock" },
             { title: "导出配置", value: "export" },
             { title: "导入配置", value: "import" }
           ]
@@ -450,8 +478,8 @@ WidgetMetadata = {
           description: "选择要取消屏蔽的媒体类型",
           value: "tv",
           enumOptions: [
-            { title: "电影", value: "movie" },
-            { title: "剧集", value: "tv" }
+            { title: "剧集", value: "tv" },
+            { title: "电影", value: "movie" }
           ],
           belongTo: { paramName: "action", value: ["unblock"] }
         },
@@ -1406,6 +1434,38 @@ async function loadTmdbTrendingData() {
 
 async function loadTodayHotTV(params) {
   const page = parseInt(params.page) || 1;
+  const region = params.sort_by || '';
+  
+  if (region) {
+    const [data, genres] = await Promise.all([
+      Widget.tmdb.get(`/discover/tv`, { 
+        params: { 
+          language: params.language || 'zh-CN',
+          page: page,
+          with_origin_country: region,
+          sort_by: 'popularity.desc'
+        } 
+      }),
+      fetchTmdbGenres()
+    ]);
+    
+    const items = data.results
+      .filter(item => item.poster_path)
+      .map(item => ({
+        id: String(item.id),
+        type: "tmdb",
+        title: item.name,
+        description: item.overview,
+        releaseDate: item.first_air_date,
+        backdropPath: item.backdrop_path,
+        posterPath: item.poster_path,
+        rating: item.vote_average,
+        mediaType: "tv",
+        genreTitle: getTmdbGenreTitles(item.genre_ids || [], "tv")
+      }));
+    
+    return filterBlockedItems(items);
+  }
   
   if (page === 1) {
     try {
@@ -1415,7 +1475,7 @@ async function loadTodayHotTV(params) {
       const tvItems = [];
       for (let i = 0; i < allTvItems.length && tvItems.length < 20; i++) {
         const item = allTvItems[i];
-        if (item.type === 'tv') {
+        if (item.type === 'tv' && item.poster_url) {
           tvItems.push({
             id: item.id.toString(),
             type: "tmdb",
@@ -1447,7 +1507,7 @@ async function loadTodayHotTV(params) {
   ]);
   
   const items = data.results
-    .filter(item => !item.media_type || item.media_type === 'tv')
+    .filter(item => (!item.media_type || item.media_type === 'tv') && item.poster_path)
     .map(item => ({
       id: String(item.id),
       type: "tmdb",
@@ -1466,6 +1526,38 @@ async function loadTodayHotTV(params) {
 
 async function loadTodayHotMovies(params) {
   const page = parseInt(params.page) || 1;
+  const region = params.sort_by || '';
+  
+  if (region) {
+    const [data, genres] = await Promise.all([
+      Widget.tmdb.get(`/discover/movie`, { 
+        params: { 
+          language: params.language || 'zh-CN',
+          page: page,
+          with_origin_country: region,
+          sort_by: 'popularity.desc'
+        } 
+      }),
+      fetchTmdbGenres()
+    ]);
+    
+    const items = data.results
+      .filter(item => item.poster_path)
+      .map(item => ({
+        id: String(item.id),
+        type: "tmdb",
+        title: item.title,
+        description: item.overview,
+        releaseDate: item.release_date,
+        backdropPath: item.backdrop_path,
+        posterPath: item.poster_path,
+        rating: item.vote_average,
+        mediaType: "movie",
+        genreTitle: getTmdbGenreTitles(item.genre_ids || [], "movie")
+      }));
+    
+    return filterBlockedItems(items);
+  }
   
   if (page === 1) {
     try {
@@ -1475,7 +1567,7 @@ async function loadTodayHotMovies(params) {
       const movieItems = [];
       for (let i = 0; i < allMovieItems.length && movieItems.length < 20; i++) {
         const item = allMovieItems[i];
-        if (item.type === 'movie') {
+        if (item.type === 'movie' && item.poster_url) {
           movieItems.push({
             id: item.id.toString(),
             type: "tmdb",
@@ -1507,7 +1599,7 @@ async function loadTodayHotMovies(params) {
   ]);
   
   const items = data.results
-    .filter(item => !item.media_type || item.media_type === 'movie')
+    .filter(item => (!item.media_type || item.media_type === 'movie') && item.poster_path)
     .map(item => ({
       id: String(item.id),
       type: "tmdb",
