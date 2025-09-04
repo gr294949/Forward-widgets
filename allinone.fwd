@@ -211,6 +211,24 @@
       "url": "https://raw.githubusercontent.com/gr294949/Forward-widgets/main/widgets/ddys_vod.js"
     },
     {
+      "id": "forward.combined.media.lists.en",
+      "title": "Movie & TV Lists",
+      "description": "Movie & TV Lists",
+      "requiredVersion": "0.0.2",
+      "version": "1.0.0",
+      "author": "𝓑𝓾𝓽𝓽𝓮𝓻𝓯𝓵𝔂",
+      "url": "https://raw.githubusercontent.com/gr294949/Forward-widgets/main/widgets/Move_list_EN.js"
+    },
+    {
+      "id": "baranwang.danmu.universe",
+      "title": "通用弹幕",
+      "description": "通用弹幕插件，支持腾讯、优酷、爱奇艺、哔哩哔哩等平台",
+      "requiredVersion": "0.0.2",
+      "version": "0.0.12",
+      "author": "Baran",
+      "url": "https://raw.githubusercontent.com/gr294949/Forward-widgets/main/widgets/danmu-universe.js"
+    },
+    {
       "id": "wuming.VOD",
       "title": "VOD",
       "description": "根据Keyword,用于VOD",
