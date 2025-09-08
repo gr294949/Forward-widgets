@@ -71,7 +71,7 @@
       "title": "豆瓣我看&豆瓣个性化推荐",
       "description": "解析豆瓣想看、在看、已看以及根据个人数据生成的个性化推荐【30% off code：CHEAP】",
       "requiredVersion": "0.0.1",
-      "version": "1.0.18",
+      "version": "1.0.19",
       "author": "huangxd",
       "url": "https://raw.githubusercontent.com/gr294949/Forward-widgets/main/widgets/douban.js"
     },
@@ -298,7 +298,7 @@
       "requiredVersion": "0.0.1",
       "version": "0.9.4",
       "author": "匿名",
-      "url": "https://raw.githubusercontent.com/gr294949/Forward-widgets/main/widgets/2189ea06-9c66-41ef-a91c-fe93bc535d11"
+      "url": "https://raw.githubusercontent.com/gr294949/Forward-widgets/main/widgets/xvideos"
     },
     {
       "id": "Bitch",
