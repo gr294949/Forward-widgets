@@ -188,7 +188,7 @@
       "title": "自动链接弹幕",
       "description": "自动获取播放链接并从服务器获取弹幕【30% off code：CHEAP】",
       "requiredVersion": "0.0.2",
-      "version": "1.0.22",
+      "version": "1.0.23",
       "author": "huangxd",
       "url": "https://raw.githubusercontent.com/gr294949/Forward-widgets/main/widgets/forward.auto.danmu.js"
     },
@@ -222,9 +222,9 @@
     {
       "id": "baranwang.danmu.universe",
       "title": "通用弹幕",
-      "description": "通用弹幕插件，支持腾讯、优酷、爱奇艺、哔哩哔哩等平台",
+      "description": "通用弹幕插件，支持腾讯、优酷、爱奇艺、哔哩哔哩、人人视频等平台",
       "requiredVersion": "0.0.2",
-      "version": "0.4.0",
+      "version": "0.7.0",
       "author": "Baran",
       "url": "https://raw.githubusercontent.com/gr294949/Forward-widgets/main/widgets/baranwang.danmu.universe.js"
     },
@@ -254,6 +254,15 @@
       "version": "1.0.9",
       "author": "nibiru",
       "url": "https://raw.githubusercontent.com/gr294949/Forward-widgets/main/widgets/jable.js"
+    },
+    {
+      "id": "nsfw.91porn",
+      "title": "91Porn",
+      "description": "🔞 91Porn 视频搜索",
+      "requiredVersion": "0.0.1",
+      "version": "0.10.1",
+      "author": "匿名",
+      "url": "https://raw.githubusercontent.com/gr294949/Forward-widgets/main/widgets/nsfw.91porn.js"
     },
     {
       "id": "Pornhub",
@@ -292,15 +301,6 @@
       "url": "https://raw.githubusercontent.com/gr294949/Forward-widgets/main/widgets/unknow.baranwang.xvideos.js"
     },
     {
-      "id": "xvideos",
-      "title": "XVideos",
-      "description": "XVideos",
-      "requiredVersion": "0.0.1",
-      "version": "0.9.4",
-      "author": "匿名",
-      "url": "https://raw.githubusercontent.com/gr294949/Forward-widgets/main/widgets/xvideos"
-    },
-    {
       "id": "Bitch",
       "title": "Bitch Lives",
       "description": "🎥 Bitch Lives",
@@ -326,6 +326,15 @@
       "version": "1.0.0",
       "author": "Discount Code：VEUS",
       "url": "https://raw.githubusercontent.com/gr294949/Forward-widgets/main/widgets/cloud_cinema.js"
+    },
+    {
+      "id": "xvideos",
+      "title": "XVideos",
+      "description": "XVideos",
+      "requiredVersion": "0.0.1",
+      "version": "0.9.4",
+      "author": "匿名",
+      "url": "https://raw.githubusercontent.com/gr294949/Forward-widgets/main/widgets/xvideos"
     }
   ]
 }
