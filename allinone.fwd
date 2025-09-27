@@ -161,7 +161,7 @@
       "title": "电视台",
       "description": "获取热门电视直播频道",
       "requiredVersion": "0.0.1",
-      "version": "1.1.5",
+      "version": "1.1.6",
       "author": "两块",
       "url": "https://raw.githubusercontent.com/gr294949/Forward-widgets/main/widgets/tv_live.js"
     },
@@ -235,7 +235,7 @@
       "requiredVersion": "0.0.2",
       "version": "0.10.1",
       "author": "Baran",
-      "url": "https://raw.githubusercontent.com/gr294949/Forward-widgets/main/widgets/baranwang.danmu.universe.js"
+      "url": "https://raw.githubusercontent.com/gr294949/Forward-widgets/main/widgets/danmu_universe.js"
     },
     {
       "id": "wuming.VOD",
