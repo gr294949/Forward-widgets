@@ -1,358 +1,359 @@
+//Original Author:Ti
 var WidgetMetadata = {
   id: "ti.bemarkt.javday",
   title: "JAVDay",
-  description: "获取 JAVDay 推荐",
-  author: "Ti",
+  description: "\u83b7\u53d6 JAVDay \u63a8\u8350",
+  author: "\ud835\udcd1\ud835\udcfe\ud835\udcfd\ud835\udcfd\ud835\udcee\ud835\udcfb\ud835\udcef\ud835\udcf5\ud835\udd02",
   site: "https://widgets-xd.vercel.app",
   version: "1.1.0",
   requiredVersion: "0.0.2",
   detailCacheDuration: 60,
   modules: [
-    // 搜索模块
+    // \u641c\u7d22\u6a21\u5757
     {
-      title: "搜索视频",
-      description: "搜索JAVDay视频库",
+      title: "\u641c\u7d22\u89c6\u9891",
+      description: "\u641c\u7d22JAVDay\u89c6\u9891\u5e93",
       requiresWebView: false,
       functionName: "search",
       cacheDuration: 3600,
       params: [
         {
           name: "keyword",
-          title: "女優/番號/關鍵字搜索…",
+          title: "\u5973\u512a/\u756a\u865f/\u95dc\u9375\u5b57\u641c\u7d22\u2026",
           type: "input",
           value: "",
-          description: "女優/番號/關鍵字搜索…",
+          description: "\u5973\u512a/\u756a\u865f/\u95dc\u9375\u5b57\u641c\u7d22\u2026",
         },
         { 
           name: "page", 
-          title: "页码", 
+          title: "\u9875\u7801", 
           type: "page", 
-          description: "搜索结果页码" 
+          description: "\u641c\u7d22\u7ed3\u679c\u9875\u7801" 
         }
       ]
     },
-    // 最新模块
+    // \u6700\u65b0\u6a21\u5757
     {
-      title: "最新更新",
-      description: "浏览最新更新视频",
+      title: "\u6700\u65b0\u66f4\u65b0",
+      description: "\u6d4f\u89c8\u6700\u65b0\u66f4\u65b0\u89c6\u9891",
       requiresWebView: false,
       functionName: "loadPage",
       cacheDuration: 3600,
       params: [
         {
           name: "url",
-          title: "列表地址",
+          title: "\u5217\u8868\u5730\u5740",
           type: "constant",
-          description: "列表地址",
+          description: "\u5217\u8868\u5730\u5740",
           value: "https://javday.app/label/new/"
         },
         {
           name: "page",
-          title: "页码",
+          title: "\u9875\u7801",
           type: "page"
         }
       ]
     },
-    // 人气模块
+    // \u4eba\u6c14\u6a21\u5757
     {
-      title: "人气系列",
-      description: "浏览人气系列视频",
+      title: "\u4eba\u6c14\u7cfb\u5217",
+      description: "\u6d4f\u89c8\u4eba\u6c14\u7cfb\u5217\u89c6\u9891",
       requiresWebView: false,
       functionName: "loadPage",
       cacheDuration: 3600,
       params: [
         {
           name: "url",
-          title: "列表地址",
+          title: "\u5217\u8868\u5730\u5740",
           type: "constant",
-          description: "列表地址",
+          description: "\u5217\u8868\u5730\u5740",
           value: "https://javday.app/label/hot/"
         },
         {
           name: "page",
-          title: "页码",
+          title: "\u9875\u7801",
           type: "page"
         }
       ]
     },
-    // 新作模块
+    // \u65b0\u4f5c\u6a21\u5757
     {
-      title: "新作上市",
-      description: "浏览新作上市视频",
+      title: "\u65b0\u4f5c\u4e0a\u5e02",
+      description: "\u6d4f\u89c8\u65b0\u4f5c\u4e0a\u5e02\u89c6\u9891",
       requiresWebView: false,
       functionName: "loadPage",
       cacheDuration: 3600,
       params: [
         {
           name: "url",
-          title: "列表地址",
+          title: "\u5217\u8868\u5730\u5740",
           type: "constant",
-          description: "列表地址",
+          description: "\u5217\u8868\u5730\u5740",
           value: "https://javday.app/category/new-release/"
         },
         {
           name: "sort_by",
-          title: "排序方式",
+          title: "\u6392\u5e8f\u65b9\u5f0f",
           type: "enumeration",
           enumOptions: [
-            { title: "最新上架", value: "new" },
-            { title: "人气最高", value: "popular" }
+            { title: "\u6700\u65b0\u4e0a\u67b6", value: "new" },
+            { title: "\u4eba\u6c14\u6700\u9ad8", value: "popular" }
           ],
-          description: "选择视频排序方式",
+          description: "\u9009\u62e9\u89c6\u9891\u6392\u5e8f\u65b9\u5f0f",
           value: "new"
         },
         {
           name: "page",
-          title: "页码",
+          title: "\u9875\u7801",
           type: "page"
         }
       ]
     },
-    // 有码模块
+    // \u6709\u7801\u6a21\u5757
     {
-      title: "有码视频",
-      description: "浏览有码分类视频",
+      title: "\u6709\u7801\u89c6\u9891",
+      description: "\u6d4f\u89c8\u6709\u7801\u5206\u7c7b\u89c6\u9891",
       requiresWebView: false,
       functionName: "loadPage",
       cacheDuration: 3600,
       params: [
         {
           name: "url",
-          title: "列表地址",
+          title: "\u5217\u8868\u5730\u5740",
           type: "constant",
-          description: "列表地址",
+          description: "\u5217\u8868\u5730\u5740",
           value: "https://javday.app/category/censored/"
         },
         {
           name: "sort_by",
-          title: "排序方式",
+          title: "\u6392\u5e8f\u65b9\u5f0f",
           type: "enumeration",
           enumOptions: [
-            { title: "最新上架", value: "new" },
-            { title: "人气最高", value: "popular" }
+            { title: "\u6700\u65b0\u4e0a\u67b6", value: "new" },
+            { title: "\u4eba\u6c14\u6700\u9ad8", value: "popular" }
           ],
-          description: "选择视频排序方式",
+          description: "\u9009\u62e9\u89c6\u9891\u6392\u5e8f\u65b9\u5f0f",
           value: "popular"
         },
         {
           name: "page",
-          title: "页码",
+          title: "\u9875\u7801",
           type: "page"
         }
       ]
     },
-    // 无码模块
+    // \u65e0\u7801\u6a21\u5757
     {
-      title: "无码视频",
-      description: "浏览无码分类视频",
+      title: "\u65e0\u7801\u89c6\u9891",
+      description: "\u6d4f\u89c8\u65e0\u7801\u5206\u7c7b\u89c6\u9891",
       requiresWebView: false,
       functionName: "loadPage",
       cacheDuration: 3600,
       params: [
         {
           name: "url",
-          title: "列表地址",
+          title: "\u5217\u8868\u5730\u5740",
           type: "constant",
-          description: "列表地址",
+          description: "\u5217\u8868\u5730\u5740",
           value: "https://javday.app/category/uncensored/"
         },
         {
           name: "sort_by",
-          title: "排序方式",
+          title: "\u6392\u5e8f\u65b9\u5f0f",
           type: "enumeration",
           enumOptions: [
-            { title: "最新上架", value: "new" },
-            { title: "人气最高", value: "popular" }
+            { title: "\u6700\u65b0\u4e0a\u67b6", value: "new" },
+            { title: "\u4eba\u6c14\u6700\u9ad8", value: "popular" }
           ],
-          description: "选择视频排序方式",
+          description: "\u9009\u62e9\u89c6\u9891\u6392\u5e8f\u65b9\u5f0f",
           value: "new"
         },
         {
           name: "page",
-          title: "页码",
+          title: "\u9875\u7801",
           type: "page"
         }
       ]
     },
-    // 流出模块
+    // \u6d41\u51fa\u6a21\u5757
     {
-      title: "无码流出",
-      description: "浏览无码流出视频",
+      title: "\u65e0\u7801\u6d41\u51fa",
+      description: "\u6d4f\u89c8\u65e0\u7801\u6d41\u51fa\u89c6\u9891",
       requiresWebView: false,
       functionName: "loadPage",
       cacheDuration: 3600,
       params: [
         {
           name: "url",
-          title: "列表地址",
+          title: "\u5217\u8868\u5730\u5740",
           type: "constant",
-          description: "列表地址",
+          description: "\u5217\u8868\u5730\u5740",
           value: "https://javday.app/category/uncensored-leaked/"
         },
         {
           name: "sort_by",
-          title: "排序方式",
+          title: "\u6392\u5e8f\u65b9\u5f0f",
           type: "enumeration",
           enumOptions: [
-            { title: "最新上架", value: "new" },
-            { title: "人气最高", value: "popular" }
+            { title: "\u6700\u65b0\u4e0a\u67b6", value: "new" },
+            { title: "\u4eba\u6c14\u6700\u9ad8", value: "popular" }
           ],
-          description: "选择视频排序方式",
+          description: "\u9009\u62e9\u89c6\u9891\u6392\u5e8f\u65b9\u5f0f",
           value: "new"
         },
         {
           name: "page",
-          title: "页码",
+          title: "\u9875\u7801",
           type: "page"
         }
       ]
     },
-    // 杏吧模块
+    // \u674f\u5427\u6a21\u5757
     {
-      title: "杏吧视频",
-      description: "浏览杏吧分类视频",
+      title: "\u674f\u5427\u89c6\u9891",
+      description: "\u6d4f\u89c8\u674f\u5427\u5206\u7c7b\u89c6\u9891",
       requiresWebView: false,
       functionName: "loadPage",
       cacheDuration: 3600,
       params: [
         {
           name: "url",
-          title: "列表地址",
+          title: "\u5217\u8868\u5730\u5740",
           type: "constant",
-          description: "列表地址",
+          description: "\u5217\u8868\u5730\u5740",
           value: "https://javday.app/category/sex8/"
         },
         {
           name: "sort_by",
-          title: "排序方式",
+          title: "\u6392\u5e8f\u65b9\u5f0f",
           type: "enumeration",
           enumOptions: [
-            { title: "最新上架", value: "new" },
-            { title: "人气最高", value: "popular" }
+            { title: "\u6700\u65b0\u4e0a\u67b6", value: "new" },
+            { title: "\u4eba\u6c14\u6700\u9ad8", value: "popular" }
           ],
-          description: "选择视频排序方式",
+          description: "\u9009\u62e9\u89c6\u9891\u6392\u5e8f\u65b9\u5f0f",
           value: "popular"
         },
         {
           name: "page",
-          title: "页码",
+          title: "\u9875\u7801",
           type: "page"
         }
       ]
     },
-    // 玩偶模块
+    // \u73a9\u5076\u6a21\u5757
     {
-      title: "玩偶姐姐",
-      description: "浏览玩偶姐姐视频",
+      title: "\u73a9\u5076\u59d0\u59d0",
+      description: "\u6d4f\u89c8\u73a9\u5076\u59d0\u59d0\u89c6\u9891",
       requiresWebView: false,
       functionName: "loadPage",
       cacheDuration: 3600,
       params: [
         {
           name: "url",
-          title: "列表地址",
+          title: "\u5217\u8868\u5730\u5740",
           type: "constant",
-          description: "列表地址",
+          description: "\u5217\u8868\u5730\u5740",
           value: "https://javday.app/category/hongkongdoll/"
         },
         {
           name: "sort_by",
-          title: "排序方式",
+          title: "\u6392\u5e8f\u65b9\u5f0f",
           type: "enumeration",
           enumOptions: [
-            { title: "最新上架", value: "new" },
-            { title: "人气最高", value: "popular" }
+            { title: "\u6700\u65b0\u4e0a\u67b6", value: "new" },
+            { title: "\u4eba\u6c14\u6700\u9ad8", value: "popular" }
           ],
-          description: "选择视频排序方式",
+          description: "\u9009\u62e9\u89c6\u9891\u6392\u5e8f\u65b9\u5f0f",
           value: "popular"
         },
         {
           name: "page",
-          title: "页码",
+          title: "\u9875\u7801",
           type: "page"
         }
       ]
     },
-    // 国产模块
+    // \u56fd\u4ea7\u6a21\u5757
     {
-      title: "国产 AV",
-      description: "浏览国产 AV视频",
+      title: "\u56fd\u4ea7 AV",
+      description: "\u6d4f\u89c8\u56fd\u4ea7 AV\u89c6\u9891",
       requiresWebView: false,
       functionName: "loadPage",
       cacheDuration: 3600,
       params: [
         {
           name: "url",
-          title: "列表地址",
+          title: "\u5217\u8868\u5730\u5740",
           type: "constant",
-          description: "列表地址",
+          description: "\u5217\u8868\u5730\u5740",
           value: "https://javday.app/category/chinese-av/"
         },
         {
           name: "sort_by",
-          title: "排序方式",
+          title: "\u6392\u5e8f\u65b9\u5f0f",
           type: "enumeration",
           enumOptions: [
-            { title: "最新上架", value: "new" },
-            { title: "人气最高", value: "popular" }
+            { title: "\u6700\u65b0\u4e0a\u67b6", value: "new" },
+            { title: "\u4eba\u6c14\u6700\u9ad8", value: "popular" }
           ],
-          description: "选择视频排序方式",
+          description: "\u9009\u62e9\u89c6\u9891\u6392\u5e8f\u65b9\u5f0f",
           value: "popular"
         },
         {
           name: "page",
-          title: "页码",
+          title: "\u9875\u7801",
           type: "page"
         }
       ]
     },
-    // 厂商模块
+    // \u5382\u5546\u6a21\u5757
     {
-      title: "国产厂商",
-      description: "按厂商标签浏览国产厂商视频",
+      title: "\u56fd\u4ea7\u5382\u5546",
+      description: "\u6309\u5382\u5546\u6807\u7b7e\u6d4f\u89c8\u56fd\u4ea7\u5382\u5546\u89c6\u9891",
       requiresWebView: false,
       functionName: "loadPage",
       cacheDuration: 3600,
       params: [
         {
           name: "url",
-          title: "厂商选择",
+          title: "\u5382\u5546\u9009\u62e9",
           type: "enumeration",
           belongTo: {
             paramName: "sort_by",
             value: ["new","popular"],
             },
           enumOptions: [ 
-            { title: "麻豆传媒", value: "https://javday.app/index.php/category/madou/" }, 
-            { title: "果冻传媒", value: "https://javday.app/index.php/category/91zhipianchang/" }, 
-            { title: "天美传媒", value: "https://javday.app/index.php/category/timi/" }, 
-            { title: "星空无限", value: "https://javday.app/index.php/category/xingkong/" }, 
-            { title: "皇家华人", value: "https://javday.app/index.php/category/royalasianstudio/" }, 
-            { title: "蜜桃影像", value: "https://javday.app/index.php/category/mtgw/" }, 
-            { title: "精东影业", value: "https://javday.app/index.php/category/jdav/" }, 
-            { title: "台湾 AV", value: "https://javday.app/index.php/category/twav/" }, 
+            { title: "\u9ebb\u8c46\u4f20\u5a92", value: "https://javday.app/index.php/category/madou/" }, 
+            { title: "\u679c\u51bb\u4f20\u5a92", value: "https://javday.app/index.php/category/91zhipianchang/" }, 
+            { title: "\u5929\u7f8e\u4f20\u5a92", value: "https://javday.app/index.php/category/timi/" }, 
+            { title: "\u661f\u7a7a\u65e0\u9650", value: "https://javday.app/index.php/category/xingkong/" }, 
+            { title: "\u7687\u5bb6\u534e\u4eba", value: "https://javday.app/index.php/category/royalasianstudio/" }, 
+            { title: "\u871c\u6843\u5f71\u50cf", value: "https://javday.app/index.php/category/mtgw/" }, 
+            { title: "\u7cbe\u4e1c\u5f71\u4e1a", value: "https://javday.app/index.php/category/jdav/" }, 
+            { title: "\u53f0\u6e7e AV", value: "https://javday.app/index.php/category/twav/" }, 
             { title: "JVID", value: "https://javday.app/index.php/category/jvid/" }, 
-            { title: "萝莉社", value: "https://javday.app/index.php/category/luolisheus/" }, 
-            { title: "糖心VLOG", value: "https://javday.app/index.php/category/txvlog/" }, 
+            { title: "\u841d\u8389\u793e", value: "https://javday.app/index.php/category/luolisheus/" }, 
+            { title: "\u7cd6\u5fc3VLOG", value: "https://javday.app/index.php/category/txvlog/" }, 
             { title: "Psychoporn TW", value: "https://javday.app/index.php/category/psychoporn-tw/" } 
           ],
           value: "https://javday.app/index.php/category/madou/",
-          description: "选择要浏览的厂商"
+          description: "\u9009\u62e9\u8981\u6d4f\u89c8\u7684\u5382\u5546"
         },
         {
           name: "sort_by",
-          title: "🔢 排序方式",
+          title: "\ud83d\udd22 \u6392\u5e8f\u65b9\u5f0f",
           type: "enumeration",
           enumOptions: [
-            { title: "最新上架", value: "new" },
-            { title: "人气最高", value: "popular" }
+            { title: "\u6700\u65b0\u4e0a\u67b6", value: "new" },
+            { title: "\u4eba\u6c14\u6700\u9ad8", value: "popular" }
           ],
           value: "new",
-          description: "选择视频排序方式"
+          description: "\u9009\u62e9\u89c6\u9891\u6392\u5e8f\u65b9\u5f0f"
         },
         {
           name: "page",
-          title: "页码",
+          title: "\u9875\u7801",
           type: "page"
         }
       ]
@@ -456,7 +457,7 @@ async function loadPage(params = {}) {
     });
 
     if (!response?.data) {
-      throw new Error("无法获取页面内容");
+      throw new Error("\u65e0\u6cd5\u83b7\u53d6\u9875\u9762\u5185\u5bb9");
     }
 
     const $ = Widget.html.load(response.data);
@@ -485,14 +486,14 @@ async function loadPage(params = {}) {
         imgSrc: imgSrc,
         backdropPath: imgSrc,
         link: link,
-        description: `来自JAVDay | 排序:${sortBy === "new" ? "最新上架" : "人气最高"}`,
+        description: `\u6765\u81eaJAVDay | \u6392\u5e8f:${sortBy === "new" ? "\u6700\u65b0\u4e0a\u67b6" : "\u4eba\u6c14\u6700\u9ad8"}`,
         mediaType: "movie",
       });
     });
     
     return videoItems;
   } catch (error) {
-    console.error(`${JAVDAY_LOG_PREFIX} 获取视频失败: ${error.message}`);
+    console.error(`${JAVDAY_LOG_PREFIX} \u83b7\u53d6\u89c6\u9891\u5931\u8d25: ${error.message}`);
     throw error;
   }
 }
@@ -502,7 +503,7 @@ async function search(params = {}) {
   const page = parseInt(params.page, 10) || 1;
   
   if (!keyword) {
-    throw new Error("请输入搜索关键词");
+    throw new Error("\u8bf7\u8f93\u5165\u641c\u7d22\u5173\u952e\u8bcd");
   }
 
   let searchUrl;
@@ -521,7 +522,7 @@ async function search(params = {}) {
     });
 
     if (!response?.data) {
-      throw new Error("无法获取搜索结果");
+      throw new Error("\u65e0\u6cd5\u83b7\u53d6\u641c\u7d22\u7ed3\u679c");
     }
 
     const $ = Widget.html.load(response.data);
@@ -550,14 +551,14 @@ async function search(params = {}) {
         imgSrc: imgSrc,
         backdropPath: imgSrc,
         link: link,
-        description: `搜索: ${params.keyword}`,
+        description: `\u641c\u7d22: ${params.keyword}`,
         mediaType: "movie",
       });
     });
     
     return videoItems;
   } catch (error) {
-    console.error(`${JAVDAY_LOG_PREFIX} 搜索失败: ${error.message}`);
+    console.error(`${JAVDAY_LOG_PREFIX} \u641c\u7d22\u5931\u8d25: ${error.message}`);
     throw error;
   }
 }
@@ -573,7 +574,7 @@ async function loadDetail(link) {
     });
 
     if (!response?.data) {
-      throw new Error("无法获取详情页内容");
+      throw new Error("\u65e0\u6cd5\u83b7\u53d6\u8be6\u60c5\u9875\u5185\u5bb9");
     }
 
     const $ = Widget.html.load(response.data);
@@ -650,9 +651,9 @@ async function loadDetail(link) {
       };
     }
 
-    throw new Error("无法找到视频源");
+    throw new Error("\u65e0\u6cd5\u627e\u5230\u89c6\u9891\u6e90");
   } catch (error) {
-    console.error(`${JAVDAY_LOG_PREFIX} 加载详情失败: ${error.message}`);
+    console.error(`${JAVDAY_LOG_PREFIX} \u52a0\u8f7d\u8be6\u60c5\u5931\u8d25: ${error.message}`);
     throw error;
   }
 }

@@ -261,7 +261,7 @@
       "description": "获取 Jable 视频",
       "requiredVersion": "0.0.2",
       "version": "1.0.9",
-      "author": "nibiru",
+      "author": "𝓑𝓾𝓽𝓽𝓮𝓻𝓯𝓵𝔂",
       "url": "https://raw.githubusercontent.com/gr294949/Forward-widgets/main/widgets/jable.js"
     },
     {
@@ -288,7 +288,7 @@
       "description": "获取 JAVDay 推荐",
       "requiredVersion": "0.0.2",
       "version": "1.1.0",
-      "author": "Ti",
+      "author": "𝓑𝓾𝓽𝓽𝓮𝓻𝓯𝓵𝔂",
       "url": "https://raw.githubusercontent.com/gr294949/Forward-widgets/main/widgets/ti.bemarkt.javday.js"
     },
     {
@@ -297,7 +297,7 @@
       "description": "获取 JAVRate 推荐",
       "requiredVersion": "0.0.2",
       "version": "2.1.0",
-      "author": "Ti",
+      "author": "𝓑𝓾𝓽𝓽𝓮𝓻𝓯𝓵𝔂",
       "url": "https://raw.githubusercontent.com/gr294949/Forward-widgets/main/widgets/ti.bemarkt.javrate.js"
     },
     {
