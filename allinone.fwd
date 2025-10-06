@@ -247,15 +247,6 @@
       "url": "https://raw.githubusercontent.com/gr294949/Forward-widgets/main/widgets/wuming.VOD.js"
     },
     {
-      "id": "missav",
-      "title": "MissAV",
-      "description": "获取 MissAV 推荐",
-      "requiredVersion": "0.0.2",
-      "version": "1.0.0",
-      "author": "𝓑𝓾𝓽𝓽𝓮𝓻𝓯𝓵𝔂",
-      "url": "https://raw.githubusercontent.com/gr294949/Forward-widgets/main/widgets/missav.js"
-    },
-    {
       "id": "jable",
       "title": "Jable",
       "description": "获取 Jable 视频",
@@ -335,6 +326,15 @@
       "version": "1.0.0",
       "author": "Discount Code：VEUS",
       "url": "https://raw.githubusercontent.com/gr294949/Forward-widgets/main/widgets/cloud_cinema.js"
+    },
+    {
+      "id": "missav",
+      "title": "MissAV",
+      "description": "获取 MissAV 推荐",
+      "requiredVersion": "0.0.2",
+      "version": "1.0.0",
+      "author": "𝓑𝓾𝓽𝓽𝓮𝓻𝓯𝓵𝔂",
+      "url": "https://raw.githubusercontent.com/gr294949/Forward-widgets/main/widgets/missav.js"
     },
     {
       "id": "xvideos",
