@@ -202,24 +202,6 @@
       "url": "https://raw.githubusercontent.com/gr294949/Forward-widgets/main/widgets/forward.auto.danmu_api.js"
     },
     {
-      "id": "dytt_vod",
-      "title": "电影天堂",
-      "description": "获取在线电影、电视剧、动漫、综艺和短剧",
-      "requiredVersion": "0.0.1",
-      "version": "1.0.0",
-      "author": "两块",
-      "url": "https://raw.githubusercontent.com/gr294949/Forward-widgets/main/widgets/dytt_vod.js"
-    },
-    {
-      "id": "ddys_vod",
-      "title": "低端影视",
-      "description": "获取在线电影、电视剧、动画",
-      "requiredVersion": "0.0.1",
-      "version": "1.0.0",
-      "author": "两块",
-      "url": "https://raw.githubusercontent.com/gr294949/Forward-widgets/main/widgets/ddys_vod.js"
-    },
-    {
       "id": "Pornhub",
       "title": "Pornhub",
       "description": "在线观看Pornhub",
@@ -281,6 +263,24 @@
       "version": "1.0.0",
       "author": "Discount Code：VEUS",
       "url": "https://raw.githubusercontent.com/gr294949/Forward-widgets/main/widgets/cloud_cinema.js"
+    },
+    {
+      "id": "dytt_vod",
+      "title": "电影天堂",
+      "description": "获取在线电影、电视剧、动漫、综艺和短剧",
+      "requiredVersion": "0.0.1",
+      "version": "1.0.0",
+      "author": "两块",
+      "url": "https://raw.githubusercontent.com/gr294949/Forward-widgets/main/widgets/dytt_vod.js"
+    },
+    {
+      "id": "ddys_vod",
+      "title": "低端影视",
+      "description": "获取在线电影、电视剧、动画",
+      "requiredVersion": "0.0.1",
+      "version": "1.0.0",
+      "author": "两块",
+      "url": "https://raw.githubusercontent.com/gr294949/Forward-widgets/main/widgets/ddys_vod.js"
     },
     {
       "id": "baranwang.danmu.universe",
