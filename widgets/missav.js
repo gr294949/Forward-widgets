@@ -3,7 +3,7 @@ var WidgetMetadata = {
     title: "MissAV",
     description: "\u83b7\u53d6 MissAV \u63a8\u8350",
     author: "\ud835\udcd1\ud835\udcfe\ud835\udcfd\ud835\udcfd\ud835\udcee\ud835\udcfb\ud835\udcef\ud835\udcf5\ud835\udd02",
-    site: "https://widgets-xd.vercel.app",
+    site: "https://for-ward.vercel.app",
     version: "1.0.0",
     requiredVersion: "0.0.2",
     detailCacheDuration: 300,
