@@ -257,7 +257,7 @@ for w in merged.values():
     backup_widgets.append(w2)
 
 result_backup = {
-    "title": "OCD's AllInOne Widgets (Backup)",
+    "title": "GOLD's AllInOne Widgets (Backup)",
     "description": "所有 widgets 使用备份 RAW URL",
     "icon": "https://github.com/gr294949/Forward-widgets/raw/main/gold.png",
     "widgets": backup_widgets
