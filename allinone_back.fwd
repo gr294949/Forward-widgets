@@ -1,6 +1,6 @@
 {
-  "title": "GOLD's AllInOne Widgets",
-  "description": "合并后的模块（使用原始 URL）",
+  "title": "GOLD's AllInOne Widgets (Backup)",
+  "description": "所有 widgets 使用备份 RAW URL",
   "icon": "https://github.com/gr294949/Forward-widgets/raw/main/gold.png",
   "widgets": [
     {
@@ -10,8 +10,7 @@
       "requiredVersion": "0.0.1",
       "version": "2.3.0",
       "author": "折扣码：GOLD",
-      "url": "https://raw.githubusercontent.com/gr294949/Forward-Widgets/refs/heads/main/other/wallpaper.js",
-      "backup_url": "https://raw.githubusercontent.com/gr294949/Forward-widgets/main/widgets/yuanqi.wallpaper.js"
+      "url": "https://raw.githubusercontent.com/gr294949/Forward-widgets/main/widgets/yuanqi.wallpaper.js"
     },
     {
       "id": "xtream_api_en",
@@ -20,8 +19,7 @@
       "requiredVersion": "0.0.1",
       "version": "2.1.2",
       "author": "折扣码：GOLD",
-      "url": "https://raw.githubusercontent.com/gr294949/Forward-Widgets/refs/heads/main/other/xtream_api.js",
-      "backup_url": "https://raw.githubusercontent.com/gr294949/Forward-widgets/main/widgets/xtream_api_en.js"
+      "url": "https://raw.githubusercontent.com/gr294949/Forward-widgets/main/widgets/xtream_api_en.js"
     },
     {
       "id": "91porn",
@@ -30,8 +28,7 @@
       "requiredVersion": "0.0.1",
       "version": "0.9.4",
       "author": "Baran",
-      "url": "https://raw.githubusercontent.com/gr294949/Forward-Widgets/refs/heads/main/other/91porn.js",
-      "backup_url": "https://raw.githubusercontent.com/gr294949/Forward-widgets/main/widgets/91porn.js"
+      "url": "https://raw.githubusercontent.com/gr294949/Forward-widgets/main/widgets/91porn.js"
     },
     {
       "id": "91porny",
@@ -40,8 +37,7 @@
       "requiredVersion": "0.0.1",
       "version": "0.9.4",
       "author": "Baran",
-      "url": "https://raw.githubusercontent.com/gr294949/Forward-Widgets/refs/heads/main/other/91porny.js",
-      "backup_url": "https://raw.githubusercontent.com/gr294949/Forward-widgets/main/widgets/91porny.js"
+      "url": "https://raw.githubusercontent.com/gr294949/Forward-widgets/main/widgets/91porny.js"
     },
     {
       "id": "forward.combined.media.lists",
@@ -50,8 +46,7 @@
       "requiredVersion": "0.0.1",
       "version": "1.3.1",
       "author": "阿米诺斯",
-      "url": "https://raw.githubusercontent.com/pack1r/ForwardWidgets/refs/heads/main/widgets/combined.js",
-      "backup_url": "https://raw.githubusercontent.com/gr294949/Forward-widgets/main/widgets/forward.combined.media.lists.js"
+      "url": "https://raw.githubusercontent.com/gr294949/Forward-widgets/main/widgets/forward.combined.media.lists.js"
     },
     {
       "id": "zhuijurili",
@@ -60,8 +55,7 @@
       "requiredVersion": "0.0.1",
       "version": "1.0.4",
       "author": "huangxd",
-      "url": "https://raw.githubusercontent.com/huangxd-/ForwardWidgets/refs/heads/main/widgets/zhuijurili.js",
-      "backup_url": "https://raw.githubusercontent.com/gr294949/Forward-widgets/main/widgets/zhuijurili.js"
+      "url": "https://raw.githubusercontent.com/gr294949/Forward-widgets/main/widgets/zhuijurili.js"
     },
     {
       "id": "trakt",
@@ -70,8 +64,7 @@
       "requiredVersion": "0.0.1",
       "version": "1.0.15",
       "author": "huangxd",
-      "url": "https://raw.githubusercontent.com/huangxd-/ForwardWidgets/refs/heads/main/widgets/trakt.js",
-      "backup_url": "https://raw.githubusercontent.com/gr294949/Forward-widgets/main/widgets/trakt.js"
+      "url": "https://raw.githubusercontent.com/gr294949/Forward-widgets/main/widgets/trakt.js"
     },
     {
       "id": "douban",
@@ -80,8 +73,7 @@
       "requiredVersion": "0.0.1",
       "version": "1.0.20",
       "author": "huangxd",
-      "url": "https://raw.githubusercontent.com/huangxd-/ForwardWidgets/refs/heads/main/widgets/douban.js",
-      "backup_url": "https://raw.githubusercontent.com/gr294949/Forward-widgets/main/widgets/douban.js"
+      "url": "https://raw.githubusercontent.com/gr294949/Forward-widgets/main/widgets/douban.js"
     },
     {
       "id": "yatu",
@@ -90,8 +82,7 @@
       "requiredVersion": "0.0.1",
       "version": "1.0.6",
       "author": "huangxd",
-      "url": "https://raw.githubusercontent.com/huangxd-/ForwardWidgets/refs/heads/main/widgets/yatu.js",
-      "backup_url": "https://raw.githubusercontent.com/gr294949/Forward-widgets/main/widgets/yatu.js"
+      "url": "https://raw.githubusercontent.com/gr294949/Forward-widgets/main/widgets/yatu.js"
     },
     {
       "id": "hot_picks",
@@ -100,8 +91,7 @@
       "requiredVersion": "0.0.1",
       "version": "1.1.7",
       "author": "两块",
-      "url": "https://raw.githubusercontent.com/2kuai/ForwardWidgets/refs/heads/main/Widgets/HotPicks.js",
-      "backup_url": "https://raw.githubusercontent.com/gr294949/Forward-widgets/main/widgets/hot_picks.js"
+      "url": "https://raw.githubusercontent.com/gr294949/Forward-widgets/main/widgets/hot_picks.js"
     },
     {
       "id": "bangumi_charts_tmdb_v3",
@@ -110,8 +100,7 @@
       "requiredVersion": "0.0.1",
       "version": "2.0.0",
       "author": "Autism",
-      "url": "https://raw.githubusercontent.com/opix-maker/Forward/refs/heads/main/js/Bangumi_v2.0.0.js",
-      "backup_url": "https://raw.githubusercontent.com/gr294949/Forward-widgets/main/widgets/bangumi_charts_tmdb_v3.js"
+      "url": "https://raw.githubusercontent.com/gr294949/Forward-widgets/main/widgets/bangumi_charts_tmdb_v3.js"
     },
     {
       "id": "imdb_discovery_final_v2",
@@ -120,8 +109,7 @@
       "requiredVersion": "0.0.1",
       "version": "2.0.0",
       "author": "Autism",
-      "url": "https://raw.githubusercontent.com/opix-maker/Forward/refs/heads/main/js/IMDb.js",
-      "backup_url": "https://raw.githubusercontent.com/gr294949/Forward-widgets/main/widgets/imdb_discovery_final_v2.js"
+      "url": "https://raw.githubusercontent.com/gr294949/Forward-widgets/main/widgets/imdb_discovery_final_v2.js"
     },
     {
       "id": "imdb",
@@ -130,8 +118,7 @@
       "requiredVersion": "0.0.1",
       "version": "1.0.0",
       "author": "pack1r",
-      "url": "https://raw.githubusercontent.com/pack1r/ForwardWidgets/refs/heads/main/widgets/imdb.js",
-      "backup_url": "https://raw.githubusercontent.com/gr294949/Forward-widgets/main/widgets/imdb.js"
+      "url": "https://raw.githubusercontent.com/gr294949/Forward-widgets/main/widgets/imdb.js"
     },
     {
       "id": "ti.bemarkt.vod.maccms",
@@ -140,8 +127,7 @@
       "requiredVersion": "0.0.1",
       "version": "1.1.0",
       "author": "Ti",
-      "url": "https://raw.githubusercontent.com/bemarkt/scripts/refs/heads/master/provider/Forward/widgets/vod.js",
-      "backup_url": "https://raw.githubusercontent.com/gr294949/Forward-widgets/main/widgets/ti.bemarkt.vod.maccms.js"
+      "url": "https://raw.githubusercontent.com/gr294949/Forward-widgets/main/widgets/ti.bemarkt.vod.maccms.js"
     },
     {
       "id": "movie_paradise",
@@ -150,8 +136,7 @@
       "requiredVersion": "0.0.1",
       "version": "1.0.0",
       "author": "两块",
-      "url": "https://raw.githubusercontent.com/2kuai/ForwardWidgets/refs/heads/main/Widgets/MovieParadise.js",
-      "backup_url": "https://raw.githubusercontent.com/gr294949/Forward-widgets/main/widgets/movie_paradise.js"
+      "url": "https://raw.githubusercontent.com/gr294949/Forward-widgets/main/widgets/movie_paradise.js"
     },
     {
       "id": "live",
@@ -160,8 +145,7 @@
       "requiredVersion": "0.0.1",
       "version": "1.0.10",
       "author": "huangxd",
-      "url": "https://raw.githubusercontent.com/huangxd-/ForwardWidgets/refs/heads/main/widgets/live.js",
-      "backup_url": "https://raw.githubusercontent.com/gr294949/Forward-widgets/main/widgets/live.js"
+      "url": "https://raw.githubusercontent.com/gr294949/Forward-widgets/main/widgets/live.js"
     },
     {
       "id": "tv_live",
@@ -170,8 +154,7 @@
       "requiredVersion": "0.0.1",
       "version": "1.1.5",
       "author": "两块",
-      "url": "https://raw.githubusercontent.com/2kuai/ForwardWidgets/refs/heads/main/Widgets/TvLive.js",
-      "backup_url": "https://raw.githubusercontent.com/gr294949/Forward-widgets/main/widgets/tv_live.js"
+      "url": "https://raw.githubusercontent.com/gr294949/Forward-widgets/main/widgets/tv_live.js"
     },
     {
       "id": "ti.bemarkt.podcast",
@@ -180,8 +163,7 @@
       "requiredVersion": "0.0.1",
       "version": "2.1.0",
       "author": "Ti",
-      "url": "https://raw.githubusercontent.com/bemarkt/scripts/refs/heads/master/provider/Forward/widgets/podcast.js",
-      "backup_url": "https://raw.githubusercontent.com/gr294949/Forward-widgets/main/widgets/ti.bemarkt.podcast.js"
+      "url": "https://raw.githubusercontent.com/gr294949/Forward-widgets/main/widgets/ti.bemarkt.podcast.js"
     },
     {
       "id": "letterboxd",
@@ -190,8 +172,7 @@
       "requiredVersion": "0.0.1",
       "version": "1.0.2",
       "author": "huangxd",
-      "url": "https://raw.githubusercontent.com/huangxd-/ForwardWidgets/refs/heads/main/widgets/letterboxd.js",
-      "backup_url": "https://raw.githubusercontent.com/gr294949/Forward-widgets/main/widgets/letterboxd.js"
+      "url": "https://raw.githubusercontent.com/gr294949/Forward-widgets/main/widgets/letterboxd.js"
     },
     {
       "id": "forward.auto.danmu",
@@ -200,8 +181,7 @@
       "requiredVersion": "0.0.2",
       "version": "2.0.10",
       "author": "huangxd",
-      "url": "https://raw.githubusercontent.com/huangxd-/ForwardWidgets/refs/heads/main/widgets/danmu_auto.js",
-      "backup_url": "https://raw.githubusercontent.com/gr294949/Forward-widgets/main/widgets/forward.auto.danmu.js"
+      "url": "https://raw.githubusercontent.com/gr294949/Forward-widgets/main/widgets/forward.auto.danmu.js"
     },
     {
       "id": "forward.auto.danmu_api",
@@ -210,8 +190,7 @@
       "requiredVersion": "0.0.2",
       "version": "1.0.3",
       "author": "huangxd",
-      "url": "https://raw.githubusercontent.com/huangxd-/ForwardWidgets/refs/heads/main/widgets/danmu_api.js",
-      "backup_url": "https://raw.githubusercontent.com/gr294949/Forward-widgets/main/widgets/forward.auto.danmu_api.js"
+      "url": "https://raw.githubusercontent.com/gr294949/Forward-widgets/main/widgets/forward.auto.danmu_api.js"
     },
     {
       "id": "Pornhub",
@@ -220,8 +199,7 @@
       "requiredVersion": "0.0.1",
       "version": "1.0.5",
       "author": "海带",
-      "url": "https://raw.githubusercontent.com/Madai-v/ForwardWidgets/refs/heads/main/Widgets/ph.js",
-      "backup_url": "https://raw.githubusercontent.com/gr294949/Forward-widgets/main/widgets/pornhub.js"
+      "url": "https://raw.githubusercontent.com/gr294949/Forward-widgets/main/widgets/pornhub.js"
     },
     {
       "id": "wuming.VOD",
@@ -230,8 +208,7 @@
       "requiredVersion": "0.0.1",
       "version": "1.0.0",
       "author": "无名",
-      "url": "https://raw.githubusercontent.com/xbzl/Forward/refs/heads/main/Widgets/wuming.js",
-      "backup_url": "https://raw.githubusercontent.com/gr294949/Forward-widgets/main/widgets/wuming.vod.js"
+      "url": "https://raw.githubusercontent.com/gr294949/Forward-widgets/main/widgets/wuming.vod.js"
     },
     {
       "id": "person.movie.tmdb",
@@ -240,8 +217,7 @@
       "requiredVersion": "0.0.1",
       "version": "1.0.4",
       "author": "Evan",
-      "url": "https://raw.githubusercontent.com/EmrysChoo/ForwardWidgets/refs/heads/main/Widgets/person_movie.js",
-      "backup_url": "https://raw.githubusercontent.com/gr294949/Forward-widgets/main/widgets/person.movie.tmdb.js"
+      "url": "https://raw.githubusercontent.com/gr294949/Forward-widgets/main/widgets/person.movie.tmdb.js"
     },
     {
       "id": "Bitch",
@@ -250,8 +226,7 @@
       "requiredVersion": "0.0.1",
       "version": "0.0.1",
       "author": "Discount Code：VEUS",
-      "url": "https://gist.githubusercontent.com/MrRegret/61a5cbf0637b95a0d800994a51860fb2/raw",
-      "backup_url": "https://raw.githubusercontent.com/gr294949/Forward-widgets/main/widgets/bitch.js"
+      "url": "https://raw.githubusercontent.com/gr294949/Forward-widgets/main/widgets/bitch.js"
     },
     {
       "id": "ti.bemarkt.javday",
@@ -260,8 +235,7 @@
       "requiredVersion": "0.0.1",
       "version": "1.1.0",
       "author": "Discount Code：VEUS",
-      "url": "https://raw.githubusercontent.com/pack1r/ForwardWidgets/refs/heads/main/widgets/javday.js",
-      "backup_url": "https://raw.githubusercontent.com/gr294949/Forward-widgets/main/widgets/ti.bemarkt.javday.js"
+      "url": "https://raw.githubusercontent.com/gr294949/Forward-widgets/main/widgets/ti.bemarkt.javday.js"
     },
     {
       "id": "ti.bemarkt.javrate",
@@ -270,8 +244,7 @@
       "requiredVersion": "0.0.1",
       "version": "2.1.0",
       "author": "Discount Code：VEUS",
-      "url": "https://raw.githubusercontent.com/pack1r/ForwardWidgets/refs/heads/main/widgets/javrate.js",
-      "backup_url": "https://raw.githubusercontent.com/gr294949/Forward-widgets/main/widgets/ti.bemarkt.javrate.js"
+      "url": "https://raw.githubusercontent.com/gr294949/Forward-widgets/main/widgets/ti.bemarkt.javrate.js"
     },
     {
       "id": "🔞 jable",
@@ -280,8 +253,7 @@
       "requiredVersion": "0.0.1",
       "version": "1.0.6",
       "author": "Discount Code：VEUS",
-      "url": "https://raw.githubusercontent.com/pack1r/ForwardWidgets/refs/heads/main/widgets/jable.js",
-      "backup_url": "https://raw.githubusercontent.com/gr294949/Forward-widgets/main/widgets/🔞 jable.js"
+      "url": "https://raw.githubusercontent.com/gr294949/Forward-widgets/main/widgets/🔞 jable.js"
     },
     {
       "id": "cloud_cinema",
@@ -290,8 +262,7 @@
       "requiredVersion": "0.0.1",
       "version": "1.0.0",
       "author": "Discount Code：VEUS",
-      "url": "https://raw.githubusercontent.com/2kuai/ForwardWidgets/refs/heads/main/Widgets/CloudCinema.js",
-      "backup_url": "https://raw.githubusercontent.com/gr294949/Forward-widgets/main/widgets/cloud_cinema.js"
+      "url": "https://raw.githubusercontent.com/gr294949/Forward-widgets/main/widgets/cloud_cinema.js"
     },
     {
       "id": "dytt_vod",

@@ -1,12 +1,11 @@
 # GOLD's AllInOne Widgets
 
-本仓库自动合并多个 ForwardWidgets 源，方便统一使用。(30% off code: GOLD)
+自动合并多个 Forward Widgets 源并生成两份可用模块：
 
-自动检测链接是否有效, 最终生成集合不包含无效模块
+- **allinone.fwd**（使用原始 URL）
+- **allinone_back.fwd**（使用仓库 RAW 备份 URL）
 
-👉 [点此下载最新 allinone.fwd](https://github.com/gr294949/Forward-widgets/blob/main/allinone.fwd?raw=true)
-
-## 感谢以下原始仓库作者
+## 原始来源仓库
 - [GOLD's Widgets](https://github.com/gr294949/Forward-Widgets)
 - [pack1r's Widgets](https://github.com/pack1r/ForwardWidgets)
 - [huangxd's Widgets](https://github.com/huangxd-/ForwardWidgets)
