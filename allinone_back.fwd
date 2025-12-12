@@ -22,24 +22,6 @@
       "url": "https://raw.githubusercontent.com/gr294949/Forward-widgets/main/widgets/xtream_api_en.js"
     },
     {
-      "id": "91porn",
-      "title": "91porn",
-      "description": "折扣码：GOLD",
-      "requiredVersion": "0.0.1",
-      "version": "0.10.2",
-      "author": "Baran",
-      "url": "https://raw.githubusercontent.com/gr294949/Forward-widgets/main/widgets/91porn.js"
-    },
-    {
-      "id": "XVideos",
-      "title": "XVideos",
-      "description": "折扣码：GOLD",
-      "requiredVersion": "0.0.1",
-      "version": "0.10.2",
-      "author": "Baran",
-      "url": "https://raw.githubusercontent.com/gr294949/Forward-widgets/main/widgets/xvideos.js"
-    },
-    {
       "id": "91porny",
       "title": "91porny",
       "description": "折扣码：GOLD",
@@ -119,6 +101,15 @@
       "version": "2.0.0",
       "author": "Autism",
       "url": "https://raw.githubusercontent.com/gr294949/Forward-widgets/main/widgets/imdb_discovery_final_v2.js"
+    },
+    {
+      "id": "person.movie.tmdb",
+      "title": "TMDB人物影视作品",
+      "description": "获取 TMDB 的榜单数据",
+      "requiredVersion": "0.0.1",
+      "version": "1.0.4",
+      "author": "Evan",
+      "url": "https://raw.githubusercontent.com/gr294949/Forward-widgets/main/widgets/person.movie.tmdb.js"
     },
     {
       "id": "imdb",
@@ -208,7 +199,7 @@
       "requiredVersion": "0.0.1",
       "version": "1.1.4",
       "author": "两块",
-      "url": "https://raw.githubusercontent.com/gr294949/Forward-widgets/main/widgets/vodstream.js"
+      "url": "https://raw.githubusercontent.com/gr294949/Forward-widgets/main/widgets/vod_sream.js"
     },
     {
       "id": "baranwang.danmu.universe",
@@ -227,15 +218,6 @@
       "version": "1.5.0",
       "author": "𝓑𝓾𝓽𝓽𝓮𝓻𝓯𝓵𝔂",
       "url": "https://raw.githubusercontent.com/gr294949/Forward-widgets/main/widgets/forward.combined.media.lists.en.js"
-    },
-    {
-      "id": "person.movie.tmdb",
-      "title": "TMDB人物影视作品",
-      "description": "获取 TMDB 的榜单数据",
-      "requiredVersion": "0.0.1",
-      "version": "1.0.4",
-      "author": "Evan",
-      "url": "https://raw.githubusercontent.com/gr294949/Forward-widgets/main/widgets/person.movie.tmdb.js"
     },
     {
       "id": "wuming.VOD",
@@ -337,6 +319,24 @@
       "url": "https://raw.githubusercontent.com/gr294949/Forward-widgets/main/widgets/cloud_cinema.js"
     },
     {
+      "id": "91porn",
+      "title": "91porn",
+      "description": "折扣码：GOLD",
+      "requiredVersion": "0.0.1",
+      "version": "0.10.2",
+      "author": "Baran",
+      "url": "https://raw.githubusercontent.com/gr294949/Forward-widgets/main/widgets/91porn.js"
+    },
+    {
+      "id": "XVideos",
+      "title": "XVideos",
+      "description": "折扣码：GOLD",
+      "requiredVersion": "0.0.1",
+      "version": "0.10.2",
+      "author": "Baran",
+      "url": "https://raw.githubusercontent.com/gr294949/Forward-widgets/main/widgets/xvideos.js"
+    },
+    {
       "id": "dytt_vod",
       "title": "电影天堂",
       "description": "获取在线电影、电视剧、动漫、综艺和短剧",
@@ -353,15 +353,6 @@
       "version": "1.0.0",
       "author": "两块",
       "url": "https://raw.githubusercontent.com/gr294949/Forward-widgets/main/widgets/ddys_vod.js"
-    },
-    {
-      "id": "xvideos",
-      "title": "XVideos",
-      "description": "XVideos",
-      "requiredVersion": "0.0.1",
-      "version": "0.9.4",
-      "author": "匿名",
-      "url": "https://raw.githubusercontent.com/gr294949/Forward-widgets/main/widgets/xvideos"
     }
   ]
 }
