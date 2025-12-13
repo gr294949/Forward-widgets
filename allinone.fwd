@@ -91,7 +91,7 @@
       "version": "1.2.1",
       "author": "两块",
       "url": "https://for-ward.vercel.app/Widgets/HotPicks.js",
-      "backup_url": "https://raw.githubusercontent.com/gr294949/Forward-widgets/main/widgets/hot_picks.js"
+      "backup_url": "https://raw.githubusercontent.com/gr294949/Forward-widgets/main/widgets/hotpicks.js"
     },
     {
       "id": "bangumi_charts_tmdb_v3",
@@ -151,7 +151,7 @@
       "version": "1.0.0",
       "author": "两块",
       "url": "https://raw.githubusercontent.com/2kuai/ForwardWidgets/refs/heads/main/Widgets/MovieParadise.js",
-      "backup_url": "https://raw.githubusercontent.com/gr294949/Forward-widgets/main/widgets/movie_paradise.js"
+      "backup_url": "https://raw.githubusercontent.com/gr294949/Forward-widgets/main/widgets/movieparadise.js"
     },
     {
       "id": "live",
@@ -171,7 +171,7 @@
       "version": "1.1.6",
       "author": "两块",
       "url": "https://for-ward.vercel.app/Widgets/TvLive.js",
-      "backup_url": "https://raw.githubusercontent.com/gr294949/Forward-widgets/main/widgets/tv_live.js"
+      "backup_url": "https://raw.githubusercontent.com/gr294949/Forward-widgets/main/widgets/tvlive.js"
     },
     {
       "id": "ti.bemarkt.podcast",
@@ -301,7 +301,7 @@
       "version": "1.1.0",
       "author": "𝓑𝓾𝓽𝓽𝓮𝓻𝓯𝓵𝔂",
       "url": "https://for-ward.vercel.app/Widgets/Javday.js",
-      "backup_url": "https://raw.githubusercontent.com/gr294949/Forward-widgets/main/widgets/ti.bemarkt.javday.js"
+      "backup_url": "https://raw.githubusercontent.com/gr294949/Forward-widgets/main/widgets/javday.js"
     },
     {
       "id": "unknow.baranwang.xvideos",
@@ -331,7 +331,7 @@
       "version": "2.1.0",
       "author": "Discount Code：VEUS",
       "url": "https://raw.githubusercontent.com/pack1r/ForwardWidgets/refs/heads/main/widgets/javrate.js",
-      "backup_url": "https://raw.githubusercontent.com/gr294949/Forward-widgets/main/widgets/ti.bemarkt.javrate.js"
+      "backup_url": "https://raw.githubusercontent.com/gr294949/Forward-widgets/main/widgets/javrate.js"
     },
     {
       "id": "🔞 jable",
@@ -351,7 +351,7 @@
       "version": "1.0.0",
       "author": "Discount Code：VEUS",
       "url": "https://raw.githubusercontent.com/2kuai/ForwardWidgets/refs/heads/main/Widgets/CloudCinema.js",
-      "backup_url": "https://raw.githubusercontent.com/gr294949/Forward-widgets/main/widgets/cloud_cinema.js"
+      "backup_url": "https://raw.githubusercontent.com/gr294949/Forward-widgets/main/widgets/cloudcinema.js"
     },
     {
       "id": "91porn",
