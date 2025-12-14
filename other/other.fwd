@@ -4,15 +4,6 @@
     "icon": "https://raw.githubusercontent.com/gr294949/Forward-Widgets/main/gold.png",
     "widgets": [
         {
-            "id": "91porn",
-            "title": "91porn",
-            "description": "折扣码：GOLD",
-            "requiredVersion": "0.0.1",
-            "version": "0.10.2",
-            "author": "Baran",
-            "url": "https://unpkg.com/@forward-widget/nsfw/91porn"
-        },
-        {
             "id": "91porny",
             "title": "91porny",
             "description": "折扣码：GOLD",
