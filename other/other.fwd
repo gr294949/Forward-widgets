@@ -4,31 +4,13 @@
     "icon": "https://raw.githubusercontent.com/gr294949/Forward-Widgets/main/gold.png",
     "widgets": [
         {
-            "id": "yuanqi.wallpaper",
-            "title": "🖼️ ✨wallpaper",
-            "description": "✨ Dynamic wallpaper For Topshelf",
-            "requiredVersion": "0.0.1",
-            "version": "2.3.0",
-            "author": "折扣码：GOLD",
-            "url": "https://raw.githubusercontent.com/gr294949/Forward-Widgets/refs/heads/main/other/wallpaper.js"
-        },
-        {
-            "id": "xtream_api_en",
-            "title": "Xtream API Live",
-            "description": "Fetch live channels via official Xtream-Codes REST API with keyword search",
-            "requiredVersion": "0.0.1",
-            "version": "2.1.2",
-            "author": "折扣码：GOLD",
-            "url": "https://raw.githubusercontent.com/gr294949/Forward-Widgets/refs/heads/main/other/xtream_api.js"
-        },
-        {
             "id": "91porn",
             "title": "91porn",
             "description": "折扣码：GOLD",
             "requiredVersion": "0.0.1",
-            "version": "0.9.4",
+            "version": "0.10.2",
             "author": "Baran",
-            "url": "https://raw.githubusercontent.com/gr294949/Forward-Widgets/refs/heads/main/other/91porn.js"
+            "url": "https://unpkg.com/@forward-widget/nsfw/91porn"
         },
         {
             "id": "91porny",
@@ -38,6 +20,24 @@
             "version": "0.9.4",
             "author": "Baran",
             "url": "https://raw.githubusercontent.com/gr294949/Forward-Widgets/refs/heads/main/other/91porny.js"
+        },
+        {
+            "id": "XVideos",
+            "title": "XVideos",
+            "description": "折扣码：GOLD",
+            "requiredVersion": "0.0.1",
+            "version": "0.10.2",
+            "author": "Baran",
+            "url": "https://unpkg.com/@forward-widget/nsfw/xvideos"
+        },
+        {
+            "id": "通用弹幕",
+            "title": "通用弹幕",
+            "description": "折扣码：GOLD",
+            "requiredVersion": "0.0.1",
+            "version": "0.14.1",
+            "author": "Baran",
+            "url": "https://unpkg.com/@forward-widget/danmu-universe"
         }
     ]
 }
