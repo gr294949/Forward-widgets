@@ -4,22 +4,13 @@
   "icon": "https://github.com/gr294949/Forward-widgets/raw/main/gold.png",
   "widgets": [
     {
-      "id": "yuanqi.wallpaper",
-      "title": "🖼️ ✨wallpaper",
-      "description": "✨ Dynamic wallpaper For Topshelf",
+      "id": "91porn",
+      "title": "91porn",
+      "description": "折扣码：GOLD",
       "requiredVersion": "0.0.1",
-      "version": "2.3.0",
-      "author": "折扣码：GOLD",
-      "url": "https://raw.githubusercontent.com/gr294949/Forward-widgets/main/widgets/yuanqi.wallpaper.js"
-    },
-    {
-      "id": "xtream_api_en",
-      "title": "Xtream API Live",
-      "description": "Fetch live channels via official Xtream-Codes REST API with keyword search",
-      "requiredVersion": "0.0.1",
-      "version": "2.1.2",
-      "author": "折扣码：GOLD",
-      "url": "https://raw.githubusercontent.com/gr294949/Forward-widgets/main/widgets/xtream_api_en.js"
+      "version": "0.10.2",
+      "author": "Baran",
+      "url": "https://raw.githubusercontent.com/gr294949/Forward-widgets/main/widgets/91porn.js"
     },
     {
       "id": "91porny",
@@ -31,13 +22,31 @@
       "url": "https://raw.githubusercontent.com/gr294949/Forward-widgets/main/widgets/91porny.js"
     },
     {
+      "id": "XVideos",
+      "title": "XVideos",
+      "description": "折扣码：GOLD",
+      "requiredVersion": "0.0.1",
+      "version": "0.10.2",
+      "author": "Baran",
+      "url": "https://raw.githubusercontent.com/gr294949/Forward-widgets/main/widgets/xvideos.js"
+    },
+    {
+      "id": "通用弹幕",
+      "title": "通用弹幕",
+      "description": "折扣码：GOLD",
+      "requiredVersion": "0.0.1",
+      "version": "0.14.1",
+      "author": "Baran",
+      "url": "https://raw.githubusercontent.com/gr294949/Forward-widgets/main/widgets/danmu-universe.js"
+    },
+    {
       "id": "forward.combined.media.lists",
       "title": "影视榜单",
       "description": "影视动画榜单",
       "requiredVersion": "0.0.2",
       "version": "1.5.0",
       "author": "𝓑𝓾𝓽𝓽𝓮𝓻𝓯𝓵𝔂",
-      "url": "https://raw.githubusercontent.com/gr294949/Forward-widgets/main/widgets/forward.combined.media.lists.js"
+      "url": "https://raw.githubusercontent.com/gr294949/Forward-widgets/main/widgets/combined.js"
     },
     {
       "id": "zhuijurili",
@@ -91,7 +100,7 @@
       "requiredVersion": "0.0.1",
       "version": "2.0.0",
       "author": "Autism",
-      "url": "https://raw.githubusercontent.com/gr294949/Forward-widgets/main/widgets/bangumi_charts_tmdb_v3.js"
+      "url": "https://raw.githubusercontent.com/gr294949/Forward-widgets/main/widgets/bangumi_v2.0.0.js"
     },
     {
       "id": "imdb_discovery_final_v2",
@@ -100,7 +109,7 @@
       "requiredVersion": "0.0.1",
       "version": "2.0.0",
       "author": "Autism",
-      "url": "https://raw.githubusercontent.com/gr294949/Forward-widgets/main/widgets/imdb_discovery_final_v2.js"
+      "url": "https://raw.githubusercontent.com/gr294949/Forward-widgets/main/widgets/imdb.js"
     },
     {
       "id": "person.movie.tmdb",
@@ -109,7 +118,7 @@
       "requiredVersion": "0.0.1",
       "version": "1.0.4",
       "author": "Evan",
-      "url": "https://raw.githubusercontent.com/gr294949/Forward-widgets/main/widgets/person.movie.tmdb.js"
+      "url": "https://raw.githubusercontent.com/gr294949/Forward-widgets/main/widgets/person_movie.js"
     },
     {
       "id": "imdb",
@@ -127,7 +136,7 @@
       "requiredVersion": "0.0.1",
       "version": "1.1.0",
       "author": "Ti",
-      "url": "https://raw.githubusercontent.com/gr294949/Forward-widgets/main/widgets/ti.bemarkt.vod.maccms.js"
+      "url": "https://raw.githubusercontent.com/gr294949/Forward-widgets/main/widgets/vod.js"
     },
     {
       "id": "movie_paradise",
@@ -163,7 +172,7 @@
       "requiredVersion": "0.0.1",
       "version": "2.1.0",
       "author": "Ti",
-      "url": "https://raw.githubusercontent.com/gr294949/Forward-widgets/main/widgets/ti.bemarkt.podcast.js"
+      "url": "https://raw.githubusercontent.com/gr294949/Forward-widgets/main/widgets/podcast.js"
     },
     {
       "id": "letterboxd",
@@ -181,7 +190,7 @@
       "requiredVersion": "0.0.2",
       "version": "2.0.10",
       "author": "huangxd",
-      "url": "https://raw.githubusercontent.com/gr294949/Forward-widgets/main/widgets/forward.auto.danmu.js"
+      "url": "https://raw.githubusercontent.com/gr294949/Forward-widgets/main/widgets/danmu_auto.js"
     },
     {
       "id": "forward.auto.danmu_api",
@@ -190,7 +199,7 @@
       "requiredVersion": "0.0.2",
       "version": "1.0.3",
       "author": "huangxd",
-      "url": "https://raw.githubusercontent.com/gr294949/Forward-widgets/main/widgets/forward.auto.danmu_api.js"
+      "url": "https://raw.githubusercontent.com/gr294949/Forward-widgets/main/widgets/danmu_api.js"
     },
     {
       "id": "vod_sream",
@@ -208,7 +217,7 @@
       "requiredVersion": "0.0.2",
       "version": "0.14.1",
       "author": "Baran",
-      "url": "https://raw.githubusercontent.com/gr294949/Forward-widgets/main/widgets/baranwang.danmu.universe.js"
+      "url": "https://raw.githubusercontent.com/gr294949/Forward-widgets/main/widgets/danmu_universe.js"
     },
     {
       "id": "forward.combined.media.lists.en",
@@ -217,7 +226,7 @@
       "requiredVersion": "0.0.2",
       "version": "1.5.0",
       "author": "𝓑𝓾𝓽𝓽𝓮𝓻𝓯𝓵𝔂",
-      "url": "https://raw.githubusercontent.com/gr294949/Forward-widgets/main/widgets/forward.combined.media.lists.en.js"
+      "url": "https://raw.githubusercontent.com/gr294949/Forward-widgets/main/widgets/move_list_en.js"
     },
     {
       "id": "wuming.VOD",
@@ -226,7 +235,7 @@
       "requiredVersion": "0.0.1",
       "version": "1.0.0",
       "author": "无名",
-      "url": "https://raw.githubusercontent.com/gr294949/Forward-widgets/main/widgets/wuming.vod.js"
+      "url": "https://raw.githubusercontent.com/gr294949/Forward-widgets/main/widgets/wuming.js"
     },
     {
       "id": "missav",
@@ -262,7 +271,7 @@
       "requiredVersion": "0.0.1",
       "version": "1.0.5",
       "author": "海带",
-      "url": "https://raw.githubusercontent.com/gr294949/Forward-widgets/main/widgets/pornhub.js"
+      "url": "https://raw.githubusercontent.com/gr294949/Forward-widgets/main/widgets/ph.js"
     },
     {
       "id": "ti.bemarkt.javday",
@@ -281,6 +290,15 @@
       "version": "0.9.4",
       "author": "匿名",
       "url": "https://raw.githubusercontent.com/gr294949/Forward-widgets/main/widgets/unknow.baranwang.xvideos.js"
+    },
+    {
+      "id": "yuanqi.wallpaper",
+      "title": "🖼️ ✨wallpaper",
+      "description": "✨ Dynamic wallpaper For Topshelf",
+      "requiredVersion": "0.0.1",
+      "version": "1.1.0",
+      "author": "Discount Code：VEUS",
+      "url": "https://raw.githubusercontent.com/gr294949/Forward-widgets/main/widgets/yuanqi.wallpaper.js"
     },
     {
       "id": "Bitch",
@@ -319,40 +337,13 @@
       "url": "https://raw.githubusercontent.com/gr294949/Forward-widgets/main/widgets/cloud_cinema.js"
     },
     {
-      "id": "91porn",
-      "title": "91porn",
-      "description": "折扣码：GOLD",
+      "id": "xtream_api_en",
+      "title": "Xtream API Live",
+      "description": "Fetch live channels via official Xtream-Codes REST API with keyword search",
       "requiredVersion": "0.0.1",
-      "version": "0.10.2",
-      "author": "Baran",
-      "url": "https://raw.githubusercontent.com/gr294949/Forward-widgets/main/widgets/91porn.js"
-    },
-    {
-      "id": "XVideos",
-      "title": "XVideos",
-      "description": "折扣码：GOLD",
-      "requiredVersion": "0.0.1",
-      "version": "0.10.2",
-      "author": "Baran",
-      "url": "https://raw.githubusercontent.com/gr294949/Forward-widgets/main/widgets/xvideos.js"
-    },
-    {
-      "id": "dytt_vod",
-      "title": "电影天堂",
-      "description": "获取在线电影、电视剧、动漫、综艺和短剧",
-      "requiredVersion": "0.0.1",
-      "version": "1.0.0",
-      "author": "两块",
-      "url": "https://raw.githubusercontent.com/gr294949/Forward-widgets/main/widgets/dytt_vod.js"
-    },
-    {
-      "id": "ddys_vod",
-      "title": "低端影视",
-      "description": "获取在线电影、电视剧、动画",
-      "requiredVersion": "0.0.1",
-      "version": "1.0.0",
-      "author": "两块",
-      "url": "https://raw.githubusercontent.com/gr294949/Forward-widgets/main/widgets/ddys_vod.js"
+      "version": "2.1.2",
+      "author": "Discount Code：VEUS",
+      "url": "https://raw.githubusercontent.com/gr294949/Forward-widgets/main/widgets/xtream_api_en.js"
     }
   ]
 }
