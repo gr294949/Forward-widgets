@@ -82,7 +82,7 @@
       "requiredVersion": "0.0.1",
       "version": "1.2.1",
       "author": "两块",
-      "url": "https://raw.githubusercontent.com/gr294949/Forward-widgets/main/widgets/hotpicks.js"
+      "url": "https://raw.githubusercontent.com/gr294949/Forward-widgets/main/widgets/hot_picks.js"
     },
     {
       "id": "bangumi_charts_tmdb_v3",
@@ -136,7 +136,7 @@
       "requiredVersion": "0.0.1",
       "version": "1.0.0",
       "author": "两块",
-      "url": "https://raw.githubusercontent.com/gr294949/Forward-widgets/main/widgets/movieparadise.js"
+      "url": "https://raw.githubusercontent.com/gr294949/Forward-widgets/main/widgets/movie_paradise.js"
     },
     {
       "id": "live",
@@ -154,7 +154,7 @@
       "requiredVersion": "0.0.1",
       "version": "1.1.6",
       "author": "两块",
-      "url": "https://raw.githubusercontent.com/gr294949/Forward-widgets/main/widgets/tvlive.js"
+      "url": "https://raw.githubusercontent.com/gr294949/Forward-widgets/main/widgets/tv_live.js"
     },
     {
       "id": "ti.bemarkt.podcast",
@@ -271,7 +271,7 @@
       "requiredVersion": "0.0.2",
       "version": "1.1.0",
       "author": "𝓑𝓾𝓽𝓽𝓮𝓻𝓯𝓵𝔂",
-      "url": "https://raw.githubusercontent.com/gr294949/Forward-widgets/main/widgets/javday.js"
+      "url": "https://raw.githubusercontent.com/gr294949/Forward-widgets/main/widgets/ti.bemarkt.javday.js"
     },
     {
       "id": "unknow.baranwang.xvideos",
@@ -298,7 +298,7 @@
       "requiredVersion": "0.0.1",
       "version": "2.1.0",
       "author": "Discount Code：VEUS",
-      "url": "https://raw.githubusercontent.com/gr294949/Forward-widgets/main/widgets/javrate.js"
+      "url": "https://raw.githubusercontent.com/gr294949/Forward-widgets/main/widgets/ti.bemarkt.javrate.js"
     },
     {
       "id": "🔞 jable",
@@ -316,7 +316,7 @@
       "requiredVersion": "0.0.1",
       "version": "1.0.0",
       "author": "Discount Code：VEUS",
-      "url": "https://raw.githubusercontent.com/gr294949/Forward-widgets/main/widgets/cloudcinema.js"
+      "url": "https://raw.githubusercontent.com/gr294949/Forward-widgets/main/widgets/cloud_cinema.js"
     },
     {
       "id": "91porn",
