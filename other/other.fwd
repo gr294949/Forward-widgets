@@ -29,15 +29,6 @@
             "version": "0.10.2",
             "author": "Baran",
             "url": "https://unpkg.com/@forward-widget/nsfw/xvideos"
-        },
-        {
-            "id": "通用弹幕",
-            "title": "通用弹幕",
-            "description": "折扣码：GOLD",
-            "requiredVersion": "0.0.1",
-            "version": "0.14.1",
-            "author": "Baran",
-            "url": "https://unpkg.com/@forward-widget/danmu-universe"
         }
     ]
 }
