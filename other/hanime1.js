@@ -1,97 +1,143 @@
 /**
- * [...](asc_slot://start-slot-4)ForwardWidget 模块: Hanime1
- * [...](asc_slot://start-slot-6)对应网站: https://hanime1.me
- * [...](asc_slot://start-slot-8)功能: 搜索、最新更新、视频播放解析
+ * [...](asc_slot://start-slot-1)ForwardWidget 模块: Hanime1
+ * 对应网站: https://hanime1.me
+ * 
+ * 修正记录:
+ * 1. 弃用通用正则，改为针对 Hanime1 结构的精准提取 (input hidden / js variable)。
+ * [...](asc_slot://start-slot-3)2. 完善 Headers 伪装，解决 403 Forbidden 问题。
+ * 3. 增加风控检测逻辑。
  */
 var WidgetMetadata = {
-    id: "hanime1_me", // 唯一ID
-    title: "Hanime1", // 显示名称
-    description: "Hanime1 视频爬虫模块",
+    id: "hanime1_me_v2",
+    title: "Hanime1",
+    description: "Hanime1 视频爬虫模块 (修正版)",
     author: "Gemini Enterprise",
     site: "https://hanime1.me",
-    version: "0.0.1",
+    version: "1.0.1",
     requiredVersion: "0.0.1",
-    detailCacheDuration: 0, // 详情页不缓存，以免播放链接过期
+    detailCacheDuration: 0, // 链接包含时效性签名，不缓存
     modules: [
         {
-            title: "最新更新",
-            description: "查看首页最新视频",
-            functionName: "getLatest",
+            title: "最新上市",
+            description: "浏览最新更新的视频",
+            functionName: "loadPage",
             requiresWebView: false,
-            sectionMode: true
+            params: [
+                {
+                    name: "url",
+                    title: "列表地址",
+                    type: "constant",
+                    value: "https://hanime1.me"
+                },
+                {
+                    name: "page",
+                    title: "页码",
+                    type: "page"
+                }
+            ]
         }
     ],
     search: {
         title: "搜索",
-        functionName: "search"
+        functionName: "search",
+        params: [
+            {
+                name: "keyword",
+                title: "关键字",
+                type: "input",
+                value: ""
+            },
+            {
+                name: "page",
+                title: "页码",
+                type: "page"
+            }
+        ]
     }
 };
-// 通用配置
+
+// 配置常量
 const BASE_URL = "https://hanime1.me";
+// 使用常见的桌面浏览器 UA，防止被识别为爬虫
 const USER_AGENT = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36";
 
-// HTTP 请求头配置
-const COMMON_HEADERS = {
-    "User-Agent": USER_AGENT,
-    "Referer": BASE_URL,
-    "Origin": BASE_URL
-};
+/**
+ * [...](asc_slot://start-slot-7)构造请求头
+ * Hanime1 的 m3u8 播放通常严格检查 Referer
+ */
+function getHeaders(referer = BASE_URL) {
+    return {
+        "User-Agent": USER_AGENT,
+        "Referer": referer,
+        "Origin": BASE_URL,
+        "Accept-Language": "zh-CN,zh;q=0.9,en;q=0.8"
+    };
+}
 
 /**
- * [...](asc_slot://start-slot-14)核心解析函数：从 HTML 中提取视频列表
- * @param {string} html 网页源码
- * [...](asc_slot://start-slot-16)@returns {Array} 视频列表
+ * 核心解析函数：从 HTML 解析视频列表
  */
 function parseVideoList(html) {
     const $ = Widget.html.load(html);
     const items = [];
 
-    [...](asc_slot://start-slot-18)// 查找所有包含 watch?v= 的链接，通常这些是视频卡片
-    // 根据 Hanime1 的结构，通常是在 .content-padding-new 或类似的容器中
-    // 这里使用较宽泛的选择器以适应可能的变动
+    // 检测是否遇到 Cloudflare 验证
+    if (html.includes("Just a moment") || html.includes("cf-challenge")) {
+        throw new Error("遇到 Cloudflare 验证，请稍后重试或检查网络环境。");
+    }
+
+    // Hanime1 的视频卡片通常包含 href 中带有 "watch?v=" 的链接
     $('a[href*="watch?v="]').each((i, el) => {
         const link = $(el).attr('href');
-        // 过滤掉非视频页面的干扰链接（如评论区链接等），通常列表页的链接包含 img
-        if ($(el).find('img').length === 0) return;
+        
+        // 过滤掉非视频内容的链接（如评论区头像等）
+        // 视频卡片通常包含 img 标签作为封面
+        const img = $(el).find('img');
+        if (img.length === 0) return;
 
-        [...](asc_slot://start-slot-20)const img = $(el).find('img');
-        const titleDiv = $(el).parent().find('.card-mobile-title'); // 尝试寻找标题容器
-        
-        [...](asc_slot://start-slot-22)// 获取标题：优先从标题容器取，否则取 img 的 alt，或 title 属性
-        let title = titleDiv.text().trim() || img.attr('alt') || $(el).attr('title') || "未知标题";
-        
-        [...](asc_slot://start-slot-24)// 获取封面
-        let cover = img.attr('src') || img.attr('data-src') || "";
-        
-        [...](asc_slot://start-slot-26)// 处理链接 (如果是相对路径)
+        // 获取完整链接
         let fullLink = link;
         if (!link.startsWith('http')) {
             fullLink = BASE_URL + (link.startsWith('/') ? '' : '/') + link;
         }
 
-        [...](asc_slot://start-slot-28)// 提取 ID (用于缓存或标识)
-        // 格式: https://hanime1.me/watch?v=12345
-        let id = "h1_" + i;
-        const urlParams = link.split('?')[1];
-        if (urlParams) {
-            const params = new URLSearchParams(urlParams);
-            if (params.get('v')) {
-                id = params.get('v');
-            }
+        // 获取封面
+        // Hanime1 可能使用 data-src 进行懒加载
+        let cover = img.attr('data-src') || img.attr('src') || "";
+        if (cover && !cover.startsWith('http')) {
+             // 处理相对路径图片
+             cover = cover.startsWith('//') ? "https:" + cover : cover;
         }
 
-        [...](asc_slot://start-slot-30)items.push({
+        // 获取标题
+        // 标题通常在卡片下方的 div 中，或者作为 img 的 alt
+        let title = "";
+        // 尝试查找同级的标题容器 (适配移动端和桌面端视图)
+        const parent = $(el).closest('.content-padding-new, .card-mobile-panel'); 
+        if (parent.length > 0) {
+             title = parent.find('.card-mobile-title, .home-rows-videos-title').text();
+        }
+        // 回退方案
+        if (!title) {
+            title = img.attr('alt') || $(el).attr('title') || "未知标题";
+        }
+        
+        title = title.trim();
+        
+        // 提取 ID 作为唯一标识
+        const id = fullLink.split('v=')[1] || fullLink;
+
+        items.push({
             id: id,
-            type: "link", // 设置为 link 类型，点击时会触发 loadDetail
+            type: "link", 
             title: title,
             coverUrl: cover,
             link: fullLink,
-            // 尝试从页面文本中提取时长等信息（可选）
-            description: $(el).text().replace(title, '').trim()
+            headers: getHeaders(BASE_URL)
         });
     });
 
-    [...](asc_slot://start-slot-32)// 去重 (因为有时图片和标题是分开的两个 a 标签指向同一个链接)
+    // 去重逻辑
     const uniqueItems = [];
     const seenLinks = new Set();
     items.forEach(item => {
@@ -105,106 +151,123 @@ function parseVideoList(html) {
 }
 
 /**
- * [...](asc_slot://start-slot-34)模块：获取最新更新
+ * [...](asc_slot://start-slot-9)模块函数：加载页面
  */
-async function getLatest(params = {}) {
+async function loadPage(params = {}) {
     try {
-        const url = BASE_URL; // 首页
-        const res = await Widget.http.get(url, { headers: COMMON_HEADERS });
-        
-        [...](asc_slot://start-slot-36)const items = parseVideoList(res.data);
-        
-        return items;
+        let url = params.url || BASE_URL;
+        const page = parseInt(params.page, 10) || 1;
+
+        // Hanime1 分页逻辑: ?page=2
+        if (page > 1) {
+            // 判断 url 是否已有参数
+            url += (url.includes('?') ? '&' : '?') + `page=${page}`;
+        }
+
+        const res = await Widget.http.get(url, { headers: getHeaders() });
+        return parseVideoList(res.data);
+
     } catch (e) {
-        console.error("Get Latest Error:", e);
+        console.error("Hanime1 LoadPage Error:", e);
         throw e;
     }
 }
 
 /**
- * [...](asc_slot://start-slot-38)模块：搜索功能
- * [...](asc_slot://start-slot-40)Forward 会传入 params.keyword 或 params.title
+ * [...](asc_slot://start-slot-11)模块函数：搜索
  */
 async function search(params = {}) {
     try {
-        const keyword = params.keyword || params.title || "";
+        const keyword = params.keyword || "";
+        const page = parseInt(params.page, 10) || 1;
+        
         if (!keyword) return [];
 
-        [...](asc_slot://start-slot-42)// 构建搜索 URL
-        const url = `${BASE_URL}/search?query=${encodeURIComponent(keyword)}`;
-        
-        [...](asc_slot://start-slot-44)const res = await Widget.http.get(url, { headers: COMMON_HEADERS });
-        const items = parseVideoList(res.data);
+        // 构建搜索 URL: https://hanime1.me/search?query=xxx&page=x
+        let url = `${BASE_URL}/search?query=${encodeURIComponent(keyword)}`;
+        if (page > 1) {
+            url += `&page=${page}`;
+        }
 
-        return items;
+        const res = await Widget.http.get(url, { headers: getHeaders() });
+        return parseVideoList(res.data);
+
     } catch (e) {
-        console.error("Search Error:", e);
+        console.error("Hanime1 Search Error:", e);
         throw e;
     }
 }
 
 /**
- * [...](asc_slot://start-slot-46)详情加载函数
- * 当列表项 type 为 "link" 时，Forward 会调用此函数加载详情
- * [...](asc_slot://start-slot-48)@param {string} link 视频页面 URL
+ * 模块函数：加载详情 (精准提取 m3u8)
  */
 async function loadDetail(link) {
     try {
-        const res = await Widget.http.get(link, { headers: COMMON_HEADERS });
+        const res = await Widget.http.get(link, { headers: getHeaders(link) });
         const html = res.data;
-        const $ = Widget.html.load(html);
-
-        // 1. [...](asc_slot://start-slot-50)获取基本信息
-        // 尝试获取 og:title 作为更准确的标题
-        const title = $('meta[property="og:title"]').attr('content') || $('title').text().replace('Hanime1.me', '').trim();
-        const description = $('meta[property="og:description"]').attr('content') || "";
-        const cover = $('meta[property="og:image"]').attr('content') || "";
-
-        [...](asc_slot://start-slot-52)// 2. [...](asc_slot://start-slot-54)解析视频地址
-        // Hanime1 通常使用 <video id="player"> 标签，src 可能是 blob 或直链
-        // 或者在 script 标签中有 var videoUrl = '...';
         
+        // 检测风控
+        if (html.length < 2000 || html.includes("Just a moment")) {
+             throw new Error("内容获取失败，可能触发了网站风控或需登录。");
+        }
+
+        [...](asc_slot://start-slot-13)const $ = Widget.html.load(html);
+
+        // 1. 提取元数据
+        const title = $('meta[property="og:title"]').attr('content') || $('title').text().replace('Hanime1.me', '').trim();
+        const cover = $('meta[property="og:image"]').attr('content') || "";
+        const desc = $('meta[property="og:description"]').attr('content') || "";
+        
+        [...](asc_slot://start-slot-15)// 2. 核心：提取视频地址
         let videoUrl = "";
 
-        [...](asc_slot://start-slot-56)// 策略 A: 直接查找 video 标签的 source
-        const videoTag = $('#player');
-        if (videoTag.length > 0) {
-            videoUrl = videoTag.attr('src') || videoTag.find('source').attr('src');
+        // 策略 A: Hanime1 经典的 hidden input 方式
+        // 网页源码中通常存在 <input type="hidden" id="video-sd" value="https://...">
+        const hiddenInput = $('input#video-sd');
+        if (hiddenInput.length > 0) {
+            videoUrl = hiddenInput.val();
         }
 
-        [...](asc_slot://start-slot-58)// 策略 B: 如果策略 A 失败，在 script 中正则匹配 .m3u8 链接
+        // 策略 B: 脚本变量提取
+        // 源码中可能包含: var source = 'https://...';
         if (!videoUrl) {
-            const scriptRegex = /source\s*:\s*['"]([^'"]+\.m3u8[^'"]*)['"]/i;
-            const match = html.match(scriptRegex);
-            if (match && match[1]) {
-                videoUrl = match[1];
+            const scriptRegex = /source\s*=\s*['"](https:\/\/[^'"]+\.m3u8[^'"]*)['"]/;
+            const matches = html.match(scriptRegex);
+            if (matches && matches[1]) {
+                videoUrl = matches[1];
             }
         }
-        
-        [...](asc_slot://start-slot-60)// 策略 C: 查找 input 里的隐藏值 (有时网站会把 url 放在 input hidden 中)
+
+        // 策略 C: 查找 video 标签 (备用)
         if (!videoUrl) {
-            videoUrl = $('input#video-url').val();
+            videoUrl = $('video#player source').attr('src') || $('video#player').attr('src');
         }
 
-        // 如果找到了视频地址
         if (videoUrl) {
+            // Hanime1 的 m3u8 地址中有时包含 &amp; 转义字符，需要还原
+            videoUrl = videoUrl.replace(/&amp;/g, '&');
+
             return {
-                id: link, // 使用链接作为 ID
-                type: "url", // 最终播放类型
+                id: link,
+                type: "url",
                 title: title,
                 coverUrl: cover,
-                description: description,
+                description: desc,
                 videoUrl: videoUrl,
-                headers: { // 部分 m3u8 可能需要 Referer 才能播放
-                    "Referer": BASE_URL
+                headers: {
+                    // 必须带上 Referer，否则 m3u8 分片会返回 403
+                    "Referer": BASE_URL, 
+                    "User-Agent": USER_AGENT
                 }
             };
         } else {
-            throw new Error("未找到视频播放地址，可能需要登录或网站结构已变更。");
+            // 调试用：如果没找到，可能是网页结构变了
+            // console.log("Hanime1 Parse Failed. HTML snippet:", html.substring(0, 500));
+            throw new Error("未解析到视频地址，请检查是否需要登录或模块需更新。");
         }
 
     } catch (e) {
-        console.error("Load Detail Error:", e);
+        console.error("Hanime1 LoadDetail Error:", e);
         throw e;
     }
 }
