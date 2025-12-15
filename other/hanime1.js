@@ -1,4 +1,4 @@
-// 核心配置：直接定义，不依赖外部变量
+// 核心配置
 var BASE_URL = "https://hanime1.me";
 var USER_AGENT = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36";
 
@@ -6,274 +6,383 @@ var WidgetMetadata = {
     title: "Hanime1",
     id: "hanime1_me_final_fix",
     site: "https://hanime1.me",
-    version: "1.0.8",
+    version: "1.1.0",
     description: "Hanime1 纯净适配版",
     author: "Gemini",
-    // 搜索必须位于根节点
-    search: {
-        functionName: "search",
-        params: [
-            { name: "keyword", title: "关键字", type: "input" },
-            { name: "page", title: "页码", type: "page" }
-        ]
-    },
-    // 模块列表
+    detailCacheDuration: 300,
     modules: [
+        // 搜索模块
         {
-            title: "最新里番",
-            functionName: "loadList",
+            title: "搜索",
+            functionName: "loadPage",
+            requiresWebView: false,
             params: [
-                { name: "path", type: "constant", value: "/search?genre=%E8%A3%8F%E7%95%AA" },
-                { name: "page", title: "页码", type: "page" }
+                {
+                    name: "keyword",
+                    title: "关键字",
+                    type: "input",
+                    value: "",
+                    description: "请输入搜索关键字"
+                },
+                {
+                    name: "page",
+                    title: "页码",
+                    type: "page"
+                }
             ]
         },
+        // 综合浏览模块
         {
-            title: "最新上市",
-            functionName: "loadList",
+            title: "浏览影片",
+            functionName: "loadPage",
+            requiresWebView: false,
             params: [
-                { name: "path", type: "constant", value: "/search?sort=%E6%9C%80%E6%96%B0%E4%B8%8A%E5%B8%82" },
-                { name: "page", title: "页码", type: "page" }
+                {
+                    name: "genre",
+                    title: "类别",
+                    type: "enumeration",
+                    value: "all",
+                    enumOptions: [
+                        { title: "全部", value: "all" },
+                        { title: "里番", value: "裏番" },
+                        { title: "泡面番", value: "泡麵番" },
+                        { title: "Motion Anime", value: "Motion Anime" },
+                        { title: "3DCG", value: "3DCG" },
+                        { title: "2D动画", value: "2D動畫" },
+                        { title: "Cosplay", value: "Cosplay" }
+                    ]
+                },
+                {
+                    name: "sort",
+                    title: "排序",
+                    type: "enumeration",
+                    value: "最新上市",
+                    enumOptions: [
+                        { title: "最新上市", value: "最新上市" },
+                        { title: "最新上传", value: "最新上傳" },
+                        { title: "本月排行", value: "本月排行" },
+                        { title: "本日排行", value: "本日排行" },
+                        { title: "他们在看", value: "他們在看" },
+                        { title: "本周排行", value: "本週排行" }
+                    ]
+                },
+                {
+                    name: "tag",
+                    title: "标签",
+                    type: "enumeration",
+                    value: "all",
+                    enumOptions: [
+                        { title: "全部", value: "all" },
+                        { title: "中文字幕", value: "中文字幕" },
+                        { title: "无码", value: "無碼" },
+                        { title: "高清", value: "HD" }
+                    ]
+                },
+                {
+                    name: "page",
+                    title: "页码",
+                    type: "page"
+                }
             ]
         },
-        {
-            title: "最新上传",
-            functionName: "loadList",
-            params: [
-                { name: "path", type: "constant", value: "/search?sort=%E6%9C%80%E6%96%B0%E4%B8%8A%E5%82%B3" },
-                { name: "page", title: "页码", type: "page" }
-            ]
-        },
-        {
-            title: "中文字幕",
-            functionName: "loadList",
-            params: [
-                { name: "path", type: "constant", value: "/search?tags%5B%5D=%E4%B8%AD%E6%96%87%E5%AD%97%E5%B9%95&sort=%E6%9C%80%E6%96%B0%E4%B8%8A%E5%82%B3" },
-                { name: "page", title: "页码", type: "page" }
-            ]
-        },
-        {
-            title: "他们在看",
-            functionName: "loadList",
-            params: [
-                { name: "path", type: "constant", value: "/search?sort=%E4%BB%96%E5%80%91%E5%9C%A8%E7%9C%8B" },
-                { name: "page", title: "页码", type: "page" }
-            ]
-        },
-        {
-            title: "泡面番",
-            functionName: "loadList",
-            params: [
-                { name: "path", type: "constant", value: "/search?genre=%E6%B3%A1%E9%BA%B5%E7%95%AA&sort=%E6%9C%80%E6%96%B0%E4%B8%8A%E5%82%B3" },
-                { name: "page", title: "页码", type: "page" }
-            ]
-        },
-        {
-            title: "Motion Anime",
-            functionName: "loadList",
-            params: [
-                { name: "path", type: "constant", value: "/search?genre=Motion+Anime&sort=%E6%9C%80%E6%96%B0%E4%B8%8A%E5%82%B3" },
-                { name: "page", title: "页码", type: "page" }
-            ]
-        },
-        {
-            title: "3DCG",
-            functionName: "loadList",
-            params: [
-                { name: "path", type: "constant", value: "/search?genre=3DCG&sort=%E6%9C%80%E6%96%B0%E4%B8%8A%E5%82%B3" },
-                { name: "page", title: "页码", type: "page" }
-            ]
-        },
-        {
-            title: "2D动画",
-            functionName: "loadList",
-            params: [
-                { name: "path", type: "constant", value: "/search?genre=2D%E5%8B%95%E7%95%AB&sort=%E6%9C%80%E6%96%B0%E4%B8%8A%E5%82%B3" },
-                { name: "page", title: "页码", type: "page" }
-            ]
-        },
-        {
-            title: "Cosplay",
-            functionName: "loadList",
-            params: [
-                { name: "path", type: "constant", value: "/search?genre=Cosplay&sort=%E6%9C%80%E6%96%B0%E4%B8%8A%E5%82%B3" },
-                { name: "page", title: "页码", type: "page" }
-            ]
-        },
+        // 新番预告
         {
             title: "新番预告",
-            functionName: "loadPreviews",
-            params: []
-        },
-        {
-            title: "本日排行",
-            functionName: "loadList",
+            functionName: "loadPage",
+            requiresWebView: false,
             params: [
-                { name: "path", type: "constant", value: "/search?sort=%E6%9C%AC%E6%97%A5%E6%8E%92%E8%A1%8C" },
-                { name: "page", title: "页码", type: "page" }
-            ]
-        },
-        {
-            title: "本月排行",
-            functionName: "loadList",
-            params: [
-                { name: "path", type: "constant", value: "/search?sort=%E6%9C%AC%E6%9C%88%E6%8E%92%E8%A1%8C" },
-                { name: "page", title: "页码", type: "page" }
+                {
+                    name: "special",
+                    type: "constant",
+                    value: "previews"
+                }
             ]
         }
     ]
 };
 
-// --- 功能函数区 ---
+// --- 工具函数 ---
 
-async function loadList(params) {
-    var page = params.page || 1;
-    var path = params.path;
-    
-    // 构造 URL
-    var url = BASE_URL + path;
-    if (page > 1) {
-        // 判断原 url 是否已有问号
-        url += (url.indexOf('?') > -1 ? '&' : '?') + 'page=' + page;
-    }
-    
-    // 发起请求
-    var res = await Widget.http.get(url, {
-        headers: { "User-Agent": USER_AGENT }
-    });
-    
-    return parseHtml(res.data);
+function getCommonHeaders() {
+    return {
+        "User-Agent": USER_AGENT,
+        "Referer": BASE_URL
+    };
 }
 
-async function search(params) {
-    var keyword = params.keyword;
-    if (!keyword) return [];
-    
-    var page = params.page || 1;
-    var url = BASE_URL + '/search?query=' + encodeURIComponent(keyword);
-    
-    if (page > 1) {
-        url += '&page=' + page;
-    }
-    
-    var res = await Widget.http.get(url, {
-        headers: { "User-Agent": USER_AGENT }
-    });
-    
-    return parseHtml(res.data);
-}
-
-async function loadPreviews() {
-    var d = new Date();
-    var y = d.getFullYear();
-    var m = d.getMonth() + 1;
-    if (m < 10) m = '0' + m;
-    
-    var url = BASE_URL + '/previews/' + y + m;
-    
-    var res = await Widget.http.get(url, {
-        headers: { "User-Agent": USER_AGENT }
-    });
-    
-    return parseHtml(res.data);
-}
-
-// 统一的 HTML 解析函数
-function parseHtml(html) {
+async function parseItems($, requestUrl) {
     var items = [];
-    var $ = Widget.html.load(html);
-    
-    $('a').each(function() {
-        var href = $(this).attr('href');
-        if (!href || href.indexOf('watch?v=') === -1) return;
-        
-        var img = $(this).find('img');
-        if (img.length === 0) return;
-        
-        // 处理链接
-        var link = href;
-        if (link.indexOf('http') !== 0) {
-            link = BASE_URL + (link.indexOf('/') === 0 ? '' : '/') + link;
-        }
-        
-        // 处理图片
-        var imgSrc = img.attr('data-src') || img.attr('src') || "";
-        if (imgSrc && imgSrc.indexOf('http') !== 0) {
-            if (imgSrc.indexOf('//') === 0) imgSrc = "https:" + imgSrc;
-            else imgSrc = BASE_URL + imgSrc;
-        }
-        
-        // 处理标题
-        var title = "";
-        // 尝试从PC端标题类获取
-        var pcTitle = $(this).find('.home-rows-videos-title').text();
-        // 尝试从移动端标题类获取 (通常是父级的兄弟元素，但也可能就在a里)
-        var mobileTitle = $(this).find('.card-mobile-title').text();
-        
-        // 如果a标签里没找到，尝试向上找一级
-        if (!mobileTitle) {
-            mobileTitle = $(this).parent().find('.card-mobile-title').text();
-        }
-        
-        title = mobileTitle || pcTitle || img.attr('alt') || $(this).attr('title') || "Hanime1";
-        
-        // 简单去重
-        var exists = false;
-        for (var i = 0; i < items.length; i++) {
-            if (items[i].link === link) {
-                exists = true;
-                break;
+
+    // 查找列表项
+    var nodes = $('a');
+    if (requestUrl.includes('/previews/')) {
+        // 预告页面的结构可能不同，但通常也是a标签
+        // 如果需要特殊处理预告页面，可以在这里判断
+    }
+
+    nodes.each(function (index, element) {
+        try {
+            var el = $(element);
+            var href = el.attr('href');
+
+            // 过滤无效链接
+            if (!href || href.indexOf('watch?v=') === -1) return;
+
+            var img = el.find('img');
+            if (img.length === 0) return;
+
+            // 处理链接
+            var link = href;
+            if (link.indexOf('http') !== 0) {
+                link = BASE_URL + (link.indexOf('/') === 0 ? '' : '/') + link;
             }
-        }
-        
-        if (!exists) {
-            items.push({
-                title: title.trim(),
-                imgSrc: imgSrc,
-                link: link
-            });
+
+            // 处理图片
+            var imgSrc = img.attr('data-src') || img.attr('src') || "";
+            if (imgSrc && imgSrc.indexOf('http') !== 0) {
+                if (imgSrc.indexOf('//') === 0) imgSrc = "https:" + imgSrc;
+                else imgSrc = BASE_URL + imgSrc;
+            }
+
+            // 处理标题
+            var title = "";
+            var pcTitle = el.find('.home-rows-videos-title').text();
+            var mobileTitle = el.find('.card-mobile-title').text();
+
+            if (!mobileTitle) {
+                mobileTitle = el.parent().find('.card-mobile-title').text();
+            }
+
+            title = mobileTitle || pcTitle || img.attr('alt') || el.attr('title') || "Hanime1";
+
+            // 提取更多信息 (尝试提取日期或时长，如果有的话)
+            // Hanime1 列表页通常包含 view count 和 user
+            var subtitle = el.parent().find('.card-mobile-user').text() || "";
+
+            // 去重检查
+            var exists = false;
+            for (var i = 0; i < items.length; i++) {
+                if (items[i].link === link) {
+                    exists = true;
+                    break;
+                }
+            }
+
+            if (!exists) {
+                items.push({
+                    id: link,
+                    type: "url",
+                    title: title.trim(),
+                    imgSrc: imgSrc,
+                    link: link,
+                    description: subtitle.trim(),
+                    mediaType: "video" // 显式声明为视频
+                });
+            }
+        } catch (e) {
+            console.error("Parse item error:", e.message);
         }
     });
-    
+
     return items;
+}
+
+async function fetchDataForPath(path, params) {
+    var page = params.page || 1;
+    var url = path;
+
+    // 如果 path 不是绝对路径且不以 http 开头，则拼接 BaseUrl
+    if (url.indexOf('http') !== 0) {
+        url = BASE_URL + (url.indexOf('/') === 0 ? '' : '/') + url;
+    }
+
+    // 处理分页
+    // 预告页面通常没有分页或逻辑不同，这里主要处理 search 分页
+    if (url.indexOf('/previews/') === -1) {
+        if (page > 1) {
+            url += (url.indexOf('?') > -1 ? '&' : '?') + 'page=' + page;
+        }
+    }
+
+    try {
+        var res = await Widget.http.get(url, {
+            headers: getCommonHeaders()
+        });
+
+        if (!res || !res.data) {
+            return [{
+                id: "error-no-data",
+                type: "url",
+                title: "加载失败",
+                description: "服务器返回空数据",
+                link: url
+            }];
+        }
+
+        var $ = Widget.html.load(res.data);
+        var items = await parseItems($, url);
+
+        if (items.length === 0) {
+            return [{
+                id: "empty-list",
+                type: "url",
+                title: "没有找到内容",
+                description: "请尝试更改搜索条件或稍后再试",
+                link: url
+            }];
+        }
+
+        return items;
+
+    } catch (e) {
+        return [{
+            id: "error-fetch",
+            type: "url",
+            title: "请求错误",
+            description: e.message,
+            link: url
+        }];
+    }
+}
+
+// --- 主要入口 ---
+
+async function loadPage(params) {
+    var path = "/search";
+    var queryParts = [];
+
+    // 1. 处理关键字搜索
+    if (params.keyword) {
+        queryParts.push("query=" + encodeURIComponent(params.keyword));
+    }
+
+    // 2. 处理预告特殊页面
+    if (params.special === "previews") {
+        var d = new Date();
+        var y = d.getFullYear();
+        var m = d.getMonth() + 1;
+        if (m < 10) m = '0' + m;
+        return fetchDataForPath("/previews/" + y + m, params);
+    }
+
+    // 3. 处理筛选参数 (用于 "浏览影片" 模块)
+    if (params.genre && params.genre !== 'all') {
+        queryParts.push("genre=" + encodeURIComponent(params.genre));
+    }
+
+    if (params.sort) {
+        queryParts.push("sort=" + encodeURIComponent(params.sort));
+    }
+
+    if (params.tag && params.tag !== 'all') {
+        // Hanime1 的 tags 參數通常是 tags[]=Tag
+        queryParts.push("tags[]=" + encodeURIComponent(params.tag));
+    }
+
+    // 构造最终 URL
+    if (queryParts.length > 0) {
+        path += "?" + queryParts.join("&");
+    } else if (!params.keyword) {
+        // 如果没有任何参数，默认按最新上市排序
+        path += "?sort=" + encodeURIComponent("最新上市");
+    }
+
+    return fetchDataForPath(path, params);
 }
 
 // 详情页解析
 async function loadDetail(link) {
-    var res = await Widget.http.get(link, {
-        headers: { "User-Agent": USER_AGENT }
-    });
-    
-    var html = res.data;
-    var $ = Widget.html.load(html);
-    
-    // 解析视频
-    var videoUrl = "";
-    
-    // 策略1: Input
-    var val = $('input#video-sd').val();
-    if (val) videoUrl = val;
-    
-    // 策略2: Script
-    if (!videoUrl) {
-        var match = html.match(/source\s*=\s*['"](https:\/\/[^'"]+)['"]/);
-        if (match) videoUrl = match[1];
-    }
-    
-    // 策略3: Video Tag
-    if (!videoUrl) {
-        videoUrl = $('video source').attr('src');
-    }
-    
-    if (!videoUrl) throw new Error("Parse Error");
-    
-    // 还原转义
-    videoUrl = videoUrl.replace(/&amp;/g, '&');
-    
-    return {
-        videoUrl: videoUrl,
-        headers: {
-            "Referer": BASE_URL,
-            "User-Agent": USER_AGENT
+    try {
+        var res = await Widget.http.get(link, {
+            headers: getCommonHeaders()
+        });
+
+        var html = res.data;
+        var $ = Widget.html.load(html);
+
+        // 解析视频链接
+        var videoUrl = "";
+
+        // 策略1: Input
+        var val = $('input#video-sd').val();
+        if (val) videoUrl = val;
+
+        // 策略2: Script
+        if (!videoUrl) {
+            var match = html.match(/source\s*=\s*['"](https:\/\/[^'"]+)['"]/);
+            if (match) videoUrl = match[1];
         }
-    };
+
+        // 策略3: Video Tag
+        if (!videoUrl) {
+            videoUrl = $('video source').attr('src');
+        }
+
+        if (!videoUrl) {
+            // 如果找不到视频，可能需要登录或解析失败
+            throw new Error("无法解析视频地址 (可能需要登录或结构变更)");
+        }
+
+        // 还原转义
+        videoUrl = videoUrl.replace(/&amp;/g, '&');
+
+        // 解析详情信息
+        var title = $('meta[property="og:title"]').attr('content') || $('title').text();
+        var desc = $('meta[property="og:description"]').attr('content') || "";
+        var img = $('meta[property="og:image"]').attr('content') || "";
+
+        // 解析相关推荐 (Related)
+        var relatedItems = [];
+        // 假设相关视频在 #playlist-scroll 或类似的容器中
+        // Hanime1 详情页底部通常有 "更多類似影片"
+        // 结构通常类似列表页
+
+        $('.home-rows-videos-div').each(function (i, el) {
+            // 简单解析几个作为推荐，避免太多
+            if (i > 10) return;
+            try {
+                var $el = $(el);
+                // 这里需要根据实际DOM结构微调，假设复用 parseItems 的逻辑
+                var a = $el.parent('a'); // 有时候 div 是 a 的子元素，有时候相反
+                if (a.length === 0 && $el.is('a')) a = $el;
+
+                // 如果找不到 a 标签则跳过
+                // 这里简单调用 parseItems 的逻辑可能比较复杂，不如手动解析一下关键信息
+            } catch (e) { }
+        });
+
+        // 尝试复用 parseItems 解析整个页面中的推荐链接
+        // 注意：详情页可能包含很多链接，我们主要关注 "更多类似" 区域
+        // 通常在 .related-videos 或类似区域，如果没有特定 ID，就扫描所有 match 视频链接的 A 标签
+        // 并排除掉当前的自己
+
+        var allVideos = await parseItems($, link);
+        // 过滤掉当前视频（根据标题或链接相似度）
+        relatedItems = allVideos.filter(function (item) {
+            return item.link !== link;
+        });
+
+
+        return {
+            id: link,
+            type: "url",
+            title: title,
+            videoUrl: videoUrl,
+            description: desc,
+            backdropPath: img,
+            relatedItems: relatedItems,
+            headers: getCommonHeaders()
+        };
+
+    } catch (error) {
+        console.error("Details error:", error);
+        return {
+            id: link,
+            type: "url",
+            title: "加载失败",
+            description: error.message,
+            link: link,
+            videoUrl: "",
+        };
+    }
 }
