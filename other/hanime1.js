@@ -4,7 +4,7 @@ var WidgetMetadata = {
     description: "获取 Hanime1 推荐",
     author: "Gemini",
     site: "https://hanime1.me",
-    version: "2.1.0",
+    version: "2.2.0",
     requiredVersion: "0.0.2",
     detailCacheDuration: 300,
     modules: [
@@ -108,8 +108,9 @@ var WidgetMetadata = {
                     title: "排序",
                     type: "enumeration",
                     description: "排序方式",
-                    value: "最新上市",
+                    value: "all",
                     enumOptions: [
+                        { title: "全部", value: "all" },
                         { title: "最新上市", value: "最新上市" },
                         { title: "最新上传", value: "最新上傳" },
                         { title: "本日排行", value: "本日排行" },
@@ -147,8 +148,9 @@ var WidgetMetadata = {
                     title: "排序",
                     type: "enumeration",
                     description: "排序方式",
-                    value: "最新上市",
+                    value: "all",
                     enumOptions: [
+                        { title: "全部", value: "all" },
                         { title: "最新上市", value: "最新上市" },
                         { title: "最新上传", value: "最新上傳" },
                         { title: "本日排行", value: "本日排行" },
@@ -307,11 +309,16 @@ async function loadNewRelease(params) {
 
 async function loadChineseSubtitle(params) {
     const page = params.page || 1;
-    const sort = params.sort_by || "最新上市";
+    const sort = params.sort_by || ""; // 默认为空，或最新上市
     const genre = params.genre || "";
 
-    // 手动编码 tags[] 为 tags%5B%5D，防止部分服务器不识别未转义的 []
-    let url = `${BASE_URL}/search?tags%5B%5D=${encodeURIComponent('中文字幕')}&sort=${encodeURIComponent(sort)}`;
+    // 手动编码 tags[] 为 tags%5B%5D
+    let url = `${BASE_URL}/search?tags%5B%5D=${encodeURIComponent('中文字幕')}`;
+
+    // 只有当 sort 既不是 'all' 也不是 '全部' 且有值时才添加
+    if (sort && sort !== 'all' && sort !== '全部') {
+        url += `&sort=${encodeURIComponent(sort)}`;
+    }
 
     if (genre && genre !== 'all' && genre !== '全部') {
         url += `&genre=${encodeURIComponent(genre)}`;
@@ -324,15 +331,32 @@ async function loadChineseSubtitle(params) {
 async function loadByGenre(params) {
     const page = params.page || 1;
     const genre = params.genre || "";
-    const sort = params.sort_by || "最新上市";
+    const sort = params.sort_by || "";
 
-    let url = `${BASE_URL}/search?sort=${encodeURIComponent(sort)}`;
+    let url = `${BASE_URL}/search?`;
+    // 这里 URL 构造需要小心，如果没有 query param，search 页面可能默认显示全部
+
+    let queryParts = [];
 
     if (genre && genre !== 'all' && genre !== '全部') {
-        url += `&genre=${encodeURIComponent(genre)}`;
+        queryParts.push(`genre=${encodeURIComponent(genre)}`);
     }
 
-    if (page > 1) url += `&page=${page}`;
+    if (sort && sort !== 'all' && sort !== '全部') {
+        queryParts.push(`sort=${encodeURIComponent(sort)}`);
+    }
+
+    if (page > 1) {
+        queryParts.push(`page=${page}`);
+    }
+
+    if (queryParts.length > 0) {
+        url += queryParts.join('&');
+    } else {
+        // 如果没有任何参数，默认可能需要一个参数来触发搜索结果？
+        // 不过 hanime1.me/search 直接访问也是有结果的 (默认排序)
+    }
+
     return fetchAndParse(url);
 }
 
