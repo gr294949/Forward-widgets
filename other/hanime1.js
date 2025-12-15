@@ -291,7 +291,8 @@ async function loadNewRelease(params) {
 async function loadChineseSubtitle(params) {
     const page = params.page || 1;
     const sort = params.sort_by || "最新上市";
-    let url = `${BASE_URL}/search?tags[]=${encodeURIComponent('中文字幕')}&sort=${encodeURIComponent(sort)}`;
+    // 手动编码 tags[] 为 tags%5B%5D，防止部分服务器不识别未转义的 []
+    let url = `${BASE_URL}/search?tags%5B%5D=${encodeURIComponent('中文字幕')}&sort=${encodeURIComponent(sort)}`;
     if (page > 1) url += `&page=${page}`;
     return fetchAndParse(url);
 }
@@ -306,6 +307,58 @@ async function loadByGenre(params) {
     return fetchAndParse(url);
 }
 
+// 专门解析预览页面的函数
+function parsePreviewsHtml(html) {
+    const $ = Widget.html.load(html);
+    const items = [];
+
+    // 预览页结构：
+    // 移动端通常是 div.hidden-sm.hidden-md.hidden-lg (根据curl结果)
+    // 或者更通用的: 查找包含 .preview-image-modal-trigger 的容器
+
+    // 根据 curl 结果，有一块 <div class="hidden-sm hidden-md hidden-lg"> 包含 h5.caption 和 图片
+    // 让我们遍历这些容器
+
+    $('div.hidden-sm.hidden-md.hidden-lg').each((i, el) => {
+        const $container = $(el);
+
+        const desc = $container.find('h5.caption').text().trim();
+        // 标题通常在描述之前，或者就是描述的第一行？
+        // 看起来 h5.caption 是描述。标题可能在更上面的结构，或者在模态框里。
+        // 根据 DOM 结构，标题似乎不好找。
+        // 我们可以尝试找同级的 h4 或者 data-target 关联的 modal 里的 title
+
+        // 尝试获取第一张图
+        const $img = $container.find('img.preview-image-modal-trigger').first();
+        const poster = $img.attr('src');
+
+        // 尝试从 Modal ID 反推或者找附近的标题
+        // 也可以直接用描述的前几个字当标题
+        let title = desc.split('\n')[0];
+        if (title.length > 30) title = title.substring(0, 30) + "...";
+        if (!title) title = "新番预览";
+
+        // 构造一个伪链接，因为是预览，没有播放地址
+        // 我们可以让它指向当前页面，或者搜索该标题
+        const link = BASE_URL + "/search?query=" + encodeURIComponent(title);
+
+        if (poster) {
+            items.push({
+                id: link,
+                type: "url",
+                title: title,
+                posterPath: poster,
+                backdropPath: poster,
+                mediaType: "movie",
+                description: desc,
+                link: link
+            });
+        }
+    });
+
+    return items;
+}
+
 async function loadPreviews(params) {
     const d = new Date();
     const year = d.getFullYear();
@@ -313,7 +366,14 @@ async function loadPreviews(params) {
     if (month < 10) month = '0' + month;
 
     const url = `${BASE_URL}/previews/${year}${month}`;
-    return fetchAndParse(url);
+
+    try {
+        const response = await Widget.http.get(url, { headers: getCommonHeaders() });
+        return parsePreviewsHtml(response.data);
+    } catch (e) {
+        console.error("Preview load failed", e);
+        return [];
+    }
 }
 
 // --- 详情加载 ---
