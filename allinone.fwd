@@ -221,7 +221,7 @@
       "version": "0.14.2",
       "author": "Baran",
       "url": "https://for-ward.vercel.app/Widgets/danmu_universe.js",
-      "backup_url": "https://raw.githubusercontent.com/gr294949/Forward-widgets/main/widgets/baranwang.danmu.universe.js"
+      "backup_url": "https://raw.githubusercontent.com/gr294949/Forward-widgets/main/widgets/danmu_universe.js"
     },
     {
       "id": "forward.combined.media.lists.en",
@@ -372,16 +372,6 @@
       "author": "Baran",
       "url": "https://unpkg.com/@forward-widget/nsfw@0.10.2/dist/91porn.js",
       "backup_url": "https://raw.githubusercontent.com/gr294949/Forward-widgets/main/widgets/91porn.js"
-    },
-    {
-      "id": "通用弹幕",
-      "title": "通用弹幕",
-      "description": "折扣码：GOLD",
-      "requiredVersion": "0.0.1",
-      "version": "0.14.1",
-      "author": "Baran",
-      "url": "https://unpkg.com/@forward-widget/danmu-universe@0.14.1/dist/danmu-universe.js",
-      "backup_url": "https://raw.githubusercontent.com/gr294949/Forward-widgets/main/widgets/danmu-universe.js"
     }
   ]
 }

@@ -199,7 +199,7 @@
       "requiredVersion": "0.0.2",
       "version": "0.14.2",
       "author": "Baran",
-      "url": "https://raw.githubusercontent.com/gr294949/Forward-widgets/main/widgets/baranwang.danmu.universe.js"
+      "url": "https://raw.githubusercontent.com/gr294949/Forward-widgets/main/widgets/danmu_universe.js"
     },
     {
       "id": "forward.combined.media.lists.en",
@@ -335,15 +335,6 @@
       "version": "0.10.2",
       "author": "Baran",
       "url": "https://raw.githubusercontent.com/gr294949/Forward-widgets/main/widgets/91porn.js"
-    },
-    {
-      "id": "通用弹幕",
-      "title": "通用弹幕",
-      "description": "折扣码：GOLD",
-      "requiredVersion": "0.0.1",
-      "version": "0.14.1",
-      "author": "Baran",
-      "url": "https://raw.githubusercontent.com/gr294949/Forward-widgets/main/widgets/danmu-universe.js"
     }
   ]
 }
