@@ -88,6 +88,22 @@ var WidgetMetadata = {
             cacheDuration: 1800,
             params: [
                 {
+                    name: "genre",
+                    title: "分类",
+                    type: "enumeration",
+                    description: "筛选分类",
+                    value: "all",
+                    enumOptions: [
+                        { title: "全部", value: "all" },
+                        { title: "里番", value: "裏番" },
+                        { title: "泡面番", value: "泡麵番" },
+                        { title: "Motion Anime", value: "Motion Anime" },
+                        { title: "3DCG", value: "3DCG" },
+                        { title: "2D 动画", value: "2D動畫" },
+                        { title: "Cosplay", value: "Cosplay" }
+                    ]
+                },
+                {
                     name: "sort_by",
                     title: "排序",
                     type: "enumeration",
@@ -115,8 +131,9 @@ var WidgetMetadata = {
                     title: "选择分类",
                     type: "enumeration",
                     description: "选择具体分类",
-                    value: "裏番",
+                    value: "all",
                     enumOptions: [
+                        { title: "全部", value: "all" },
                         { title: "里番", value: "裏番" },
                         { title: "泡面番", value: "泡麵番" },
                         { title: "Motion Anime", value: "Motion Anime" },
@@ -291,18 +308,30 @@ async function loadNewRelease(params) {
 async function loadChineseSubtitle(params) {
     const page = params.page || 1;
     const sort = params.sort_by || "最新上市";
+    const genre = params.genre || "";
+
     // 手动编码 tags[] 为 tags%5B%5D，防止部分服务器不识别未转义的 []
     let url = `${BASE_URL}/search?tags%5B%5D=${encodeURIComponent('中文字幕')}&sort=${encodeURIComponent(sort)}`;
+
+    if (genre && genre !== 'all' && genre !== '全部') {
+        url += `&genre=${encodeURIComponent(genre)}`;
+    }
+
     if (page > 1) url += `&page=${page}`;
     return fetchAndParse(url);
 }
 
 async function loadByGenre(params) {
     const page = params.page || 1;
-    const genre = params.genre || "裏番";
+    const genre = params.genre || "";
     const sort = params.sort_by || "最新上市";
 
-    let url = `${BASE_URL}/search?genre=${encodeURIComponent(genre)}&sort=${encodeURIComponent(sort)}`;
+    let url = `${BASE_URL}/search?sort=${encodeURIComponent(sort)}`;
+
+    if (genre && genre !== 'all' && genre !== '全部') {
+        url += `&genre=${encodeURIComponent(genre)}`;
+    }
+
     if (page > 1) url += `&page=${page}`;
     return fetchAndParse(url);
 }
