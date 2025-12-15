@@ -171,9 +171,17 @@ async function fetchAndParse(url) {
         const $ = Widget.html.load(response.data);
         const items = [];
 
-        $('a').each((i, el) => {
-            const $el = $(el);
-            const href = $el.attr('href');
+        // Hanime1 的结构：
+        // .content-padding-new .row .search-doujin-videos
+        //   -> a.overlay (链接)
+        //   -> .card-mobile-panel
+        //      -> img (封面)
+        //      -> .card-mobile-title (标题)
+
+        $('.content-padding-new .search-doujin-videos').each((i, el) => {
+            const $card = $(el);
+            const $link = $card.find('a.overlay');
+            const href = $link.attr('href');
 
             if (!href || href.indexOf('/watch?v=') === -1) return;
 
@@ -182,45 +190,53 @@ async function fetchAndParse(url) {
                 link = BASE_URL + (link.indexOf('/') === 0 ? '' : '/') + link;
             }
 
-            const $img = $el.find('img');
-            if ($img.length === 0) return;
+            // 简单排重: 页面上可能同时存在桌面版和移动版卡片（hidden-xs 等类控制显示）
+            if (items.some(it => it.link === link)) return;
 
-            // 处理封面图
-            let poster = $img.attr('data-srcset') || $img.attr('srcset') || $img.attr('data-src') || $img.attr('src') || "";
-            if (poster.includes(',')) {
-                poster = poster.split(',')[0].split(' ')[0];
+            const $img = $card.find('img').first(); // 通常有两个img，一个是背景一个是封面，取第一个或根据样式判断
+            // 实际上第二个 img 通常是封面 (object-fit: cover)
+            // 但即使取第一个背景图也尚可。让我们尝试找 .inner img 且 src 不为空的
+            // 源码中: 第一个 img 是 background.jpg, 第二个是 thumbnail
+            let poster = "";
+            $card.find('img').each((j, imgEl) => {
+                const src = $(imgEl).attr('src') || $(imgEl).attr('data-src');
+                if (src && src.indexOf('background.jpg') === -1) {
+                    poster = src;
+                    return false; // break
+                }
+            });
+
+            if (!poster) {
+                // 兜底
+                poster = $card.find('img').attr('src') || "";
             }
+
             if (poster && !poster.startsWith('http')) {
                 if (poster.startsWith('//')) poster = "https:" + poster;
                 else poster = BASE_URL + (poster.startsWith('/') ? '' : '/') + poster;
             }
 
-            // 处理标题
-            let title = $el.find('.home-rows-videos-title').text() ||
-                $el.find('.card-mobile-title').text() ||
-                $img.attr('alt') ||
-                $el.attr('title');
-
-            if (!title) return;
-            title = title.trim();
-
-            const duration = $el.find('.card-mobile-duration').text().trim();
-            const author = $el.parent().find('.card-mobile-user').text().trim();
-
-            // 简单排重
-            if (!items.some(it => it.link === link)) {
-                items.push({
-                    id: link,
-                    type: "url",
-                    title: title,
-                    posterPath: poster,
-                    backdropPath: poster,
-                    mediaType: "movie",
-                    durationText: duration,
-                    description: author || "",
-                    link: link
-                });
+            let title = $card.find('.card-mobile-title').text().trim();
+            if (!title) {
+                // 备选: title 属性
+                title = $card.attr('title') || "";
             }
+            // 去除多余的 " [中文字幕]" 等后缀，如果需要的话。暂时保留。
+
+            const duration = $card.find('.card-mobile-duration').first().text().trim(); // 时间通常在第一个 duration 类里
+            const author = $card.find('.card-mobile-user').text().trim();
+
+            items.push({
+                id: link,
+                type: "url",
+                title: title,
+                posterPath: poster,
+                backdropPath: poster,
+                mediaType: "movie",
+                durationText: duration,
+                description: author || "",
+                link: link
+            });
         });
 
         return items;
