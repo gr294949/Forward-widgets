@@ -1,49 +1,92 @@
-// 核心配置
 var BASE_URL = "https://hanime1.me";
 var USER_AGENT = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36";
 
 var WidgetMetadata = {
     title: "Hanime1",
-    id: "hanime1_me_final_fix",
+    id: "hanime1_me",
     site: "https://hanime1.me",
-    version: "1.1.0",
-    description: "Hanime1 纯净适配版",
+    version: "2.0.0",
+    description: "Hanime1 视频观看",
     author: "Gemini",
-    detailCacheDuration: 300,
+    detailCacheDuration: 60,
     modules: [
         // 搜索模块
         {
-            title: "搜索",
+            title: "搜索影片",
             functionName: "loadPage",
             requiresWebView: false,
+            cacheDuration: 300,
             params: [
                 {
                     name: "keyword",
-                    title: "关键字",
+                    title: "搜索关键字",
                     type: "input",
                     value: "",
-                    description: "请输入搜索关键字"
+                    description: "输入番号、标题或女优名"
                 },
                 {
                     name: "page",
                     title: "页码",
-                    type: "page"
+                    type: "page",
+                    value: "1"
                 }
             ]
         },
-        // 综合浏览模块
+        // 热门排行
         {
-            title: "浏览影片",
+            title: "热门排行",
             functionName: "loadPage",
             requiresWebView: false,
+            cacheDuration: 1800,
+            params: [
+                {
+                    name: "sort",
+                    title: "排行维度",
+                    type: "enumeration",
+                    value: "本日排行",
+                    enumOptions: [
+                        { title: "本日排行", value: "本日排行" },
+                        { title: "本周排行", value: "本週排行" },
+                        { title: "本月排行", value: "本月排行" },
+                        { title: "他们在看", value: "他們在看" }
+                    ]
+                },
+                { name: "page", title: "页码", type: "page", value: "1" }
+            ]
+        },
+        // 最新更新
+        {
+            title: "最新更新",
+            functionName: "loadPage",
+            requiresWebView: false,
+            cacheDuration: 600,
+            params: [
+                {
+                    name: "sort",
+                    title: "类型",
+                    type: "enumeration",
+                    value: "最新上市",
+                    enumOptions: [
+                        { title: "最新上市", value: "最新上市" },
+                        { title: "最新上传", value: "最新上傳" }
+                    ]
+                },
+                { name: "page", title: "页码", type: "page", value: "1" }
+            ]
+        },
+        // 类别浏览
+        {
+            title: "分类浏览",
+            functionName: "loadPage",
+            requiresWebView: false,
+            cacheDuration: 3600,
             params: [
                 {
                     name: "genre",
-                    title: "类别",
+                    title: "选择分类",
                     type: "enumeration",
-                    value: "all",
+                    value: "裏番",
                     enumOptions: [
-                        { title: "全部", value: "all" },
                         { title: "里番", value: "裏番" },
                         { title: "泡面番", value: "泡麵番" },
                         { title: "Motion Anime", value: "Motion Anime" },
@@ -60,29 +103,44 @@ var WidgetMetadata = {
                     enumOptions: [
                         { title: "最新上市", value: "最新上市" },
                         { title: "最新上传", value: "最新上傳" },
-                        { title: "本月排行", value: "本月排行" },
                         { title: "本日排行", value: "本日排行" },
-                        { title: "他们在看", value: "他們在看" },
-                        { title: "本周排行", value: "本週排行" }
+                        { title: "本月排行", value: "本月排行" }
                     ]
                 },
+                { name: "page", title: "页码", type: "page", value: "1" }
+            ]
+        },
+        // 标签筛选
+        {
+            title: "标签筛选",
+            functionName: "loadPage",
+            requiresWebView: false,
+            cacheDuration: 3600,
+            params: [
                 {
                     name: "tag",
-                    title: "标签",
+                    title: "选择标签",
                     type: "enumeration",
-                    value: "all",
+                    value: "中文字幕",
                     enumOptions: [
-                        { title: "全部", value: "all" },
                         { title: "中文字幕", value: "中文字幕" },
                         { title: "无码", value: "無碼" },
-                        { title: "高清", value: "HD" }
+                        { title: "高清", value: "HD" },
+                        { title: "60 FPS", value: "60 FPS" },
+                        { title: "VR", value: "VR" }
                     ]
                 },
                 {
-                    name: "page",
-                    title: "页码",
-                    type: "page"
-                }
+                    name: "sort",
+                    title: "排序",
+                    type: "enumeration",
+                    value: "最新上市",
+                    enumOptions: [
+                        { title: "最新上市", value: "最新上市" },
+                        { title: "最新上传", value: "最新上傳" }
+                    ]
+                },
+                { name: "page", title: "页码", type: "page", value: "1" }
             ]
         },
         // 新番预告
@@ -90,12 +148,15 @@ var WidgetMetadata = {
             title: "新番预告",
             functionName: "loadPage",
             requiresWebView: false,
+            cacheDuration: 3600,
             params: [
                 {
                     name: "special",
+                    title: "类型",
                     type: "constant",
                     value: "previews"
-                }
+                },
+                // 预告页面通常没有翻页，但为了兼容性保留
             ]
         }
     ]
@@ -110,279 +171,239 @@ function getCommonHeaders() {
     };
 }
 
-async function parseItems($, requestUrl) {
+// 解析普通的视频卡片列表
+function parseVideoItems($, isPreview) {
     var items = [];
 
-    // 查找列表项
-    var nodes = $('a');
-    if (requestUrl.includes('/previews/')) {
-        // 预告页面的结构可能不同，但通常也是a标签
-        // 如果需要特殊处理预告页面，可以在这里判断
-    }
+    // Hanime1 的列表通常在 id="home-rows-wrapper" 里的 a 标签
+    // 或者直接查找带有特定 class 的 a 标签
+    // 通常 class 并不是固定的，最好找包含 img 和特定的 href 的 a 标签
 
-    nodes.each(function (index, element) {
+    var elements = $('a');
+
+    elements.each(function (i, el) {
         try {
-            var el = $(element);
-            var href = el.attr('href');
+            var $el = $(el);
+            var href = $el.attr('href');
 
-            // 过滤无效链接
-            if (!href || href.indexOf('watch?v=') === -1) return;
+            // 过滤规则：
+            // 1. 必须包含 href
+            // 2. href 必须包含 watch?v= (普通视频) 或者 预告视频的特征
 
-            var img = el.find('img');
-            if (img.length === 0) return;
+            if (!href) return;
 
-            // 处理链接
-            var link = href;
-            if (link.indexOf('http') !== 0) {
-                link = BASE_URL + (link.indexOf('/') === 0 ? '' : '/') + link;
-            }
+            var isVideoLink = href.indexOf('watch?v=') !== -1;
+            // 预告片链接通常也是 watch?v= 但是在不同页面
 
-            // 处理图片
-            var imgSrc = img.attr('data-src') || img.attr('src') || "";
+            if (!isVideoLink) return;
+
+            var $img = $el.find('img');
+            if ($img.length === 0) return;
+
+            // 解析封面
+            var imgSrc = $img.attr('data-src') || $img.attr('src') || "";
+            // 补全图片链接
             if (imgSrc && imgSrc.indexOf('http') !== 0) {
                 if (imgSrc.indexOf('//') === 0) imgSrc = "https:" + imgSrc;
                 else imgSrc = BASE_URL + imgSrc;
             }
 
-            // 处理标题
-            var title = "";
-            var pcTitle = el.find('.home-rows-videos-title').text();
-            var mobileTitle = el.find('.card-mobile-title').text();
+            // 解析标题
+            // 优先级: .card-mobile-title -> .home-rows-videos-title -> img alt -> title attr
+            var title = $el.find('.card-mobile-title').text() ||
+                $el.find('.home-rows-videos-title').text();
 
-            if (!mobileTitle) {
-                mobileTitle = el.parent().find('.card-mobile-title').text();
+            if (!title) {
+                // 尝试找父级 (适应某些移动端视图结构)
+                title = $el.parent().find('.card-mobile-title').text();
             }
 
-            title = mobileTitle || pcTitle || img.attr('alt') || el.attr('title') || "Hanime1";
+            if (!title) title = $img.attr('alt') || $el.attr('title') || "未知标题";
 
-            // 提取更多信息 (尝试提取日期或时长，如果有的话)
-            // Hanime1 列表页通常包含 view count 和 user
-            var subtitle = el.parent().find('.card-mobile-user').text() || "";
+            title = title.trim();
 
-            // 去重检查
-            var exists = false;
-            for (var i = 0; i < items.length; i++) {
-                if (items[i].link === link) {
-                    exists = true;
+            // 解析链接
+            var link = href;
+            if (link.indexOf('http') !== 0) {
+                link = BASE_URL + (link.indexOf('/') === 0 ? '' : '/') + link;
+            }
+
+            // 解析额外信息 (如作者、播放量等，显示在 description 位置)
+            var info = $el.parent().find('.card-mobile-user').text() || "";
+            var duration = $el.find('.card-mobile-duration').text() || "";
+
+            // 去重
+            var isExist = false;
+            for (var k = 0; k < items.length; k++) {
+                if (items[k].link === link) {
+                    isExist = true;
                     break;
                 }
             }
 
-            if (!exists) {
+            if (!isExist) {
                 items.push({
                     id: link,
                     type: "url",
-                    title: title.trim(),
-                    imgSrc: imgSrc,
+                    title: title,
+                    posterPath: imgSrc, // 竖屏
+                    backdropPath: imgSrc, // 横屏 (Hanime1 通常是横图，但也兼容)
+                    videoUrl: "", // 列表页没有视频链接
                     link: link,
-                    description: subtitle.trim(),
-                    mediaType: "video" // 显式声明为视频
+                    description: info.trim(),
+                    durationText: duration.trim(),
+                    mediaType: "movie"
                 });
             }
+
         } catch (e) {
-            console.error("Parse item error:", e.message);
+            console.error("Item parse error:", e);
         }
     });
 
     return items;
 }
 
-async function fetchDataForPath(path, params) {
-    var page = params.page || 1;
-    var url = path;
-
-    // 如果 path 不是绝对路径且不以 http 开头，则拼接 BaseUrl
-    if (url.indexOf('http') !== 0) {
-        url = BASE_URL + (url.indexOf('/') === 0 ? '' : '/') + url;
-    }
-
-    // 处理分页
-    // 预告页面通常没有分页或逻辑不同，这里主要处理 search 分页
-    if (url.indexOf('/previews/') === -1) {
-        if (page > 1) {
-            url += (url.indexOf('?') > -1 ? '&' : '?') + 'page=' + page;
-        }
-    }
-
+// 统一的页面加载函数
+async function loadPage(params) {
     try {
-        var res = await Widget.http.get(url, {
-            headers: getCommonHeaders()
-        });
+        var page = params.page || 1;
+        var url = BASE_URL + "/search";
+        var queryParams = [];
 
-        if (!res || !res.data) {
-            return [{
-                id: "error-no-data",
-                type: "url",
-                title: "加载失败",
-                description: "服务器返回空数据",
-                link: url
-            }];
+        // 特殊模块：预告
+        if (params.special === "previews") {
+            var d = new Date();
+            var y = d.getFullYear();
+            var m = d.getMonth() + 1;
+            if (m < 10) m = '0' + m;
+            url = BASE_URL + '/previews/' + y + m;
+
+            // 直接请求预告页
+            var res = await Widget.http.get(url, { headers: getCommonHeaders() });
+            var $ = Widget.html.load(res.data);
+            return parseVideoItems($, true);
         }
 
+        // 构造搜索参数
+        if (params.keyword) {
+            queryParams.push("query=" + encodeURIComponent(params.keyword));
+        }
+
+        if (params.genre) {
+            queryParams.push("genre=" + encodeURIComponent(params.genre));
+        }
+
+        if (params.sort) {
+            queryParams.push("sort=" + encodeURIComponent(params.sort));
+        }
+
+        if (params.tag) {
+            queryParams.push("tags[]=" + encodeURIComponent(params.tag));
+        }
+
+        // 分页
+        if (page > 1) {
+            queryParams.push("page=" + page);
+        }
+
+        // 组合 URL
+        if (queryParams.length > 0) {
+            url += "?" + queryParams.join("&");
+        } else {
+            // 默认兜底
+            if (url.indexOf('?') === -1) url += "?sort=" + encodeURIComponent("最新上市");
+        }
+
+        var res = await Widget.http.get(url, { headers: getCommonHeaders() });
         var $ = Widget.html.load(res.data);
-        var items = await parseItems($, url);
 
-        if (items.length === 0) {
-            return [{
-                id: "empty-list",
-                type: "url",
-                title: "没有找到内容",
-                description: "请尝试更改搜索条件或稍后再试",
-                link: url
-            }];
-        }
-
-        return items;
+        return parseVideoItems($, false);
 
     } catch (e) {
-        return [{
-            id: "error-fetch",
-            type: "url",
-            title: "请求错误",
-            description: e.message,
-            link: url
-        }];
+        console.error("loadPage failure:", e);
+        throw e;
     }
 }
 
-// --- 主要入口 ---
-
-async function loadPage(params) {
-    var path = "/search";
-    var queryParts = [];
-
-    // 1. 处理关键字搜索
-    if (params.keyword) {
-        queryParts.push("query=" + encodeURIComponent(params.keyword));
-    }
-
-    // 2. 处理预告特殊页面
-    if (params.special === "previews") {
-        var d = new Date();
-        var y = d.getFullYear();
-        var m = d.getMonth() + 1;
-        if (m < 10) m = '0' + m;
-        return fetchDataForPath("/previews/" + y + m, params);
-    }
-
-    // 3. 处理筛选参数 (用于 "浏览影片" 模块)
-    if (params.genre && params.genre !== 'all') {
-        queryParts.push("genre=" + encodeURIComponent(params.genre));
-    }
-
-    if (params.sort) {
-        queryParts.push("sort=" + encodeURIComponent(params.sort));
-    }
-
-    if (params.tag && params.tag !== 'all') {
-        // Hanime1 的 tags 參數通常是 tags[]=Tag
-        queryParts.push("tags[]=" + encodeURIComponent(params.tag));
-    }
-
-    // 构造最终 URL
-    if (queryParts.length > 0) {
-        path += "?" + queryParts.join("&");
-    } else if (!params.keyword) {
-        // 如果没有任何参数，默认按最新上市排序
-        path += "?sort=" + encodeURIComponent("最新上市");
-    }
-
-    return fetchDataForPath(path, params);
-}
-
-// 详情页解析
+// 详情页加载函数
 async function loadDetail(link) {
     try {
-        var res = await Widget.http.get(link, {
-            headers: getCommonHeaders()
-        });
-
+        var res = await Widget.http.get(link, { headers: getCommonHeaders() });
         var html = res.data;
         var $ = Widget.html.load(html);
 
-        // 解析视频链接
+        // 1. 解析视频地址
         var videoUrl = "";
 
-        // 策略1: Input
+        // 策略A: input#video-sd
         var val = $('input#video-sd').val();
         if (val) videoUrl = val;
 
-        // 策略2: Script
+        // 策略B: script 里的 source 变量
         if (!videoUrl) {
             var match = html.match(/source\s*=\s*['"](https:\/\/[^'"]+)['"]/);
             if (match) videoUrl = match[1];
         }
 
-        // 策略3: Video Tag
+        // 策略C: video 标签
         if (!videoUrl) {
             videoUrl = $('video source').attr('src');
         }
 
         if (!videoUrl) {
-            // 如果找不到视频，可能需要登录或解析失败
-            throw new Error("无法解析视频地址 (可能需要登录或结构变更)");
+            throw new Error("无法解析视频地址，可能需要登录或页面结构已变更");
         }
 
-        // 还原转义
+        // 处理 &amp;
         videoUrl = videoUrl.replace(/&amp;/g, '&');
 
-        // 解析详情信息
+        // 2. 解析元数据
         var title = $('meta[property="og:title"]').attr('content') || $('title').text();
         var desc = $('meta[property="og:description"]').attr('content') || "";
-        var img = $('meta[property="og:image"]').attr('content') || "";
+        var cover = $('meta[property="og:image"]').attr('content') || "";
 
-        // 解析相关推荐 (Related)
-        var relatedItems = [];
-        // 假设相关视频在 #playlist-scroll 或类似的容器中
-        // Hanime1 详情页底部通常有 "更多類似影片"
-        // 结构通常类似列表页
+        // 发布日期
+        // Hanime1 详情页可能有 date display
+        var dateText = "";
+        // 尝试寻找包含日期的文本节点，这比较难通用，先留空
 
-        $('.home-rows-videos-div').each(function (i, el) {
-            // 简单解析几个作为推荐，避免太多
-            if (i > 10) return;
-            try {
-                var $el = $(el);
-                // 这里需要根据实际DOM结构微调，假设复用 parseItems 的逻辑
-                var a = $el.parent('a'); // 有时候 div 是 a 的子元素，有时候相反
-                if (a.length === 0 && $el.is('a')) a = $el;
+        // 3. 解析推荐列表 (childItems)
+        var childItems = [];
+        // 查找 "更多类似影片" 或相关推荐
+        // 通常在 .home-rows-videos-div 的容器里
+        var relatedNodes = $('.home-rows-videos-div'); // 或者复用 parseVideoItems 的逻辑
 
-                // 如果找不到 a 标签则跳过
-                // 这里简单调用 parseItems 的逻辑可能比较复杂，不如手动解析一下关键信息
-            } catch (e) { }
+        // 由于 parseVideoItems 是针对整个页面的 $，我们可以再次调用它，
+        // 但需要过滤掉当前视频本身，并且只取一部分作为 childItems
+        var allItems = parseVideoItems($, false);
+
+        // 过滤
+        childItems = allItems.filter(function (item) {
+            return item.link !== link && item.title !== title;
         });
 
-        // 尝试复用 parseItems 解析整个页面中的推荐链接
-        // 注意：详情页可能包含很多链接，我们主要关注 "更多类似" 区域
-        // 通常在 .related-videos 或类似区域，如果没有特定 ID，就扫描所有 match 视频链接的 A 标签
-        // 并排除掉当前的自己
-
-        var allVideos = await parseItems($, link);
-        // 过滤掉当前视频（根据标题或链接相似度）
-        relatedItems = allVideos.filter(function (item) {
-            return item.link !== link;
-        });
-
+        // 限制数量，防止数据过大
+        if (childItems.length > 20) childItems = childItems.slice(0, 20);
 
         return {
             id: link,
             type: "url",
-            title: title,
+            title: title || "未知标题",
             videoUrl: videoUrl,
             description: desc,
-            backdropPath: img,
-            relatedItems: relatedItems,
-            headers: getCommonHeaders()
+            backdropPath: cover,
+            posterPath: cover,
+            mediaType: "movie",
+            link: link,
+            childItems: childItems,
+            headers: {
+                "User-Agent": USER_AGENT
+            }
         };
 
-    } catch (error) {
-        console.error("Details error:", error);
-        return {
-            id: link,
-            type: "url",
-            title: "加载失败",
-            description: error.message,
-            link: link,
-            videoUrl: "",
-        };
+    } catch (e) {
+        console.error("loadDetail failure:", e);
+        throw e;
     }
 }
