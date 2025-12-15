@@ -4,16 +4,6 @@
   "icon": "https://github.com/gr294949/Forward-widgets/raw/main/gold.png",
   "widgets": [
     {
-      "id": "91porn",
-      "title": "91porn",
-      "description": "折扣码：GOLD",
-      "requiredVersion": "0.0.1",
-      "version": "0.10.2",
-      "author": "Baran",
-      "url": "https://unpkg.com/@forward-widget/nsfw@0.10.2/dist/91porn.js",
-      "backup_url": "https://raw.githubusercontent.com/gr294949/Forward-widgets/main/widgets/91porn.js"
-    },
-    {
       "id": "91porny",
       "title": "91porny",
       "description": "折扣码：GOLD",
@@ -34,16 +24,6 @@
       "backup_url": "https://raw.githubusercontent.com/gr294949/Forward-widgets/main/widgets/xvideos.js"
     },
     {
-      "id": "通用弹幕",
-      "title": "通用弹幕",
-      "description": "折扣码：GOLD",
-      "requiredVersion": "0.0.1",
-      "version": "0.14.1",
-      "author": "Baran",
-      "url": "https://unpkg.com/@forward-widget/danmu-universe@0.14.1/dist/danmu-universe.js",
-      "backup_url": "https://raw.githubusercontent.com/gr294949/Forward-widgets/main/widgets/danmu-universe.js"
-    },
-    {
       "id": "forward.combined.media.lists",
       "title": "影视榜单",
       "description": "影视动画榜单",
@@ -51,7 +31,7 @@
       "version": "1.5.0",
       "author": "𝓑𝓾𝓽𝓽𝓮𝓻𝓯𝓵𝔂",
       "url": "https://for-ward.vercel.app/Widgets/combined.js",
-      "backup_url": "https://raw.githubusercontent.com/gr294949/Forward-widgets/main/widgets/combined.js"
+      "backup_url": "https://raw.githubusercontent.com/gr294949/Forward-widgets/main/widgets/forward.combined.media.lists.js"
     },
     {
       "id": "zhuijurili",
@@ -111,7 +91,7 @@
       "version": "2.0.0",
       "author": "Autism",
       "url": "https://raw.githubusercontent.com/opix-maker/Forward/refs/heads/main/js/Bangumi_v2.0.0.js",
-      "backup_url": "https://raw.githubusercontent.com/gr294949/Forward-widgets/main/widgets/bangumi_v2.0.0.js"
+      "backup_url": "https://raw.githubusercontent.com/gr294949/Forward-widgets/main/widgets/bangumi_charts_tmdb_v3.js"
     },
     {
       "id": "imdb_discovery_final_v2",
@@ -121,7 +101,7 @@
       "version": "2.0.0",
       "author": "Autism",
       "url": "https://raw.githubusercontent.com/opix-maker/Forward/refs/heads/main/js/IMDb.js",
-      "backup_url": "https://raw.githubusercontent.com/gr294949/Forward-widgets/main/widgets/imdb.js"
+      "backup_url": "https://raw.githubusercontent.com/gr294949/Forward-widgets/main/widgets/imdb_discovery_final_v2.js"
     },
     {
       "id": "person.movie.tmdb",
@@ -131,7 +111,7 @@
       "version": "1.0.4",
       "author": "Evan",
       "url": "https://raw.githubusercontent.com/EmrysChoo/ForwardWidgets/refs/heads/main/Widgets/person_movie.js",
-      "backup_url": "https://raw.githubusercontent.com/gr294949/Forward-widgets/main/widgets/person_movie.js"
+      "backup_url": "https://raw.githubusercontent.com/gr294949/Forward-widgets/main/widgets/person.movie.tmdb.js"
     },
     {
       "id": "imdb",
@@ -151,7 +131,7 @@
       "version": "1.1.0",
       "author": "Ti",
       "url": "https://raw.githubusercontent.com/bemarkt/scripts/refs/heads/master/provider/Forward/widgets/vod.js",
-      "backup_url": "https://raw.githubusercontent.com/gr294949/Forward-widgets/main/widgets/vod.js"
+      "backup_url": "https://raw.githubusercontent.com/gr294949/Forward-widgets/main/widgets/ti.bemarkt.vod.maccms.js"
     },
     {
       "id": "movie_paradise",
@@ -191,7 +171,7 @@
       "version": "2.1.0",
       "author": "Ti",
       "url": "https://raw.githubusercontent.com/bemarkt/scripts/refs/heads/master/provider/Forward/widgets/podcast.js",
-      "backup_url": "https://raw.githubusercontent.com/gr294949/Forward-widgets/main/widgets/podcast.js"
+      "backup_url": "https://raw.githubusercontent.com/gr294949/Forward-widgets/main/widgets/ti.bemarkt.podcast.js"
     },
     {
       "id": "letterboxd",
@@ -211,7 +191,7 @@
       "version": "2.0.10",
       "author": "huangxd",
       "url": "https://raw.githubusercontent.com/huangxd-/ForwardWidgets/refs/heads/main/widgets/danmu_auto.js",
-      "backup_url": "https://raw.githubusercontent.com/gr294949/Forward-widgets/main/widgets/danmu_auto.js"
+      "backup_url": "https://raw.githubusercontent.com/gr294949/Forward-widgets/main/widgets/forward.auto.danmu.js"
     },
     {
       "id": "forward.auto.danmu_api",
@@ -221,7 +201,7 @@
       "version": "1.0.3",
       "author": "huangxd",
       "url": "https://raw.githubusercontent.com/huangxd-/ForwardWidgets/refs/heads/main/widgets/danmu_api.js",
-      "backup_url": "https://raw.githubusercontent.com/gr294949/Forward-widgets/main/widgets/danmu_api.js"
+      "backup_url": "https://raw.githubusercontent.com/gr294949/Forward-widgets/main/widgets/forward.auto.danmu_api.js"
     },
     {
       "id": "vod_sream",
@@ -238,10 +218,10 @@
       "title": "通用弹幕",
       "description": "通用弹幕插件，支持腾讯、优酷、爱奇艺、哔哩哔哩、人人视频等平台",
       "requiredVersion": "0.0.2",
-      "version": "0.14.1",
+      "version": "0.14.2",
       "author": "Baran",
       "url": "https://for-ward.vercel.app/Widgets/danmu_universe.js",
-      "backup_url": "https://raw.githubusercontent.com/gr294949/Forward-widgets/main/widgets/danmu_universe.js"
+      "backup_url": "https://raw.githubusercontent.com/gr294949/Forward-widgets/main/widgets/baranwang.danmu.universe.js"
     },
     {
       "id": "forward.combined.media.lists.en",
@@ -251,7 +231,7 @@
       "version": "1.5.0",
       "author": "𝓑𝓾𝓽𝓽𝓮𝓻𝓯𝓵𝔂",
       "url": "https://for-ward.vercel.app/Widgets/Move_list_EN.js",
-      "backup_url": "https://raw.githubusercontent.com/gr294949/Forward-widgets/main/widgets/move_list_en.js"
+      "backup_url": "https://raw.githubusercontent.com/gr294949/Forward-widgets/main/widgets/forward.combined.media.lists.en.js"
     },
     {
       "id": "wuming.VOD",
@@ -261,7 +241,7 @@
       "version": "1.0.0",
       "author": "无名",
       "url": "https://for-ward.vercel.app/Widgets/wuming.js",
-      "backup_url": "https://raw.githubusercontent.com/gr294949/Forward-widgets/main/widgets/wuming.js"
+      "backup_url": "https://raw.githubusercontent.com/gr294949/Forward-widgets/main/widgets/wuming.vod.js"
     },
     {
       "id": "missav",
@@ -301,7 +281,7 @@
       "version": "1.0.5",
       "author": "海带",
       "url": "https://for-ward.vercel.app/Widgets/ph.js",
-      "backup_url": "https://raw.githubusercontent.com/gr294949/Forward-widgets/main/widgets/ph.js"
+      "backup_url": "https://raw.githubusercontent.com/gr294949/Forward-widgets/main/widgets/pornhub.js"
     },
     {
       "id": "ti.bemarkt.javday",
@@ -382,6 +362,26 @@
       "author": "Discount Code：VEUS",
       "url": "https://gist.githubusercontent.com/MrRegret/1b47fe77b505ef46893ca03cd1356b4f/raw",
       "backup_url": "https://raw.githubusercontent.com/gr294949/Forward-widgets/main/widgets/xtream_api_en.js"
+    },
+    {
+      "id": "91porn",
+      "title": "91porn",
+      "description": "折扣码：GOLD",
+      "requiredVersion": "0.0.1",
+      "version": "0.10.2",
+      "author": "Baran",
+      "url": "https://unpkg.com/@forward-widget/nsfw@0.10.2/dist/91porn.js",
+      "backup_url": "https://raw.githubusercontent.com/gr294949/Forward-widgets/main/widgets/91porn.js"
+    },
+    {
+      "id": "通用弹幕",
+      "title": "通用弹幕",
+      "description": "折扣码：GOLD",
+      "requiredVersion": "0.0.1",
+      "version": "0.14.1",
+      "author": "Baran",
+      "url": "https://unpkg.com/@forward-widget/danmu-universe@0.14.1/dist/danmu-universe.js",
+      "backup_url": "https://raw.githubusercontent.com/gr294949/Forward-widgets/main/widgets/danmu-universe.js"
     }
   ]
 }
