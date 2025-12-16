@@ -1,8 +1,8 @@
 var WidgetMetadata = {
-    id: "hanime1_me_style_missav",
+    id: "hanime1_me_style",
     title: "Hanime1",
     description: "获取 Hanime1 推荐",
-    author: "Gemini",
+    author: "gr294949",
     site: "https://hanime1.me",
     version: "2.1.1",
     requiredVersion: "0.0.2",
