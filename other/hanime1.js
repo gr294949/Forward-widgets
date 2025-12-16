@@ -4,7 +4,7 @@ var WidgetMetadata = {
     description: "获取 Hanime1 推荐",
     author: "Gemini",
     site: "https://hanime1.me",
-    version: "2.2.0",
+    version: "2.1.1",
     requiredVersion: "0.0.2",
     detailCacheDuration: 300,
     modules: [
@@ -29,6 +29,7 @@ var WidgetMetadata = {
                     description: "排序方式",
                     value: "最新上市",
                     enumOptions: [
+                        { title: "全部", value: "all" },
                         { title: "最新上市", value: "最新上市" },
                         { title: "最新上传", value: "最新上傳" },
                         { title: "本日排行", value: "本日排行" },
@@ -190,73 +191,113 @@ async function fetchAndParse(url) {
         const $ = Widget.html.load(response.data);
         const items = [];
 
-        // Hanime1 的结构：
-        // .content-padding-new .row .search-doujin-videos
-        //   -> a.overlay (链接)
-        //   -> .card-mobile-panel
-        //      -> img (封面)
-        //      -> .card-mobile-title (标题)
+        // 策略 1: 标签搜索页 (Tags Search) 结构
+        // .content-padding-new .search-doujin-videos -> a.overlay
+        const $doujinVideos = $('.content-padding-new .search-doujin-videos');
+        if ($doujinVideos.length > 0) {
+            $doujinVideos.each((i, el) => {
+                const $card = $(el);
+                const $link = $card.find('a.overlay');
+                const href = $link.attr('href');
+                if (!href || href.indexOf('/watch?v=') === -1) return;
 
-        $('.content-padding-new .search-doujin-videos').each((i, el) => {
-            const $card = $(el);
-            const $link = $card.find('a.overlay');
-            const href = $link.attr('href');
+                let link = href;
+                if (!link.startsWith('http')) {
+                    link = BASE_URL + (link.startsWith('/') ? '' : '/') + link;
+                }
 
-            if (!href || href.indexOf('/watch?v=') === -1) return;
+                if (items.some(it => it.link === link)) return;
 
-            let link = href;
-            if (link.indexOf('http') !== 0) {
-                link = BASE_URL + (link.indexOf('/') === 0 ? '' : '/') + link;
-            }
+                // 图片提取
+                let poster = "";
+                $card.find('img').each((j, imgEl) => {
+                    const src = $(imgEl).attr('src') || $(imgEl).attr('data-src');
+                    if (src && src.indexOf('background.jpg') === -1) {
+                        poster = src;
+                        return false;
+                    }
+                });
+                if (!poster) poster = $card.find('img').attr('src') || "";
 
-            // 简单排重: 页面上可能同时存在桌面版和移动版卡片（hidden-xs 等类控制显示）
-            if (items.some(it => it.link === link)) return;
+                if (poster && !poster.startsWith('http')) {
+                    if (poster.startsWith('//')) poster = "https:" + poster;
+                    else poster = BASE_URL + (poster.startsWith('/') ? '' : '/') + poster;
+                }
 
-            const $img = $card.find('img').first(); // 通常有两个img，一个是背景一个是封面，取第一个或根据样式判断
-            // 实际上第二个 img 通常是封面 (object-fit: cover)
-            // 但即使取第一个背景图也尚可。让我们尝试找 .inner img 且 src 不为空的
-            // 源码中: 第一个 img 是 background.jpg, 第二个是 thumbnail
-            let poster = "";
-            $card.find('img').each((j, imgEl) => {
-                const src = $(imgEl).attr('src') || $(imgEl).attr('data-src');
-                if (src && src.indexOf('background.jpg') === -1) {
-                    poster = src;
-                    return false; // break
+                let title = $card.find('.card-mobile-title').text().trim() || $card.attr('title') || "";
+                const duration = $card.find('.card-mobile-duration').first().text().trim();
+                const author = $card.find('.card-mobile-user').text().trim();
+
+                items.push({
+                    id: link,
+                    type: "url",
+                    title: title,
+                    posterPath: poster,
+                    backdropPath: poster,
+                    mediaType: "movie",
+                    durationText: duration,
+                    description: author || "",
+                    link: link
+                });
+            });
+        }
+
+        // 策略 2: 分类/排行 (Genre/Rank) 结构
+        // 直接是 <a> 包含 .home-rows-videos-div.search-videos
+        // 参考 Step 220 output: <a href="..."><div class="home-rows-videos-div search-videos">...</div></a>
+        // 有时候可能是 .home-rows-videos-div 下的 a
+        if (items.length === 0) {
+            $('a').each((i, el) => {
+                const $a = $(el);
+                const href = $a.attr('href');
+                if (!href || href.indexOf('/watch?v=') === -1) return;
+
+                // 必须包含视频卡片特征元素
+                const $videoDiv = $a.find('.home-rows-videos-div');
+                if ($videoDiv.length === 0 && !$a.parent().hasClass('home-rows-videos-div')) {
+                    // 也许是 <a> 里面直接有 img?
+                    // 让我们严格一点，只匹配包含 .home-rows-videos-title 或 .search-videos 的
+                    if ($a.find('.home-rows-videos-title').length === 0 && $a.find('.search-videos').length === 0) return;
+                }
+
+                let link = href;
+                if (!link.startsWith('http')) {
+                    link = BASE_URL + (link.startsWith('/') ? '' : '/') + link;
+                }
+
+                if (items.some(it => it.link === link)) return;
+
+                const $img = $a.find('img');
+                let poster = $img.attr('src') || $img.attr('data-src') || "";
+                if (poster && !poster.startsWith('http')) {
+                    if (poster.startsWith('//')) poster = "https:" + poster;
+                    else poster = BASE_URL + (poster.startsWith('/') ? '' : '/') + poster;
+                }
+
+                let title = $a.find('.home-rows-videos-title').text().trim();
+                // 如果找不到标题，尝试找 img alt
+                if (!title) title = $img.attr('alt') || "";
+
+                // 时长通常在这个模式下不直接显示在卡片上，或者在图片右上角？
+                // 暂时留空或尝试查找
+                const duration = "";
+                const author = "";
+
+                if (title) {
+                    items.push({
+                        id: link,
+                        type: "url",
+                        title: title,
+                        posterPath: poster,
+                        backdropPath: poster,
+                        mediaType: "movie",
+                        durationText: duration,
+                        description: author,
+                        link: link
+                    });
                 }
             });
-
-            if (!poster) {
-                // 兜底
-                poster = $card.find('img').attr('src') || "";
-            }
-
-            if (poster && !poster.startsWith('http')) {
-                if (poster.startsWith('//')) poster = "https:" + poster;
-                else poster = BASE_URL + (poster.startsWith('/') ? '' : '/') + poster;
-            }
-
-            let title = $card.find('.card-mobile-title').text().trim();
-            if (!title) {
-                // 备选: title 属性
-                title = $card.attr('title') || "";
-            }
-            // 去除多余的 " [中文字幕]" 等后缀，如果需要的话。暂时保留。
-
-            const duration = $card.find('.card-mobile-duration').first().text().trim(); // 时间通常在第一个 duration 类里
-            const author = $card.find('.card-mobile-user').text().trim();
-
-            items.push({
-                id: link,
-                type: "url",
-                title: title,
-                posterPath: poster,
-                backdropPath: poster,
-                mediaType: "movie",
-                durationText: duration,
-                description: author || "",
-                link: link
-            });
-        });
+        }
 
         return items;
 
