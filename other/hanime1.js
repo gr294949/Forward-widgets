@@ -1,7 +1,7 @@
 var WidgetMetadata = {
     id: "hanime1_me_style",
     title: "Hanime1",
-    description: "获取 Hanime1 推荐",
+    description: "获取 Hanime1 动画，折扣码gold",
     author: "gr294949",
     site: "https://hanime1.me",
     version: "2.1.1",
