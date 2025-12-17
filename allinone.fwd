@@ -14,6 +14,16 @@
       "backup_url": "https://raw.githubusercontent.com/gr294949/Forward-widgets/main/widgets/91porny.js"
     },
     {
+      "id": "Hanime1",
+      "title": "Hanime1",
+      "description": "折扣码：GOLD",
+      "requiredVersion": "0.0.1",
+      "version": "2.1.1",
+      "author": "gr294949",
+      "url": "https://raw.githubusercontent.com/gr294949/Forward-widgets/refs/heads/main/other/hanime1.js",
+      "backup_url": "https://raw.githubusercontent.com/gr294949/Forward-widgets/main/widgets/hanime1.js"
+    },
+    {
       "id": "XVideos",
       "title": "XVideos",
       "description": "折扣码：GOLD",
@@ -252,6 +262,16 @@
       "author": "𝓑𝓾𝓽𝓽𝓮𝓻𝓯𝓵𝔂",
       "url": "https://for-ward.vercel.app/Widgets/MissAV.js",
       "backup_url": "https://raw.githubusercontent.com/gr294949/Forward-widgets/main/widgets/missav.js"
+    },
+    {
+      "id": "hanime1_me_style",
+      "title": "Hanime1",
+      "description": "获取 Hanime1 动画，折扣码gold",
+      "requiredVersion": "0.0.2",
+      "version": "2.1.1",
+      "author": "gr294949",
+      "url": "https://for-ward.vercel.app/Widgets/hanime1.js",
+      "backup_url": "https://raw.githubusercontent.com/gr294949/Forward-widgets/main/widgets/hanime1_me_style.js"
     },
     {
       "id": "jable",
