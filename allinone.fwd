@@ -224,6 +224,16 @@
       "backup_url": "https://raw.githubusercontent.com/gr294949/Forward-widgets/main/widgets/vod_sream.js"
     },
     {
+      "id": "ystt.vod",
+      "title": "影视天堂",
+      "description": "影视天堂影片资源",
+      "requiredVersion": "0.0.1",
+      "version": "1.0.0",
+      "author": "两块",
+      "url": "https://raw.githubusercontent.com/2kuai/ForwardWidgets/refs/heads/main/Widgets/ystt.js",
+      "backup_url": "https://raw.githubusercontent.com/gr294949/Forward-widgets/main/widgets/ystt.js"
+    },
+    {
       "id": "baranwang.danmu.universe",
       "title": "通用弹幕",
       "description": "通用弹幕插件，支持腾讯、优酷、爱奇艺、哔哩哔哩、人人视频等平台",
