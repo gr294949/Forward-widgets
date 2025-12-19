@@ -41,8 +41,8 @@
     },
     {
       "id": "zhuijurili",
-      "title": "追剧日历(今/明日播出、各项榜单、今日推荐)",
-      "description": "解析追剧日历今/明日播出剧集/番剧/国漫/综艺、各项榜单、今日推荐等",
+      "title": "追剧日历(今/明日播出、周历、各项榜单、今日推荐)",
+      "description": "解析追剧日历今/明日播出剧集/番剧/国漫/综艺、周历、各项榜单、今日推荐等【30% off code：CHEAP】",
       "requiredVersion": "0.0.1",
       "version": "1.0.4",
       "author": "huangxd",
@@ -69,7 +69,7 @@
     {
       "id": "yatu",
       "title": "雅图(每日放送+点播排行榜+评分排行榜)",
-      "description": "解析雅图每日放送更新以及各类排行榜",
+      "description": "解析雅图每日放送更新以及各类排行榜【30% off code：CHEAP】",
       "requiredVersion": "0.0.1",
       "version": "1.0.6",
       "author": "huangxd",
@@ -353,15 +353,6 @@
       "version": "2.1.2",
       "author": "Discount Code：VEUS",
       "url": "https://raw.githubusercontent.com/gr294949/Forward-widgets/main/widgets/xtream_api_en.js"
-    },
-    {
-      "id": "91porn",
-      "title": "91porn",
-      "description": "折扣码：GOLD",
-      "requiredVersion": "0.0.1",
-      "version": "0.10.2",
-      "author": "Baran",
-      "url": "https://raw.githubusercontent.com/gr294949/Forward-widgets/main/widgets/91porn.js"
     }
   ]
 }
