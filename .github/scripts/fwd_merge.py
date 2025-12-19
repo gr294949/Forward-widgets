@@ -68,6 +68,21 @@ def _detect_branch(base_dir: str) -> str:
 def _detect_owner_repo() -> str:
     return os.getenv("GITHUB_REPOSITORY", "ocd0711/forward_module")
 
+ID_ALIAS = {
+    "xvideos": "nsfw.xvideos",
+}
+
+def get_source_priority(url: str) -> int:
+    if not url:
+        return 0
+    if "unpkg.com/@forward-widget" in url:
+        return 100
+    if "for-ward.vercel.app" in url:
+        return 90
+    if "raw.githubusercontent.com/pack1r/ForwardWidgets" in url:
+        return 80
+    return 10
+
 OWNER_REPO = _detect_owner_repo()
 BRANCH = _detect_branch(BASE_DIR)
 
@@ -181,6 +196,10 @@ for widget in all_widgets:
     if not wid or not url:
         continue
 
+    # Normalize ID (Aliasing)
+    wid = ID_ALIAS.get(wid, wid)
+    widget["id"] = wid
+
     ok, final, code = check_url_final(url)
     if not ok:
         print(f"  ⚠️ 已跳过失效 widget: {wid} (最终 URL: {final}, 状态码: {code})")
@@ -189,8 +208,22 @@ for widget in all_widgets:
     widget["url"] = final
 
     cur_ver = normalize_version(widget.get("version", "0.0.0"))
-    if wid not in merged or cur_ver > normalize_version(merged[wid].get("version", "0.0.0")):
+
+    if wid not in merged:
         merged[wid] = widget
+    else:
+        old_widget = merged[wid]
+        old_ver = normalize_version(old_widget.get("version", "0.0.0"))
+
+        if cur_ver > old_ver:
+            merged[wid] = widget
+        elif cur_ver == old_ver:
+            # 同版本，比较来源优先级
+            p_new = get_source_priority(final)
+            p_old = get_source_priority(old_widget.get("url"))
+            if p_new > p_old:
+                merged[wid] = widget
+                print(f"  ⬆️ 同版本 ({cur_ver}) 替换更高优先级源: {wid}")
 
 
 # ================================================================
@@ -213,8 +246,10 @@ if os.path.exists(old_fwd_path):
             old_data = json.load(f)
 
         for old_widget in old_data.get("widgets", []):
-            wid = old_widget.get("id")
-            
+            # Normalize ID for backup too
+            wid = ID_ALIAS.get(wid, wid)
+            old_widget["id"] = wid
+
             # 1. 如果新列表里没有这个 id，尝试从本地恢复
             # 2. 如果新列表里有，但旧版本号更高，且本地文件存在，也恢复（降级回滚保护）
             
@@ -230,6 +265,16 @@ if os.path.exists(old_fwd_path):
                 if old_ver > new_ver:
                     should_restore = True
                     reason = f"newer_version ({old_ver} > {new_ver})"
+                elif old_ver == new_ver:
+                     # 备份恢复时，如果版本相同，通常认为 fresh 更优（因为它可能是重新发布的）。
+                     # 但如果用户指明了优先级，这里也可以比较。
+                     # 但 old_widget ["url"] 可能是原始 URL 也可能是 repo URL (allinone.fwd 存的是原始URL)
+                     # 假设 allinone.fwd 里的 url 是原始 url。
+                     p_old = get_source_priority(old_widget.get("url"))
+                     p_new = get_source_priority(merged[wid].get("url"))
+                     if p_old > p_new:
+                         should_restore = True
+                         reason = f"priority_restore ({p_old} > {p_new})"
 
             if should_restore:
                 filename = os.path.basename(old_widget.get("url", "")).split("?")[0]
