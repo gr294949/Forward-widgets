@@ -214,11 +214,29 @@ if os.path.exists(old_fwd_path):
 
         for old_widget in old_data.get("widgets", []):
             wid = old_widget.get("id")
+            
+            # 1. 如果新列表里没有这个 id，尝试从本地恢复
+            # 2. 如果新列表里有，但旧版本号更高，且本地文件存在，也恢复（降级回滚保护）
+            
+            should_restore = False
+            reason = ""
+
             if wid not in merged:
+                should_restore = True
+                reason = "missing"
+            else:
+                old_ver = normalize_version(old_widget.get("version", "0.0.0"))
+                new_ver = normalize_version(merged[wid].get("version", "0.0.0"))
+                if old_ver > new_ver:
+                    should_restore = True
+                    reason = f"newer_version ({old_ver} > {new_ver})"
+
+            if should_restore:
                 filename = os.path.basename(old_widget.get("url", "")).split("?")[0]
+                # 兼容旧版 url 可能不一样，尝试检查 filename
                 if filename and file_exists_case_insensitive(os.path.join(BASE_DIR, "widgets"), filename):
                     merged[wid] = old_widget
-                    print(f"  ♻️ 恢复本地备份 widget: {wid}")
+                    print(f"  ♻️ 恢复本地备份 widget: {wid} [{reason}]")
     except Exception as e:
         print(f"⚠️ 无法读取旧 allinone.fwd: {e}")
 
