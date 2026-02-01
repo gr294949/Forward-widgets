@@ -218,20 +218,10 @@
       "title": "通用弹幕",
       "description": "通用弹幕插件，支持腾讯、优酷、爱奇艺、哔哩哔哩、人人视频等平台",
       "requiredVersion": "0.0.2",
-      "version": "0.14.3",
+      "version": "0.15.1",
       "author": "Baran",
       "url": "https://for-ward.vercel.app/Widgets/danmu_universe.js",
       "backup_url": "https://raw.githubusercontent.com/gr294949/Forward-widgets/main/widgets/baranwang.danmu.universe.js"
-    },
-    {
-      "id": "forward.combined.media.lists.en",
-      "title": "Movie & TV Lists",
-      "description": "Movie & TV Lists",
-      "requiredVersion": "0.0.2",
-      "version": "1.5.1",
-      "author": "𝓑𝓾𝓽𝓽𝓮𝓻𝓯𝓵𝔂",
-      "url": "https://for-ward.vercel.app/Widgets/Move_list_EN.js",
-      "backup_url": "https://raw.githubusercontent.com/gr294949/Forward-widgets/main/widgets/forward.combined.media.lists.en.js"
     },
     {
       "id": "rr_vod_full",
