@@ -195,7 +195,7 @@
     {
       "id": "Move_lists",
       "title": "影视榜单",
-      "description": "仅限使用我推荐码购买用户发送凭证开通白名单",
+      "description": "白名单用户独享模块",
       "requiredVersion": "0.0.2",
       "version": "2.0.0",
       "author": "𝓑𝓾𝓽𝓽𝓮𝓻𝓯𝓵𝔂",
@@ -217,7 +217,7 @@
       "requiredVersion": "0.0.1",
       "version": "1.0.15",
       "author": "匿名",
-      "url": "https://raw.githubusercontent.com/gr294949/Forward-widgets/main/widgets/one_fwd.js"
+      "url": "https://raw.githubusercontent.com/gr294949/Forward-widgets/main/widgets/one.js"
     },
     {
       "id": "rr_vod_full",
@@ -253,7 +253,7 @@
       "requiredVersion": "0.0.1",
       "version": "1.0.0",
       "author": "匿名",
-      "url": "https://raw.githubusercontent.com/gr294949/Forward-widgets/main/widgets/jav_fwd.js"
+      "url": "https://raw.githubusercontent.com/gr294949/Forward-widgets/main/widgets/javdb.js"
     },
     {
       "id": "missav",
