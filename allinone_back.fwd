@@ -41,8 +41,8 @@
     },
     {
       "id": "zhuijurili",
-      "title": "追剧日历(今/明日播出、周历、各项榜单、今日推荐)",
-      "description": "解析追剧日历今/明日播出剧集/番剧/国漫/综艺、周历、各项榜单、今日推荐等【30% off code：CHEAP】",
+      "title": "追剧日历(今/明日播出、各项榜单、今日推荐)",
+      "description": "解析追剧日历今/明日播出剧集/番剧/国漫/综艺、各项榜单、今日推荐等",
       "requiredVersion": "0.0.1",
       "version": "1.0.4",
       "author": "huangxd",
@@ -69,7 +69,7 @@
     {
       "id": "yatu",
       "title": "雅图(每日放送+点播排行榜+评分排行榜)",
-      "description": "解析雅图每日放送更新以及各类排行榜【30% off code：CHEAP】",
+      "description": "解析雅图每日放送更新以及各类排行榜",
       "requiredVersion": "0.0.1",
       "version": "1.0.6",
       "author": "huangxd",
@@ -80,7 +80,7 @@
       "title": "热门精选",
       "description": "获取最新热播剧和热门影片推荐",
       "requiredVersion": "0.0.1",
-      "version": "1.2.1",
+      "version": "1.1.7",
       "author": "两块",
       "url": "https://raw.githubusercontent.com/gr294949/Forward-widgets/main/widgets/hot_picks.js"
     },
@@ -191,24 +191,6 @@
       "version": "1.2.1",
       "author": "两块",
       "url": "https://raw.githubusercontent.com/gr294949/Forward-widgets/main/widgets/vod_sream.js"
-    },
-    {
-      "id": "Move_lists",
-      "title": "影视榜单",
-      "description": "白名单用户独享模块",
-      "requiredVersion": "0.0.2",
-      "version": "2.0.0",
-      "author": "𝓑𝓾𝓽𝓽𝓮𝓻𝓯𝓵𝔂",
-      "url": "https://raw.githubusercontent.com/gr294949/Forward-widgets/main/widgets/move_lists.js"
-    },
-    {
-      "id": "baranwang.danmu.universe",
-      "title": "通用弹幕",
-      "description": "通用弹幕插件，支持腾讯、优酷、爱奇艺、哔哩哔哩、人人视频等平台",
-      "requiredVersion": "0.0.2",
-      "version": "0.15.1",
-      "author": "Baran",
-      "url": "https://raw.githubusercontent.com/gr294949/Forward-widgets/main/widgets/baranwang.danmu.universe.js"
     },
     {
       "id": "ONE",
