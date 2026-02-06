@@ -9,7 +9,7 @@
 - [GOLD's Widgets](https://github.com/gr294949/Forward-Widgets)
 - [pack1r's Widgets](https://github.com/pack1r/ForwardWidgets)
 - [huangxd's Widgets](https://github.com/huangxd-/ForwardWidgets)
-- [2Kuai Widgets](https://github.com/2kuai/ForwardWidgets)
+- [𝓑𝓾𝓽𝓽𝓮𝓻𝓯𝓵𝔂 '𝓼 𝓦𝓲𝓭𝓰𝓮𝓽𝓼 - 常规模块合集](https://for-ward.vercel.app/Normal.fwd)
 - [𝓑𝓾𝓽𝓽𝓮𝓻𝓯𝓵𝔂 '𝓼 𝓦𝓲𝓭𝓰𝓮𝓽𝓼 - 在线资源合集](https://for-ward.vercel.app/Online.fwd)
 - [𝓑𝓾𝓽𝓽𝓮𝓻𝓯𝓵𝔂 ‘𝓼 𝓦𝓲𝓭𝓰𝓮𝓽𝓼 - 瑟瑟合集](https://for-ward.vercel.app/Porn.fwd)
 - [Madai-v's Widgets](https://github.com/Madai-v/ForwardWidgets)
