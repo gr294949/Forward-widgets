@@ -45,12 +45,12 @@
     },
     {
       "id": "zhuijurili",
-      "title": "追剧日历(今/明日播出、周历、各项榜单、今日推荐)",
-      "description": "解析追剧日历今/明日播出剧集/番剧/国漫/综艺、周历、各项榜单、今日推荐等【30% off code：CHEAP】",
+      "title": "追剧日历(今/明日播出、各项榜单、今日推荐)",
+      "description": "解析追剧日历今/明日播出剧集/番剧/国漫/综艺、各项榜单、今日推荐等",
       "requiredVersion": "0.0.1",
       "version": "1.0.4",
       "author": "huangxd",
-      "url": "https://for-ward.vercel.app/Widgets/zhuijurili.js",
+      "url": "https://raw.githubusercontent.com/huangxd-/ForwardWidgets/refs/heads/main/widgets/zhuijurili.js",
       "backup_url": "https://raw.githubusercontent.com/gr294949/Forward-widgets/main/widgets/zhuijurili.js"
     },
     {
@@ -60,7 +60,7 @@
       "requiredVersion": "0.0.1",
       "version": "1.0.15",
       "author": "huangxd",
-      "url": "https://for-ward.vercel.app/Widgets/trakt.js",
+      "url": "https://raw.githubusercontent.com/huangxd-/ForwardWidgets/refs/heads/main/widgets/trakt.js",
       "backup_url": "https://raw.githubusercontent.com/gr294949/Forward-widgets/main/widgets/trakt.js"
     },
     {
@@ -70,17 +70,17 @@
       "requiredVersion": "0.0.1",
       "version": "1.0.20",
       "author": "huangxd",
-      "url": "https://for-ward.vercel.app/Widgets/douban.js",
+      "url": "https://raw.githubusercontent.com/huangxd-/ForwardWidgets/refs/heads/main/widgets/douban.js",
       "backup_url": "https://raw.githubusercontent.com/gr294949/Forward-widgets/main/widgets/douban.js"
     },
     {
       "id": "yatu",
       "title": "雅图(每日放送+点播排行榜+评分排行榜)",
-      "description": "解析雅图每日放送更新以及各类排行榜【30% off code：CHEAP】",
+      "description": "解析雅图每日放送更新以及各类排行榜",
       "requiredVersion": "0.0.1",
       "version": "1.0.6",
       "author": "huangxd",
-      "url": "https://for-ward.vercel.app/Widgets/yatu.js",
+      "url": "https://raw.githubusercontent.com/huangxd-/ForwardWidgets/refs/heads/main/widgets/yatu.js",
       "backup_url": "https://raw.githubusercontent.com/gr294949/Forward-widgets/main/widgets/yatu.js"
     },
     {
@@ -88,9 +88,9 @@
       "title": "热门精选",
       "description": "获取最新热播剧和热门影片推荐",
       "requiredVersion": "0.0.1",
-      "version": "1.5.37",
+      "version": "1.1.7",
       "author": "两块",
-      "url": "https://for-ward.vercel.app/Widgets/HotPicks.js",
+      "url": "https://raw.githubusercontent.com/2kuai/ForwardWidgets/refs/heads/main/Widgets/HotPicks.js",
       "backup_url": "https://raw.githubusercontent.com/gr294949/Forward-widgets/main/widgets/hot_picks.js"
     },
     {
@@ -100,7 +100,7 @@
       "requiredVersion": "0.0.1",
       "version": "2.0.0",
       "author": "Autism",
-      "url": "https://for-ward.vercel.app/Widgets/Bangumi_v2.0.0.js",
+      "url": "https://raw.githubusercontent.com/opix-maker/Forward/refs/heads/main/js/Bangumi_v2.0.0.js",
       "backup_url": "https://raw.githubusercontent.com/gr294949/Forward-widgets/main/widgets/bangumi_charts_tmdb_v3.js"
     },
     {
@@ -120,7 +120,7 @@
       "requiredVersion": "0.0.1",
       "version": "1.0.4",
       "author": "Evan",
-      "url": "https://for-ward.vercel.app/Widgets/person_movie.js",
+      "url": "https://raw.githubusercontent.com/EmrysChoo/ForwardWidgets/refs/heads/main/Widgets/person_movie.js",
       "backup_url": "https://raw.githubusercontent.com/gr294949/Forward-widgets/main/widgets/person.movie.tmdb.js"
     },
     {
@@ -140,7 +140,7 @@
       "requiredVersion": "0.0.1",
       "version": "1.1.0",
       "author": "Ti",
-      "url": "https://for-ward.vercel.app/Widgets/vod.js",
+      "url": "https://raw.githubusercontent.com/bemarkt/scripts/refs/heads/master/provider/Forward/widgets/vod.js",
       "backup_url": "https://raw.githubusercontent.com/gr294949/Forward-widgets/main/widgets/ti.bemarkt.vod.maccms.js"
     },
     {
@@ -150,7 +150,7 @@
       "requiredVersion": "0.0.1",
       "version": "1.0.10",
       "author": "huangxd",
-      "url": "https://for-ward.vercel.app/Widgets/live.js",
+      "url": "https://raw.githubusercontent.com/huangxd-/ForwardWidgets/refs/heads/main/widgets/live.js",
       "backup_url": "https://raw.githubusercontent.com/gr294949/Forward-widgets/main/widgets/live.js"
     },
     {
@@ -170,7 +170,7 @@
       "requiredVersion": "0.0.1",
       "version": "1.0.2",
       "author": "huangxd",
-      "url": "https://for-ward.vercel.app/Widgets/letterboxd.js",
+      "url": "https://raw.githubusercontent.com/huangxd-/ForwardWidgets/refs/heads/main/widgets/letterboxd.js",
       "backup_url": "https://raw.githubusercontent.com/gr294949/Forward-widgets/main/widgets/letterboxd.js"
     },
     {
@@ -180,7 +180,7 @@
       "requiredVersion": "0.0.2",
       "version": "1.13.6",
       "author": "huangxd",
-      "url": "https://for-ward.vercel.app/Widgets/danmu_auto.js",
+      "url": "https://raw.githubusercontent.com/huangxd-/ForwardWidgets/refs/heads/main/widgets/danmu_auto.js",
       "backup_url": "https://raw.githubusercontent.com/gr294949/Forward-widgets/main/widgets/forward.auto.danmu.js"
     },
     {
@@ -190,138 +190,8 @@
       "requiredVersion": "0.0.2",
       "version": "1.0.3",
       "author": "huangxd",
-      "url": "https://for-ward.vercel.app/Widgets/danmu_api.js",
+      "url": "https://raw.githubusercontent.com/huangxd-/ForwardWidgets/refs/heads/main/widgets/danmu_api.js",
       "backup_url": "https://raw.githubusercontent.com/gr294949/Forward-widgets/main/widgets/forward.auto.danmu_api.js"
-    },
-    {
-      "id": "Move_lists",
-      "title": "影视榜单",
-      "description": "白名单用户独享模块",
-      "requiredVersion": "0.0.2",
-      "version": "2.0.0",
-      "author": "𝓑𝓾𝓽𝓽𝓮𝓻𝓯𝓵𝔂",
-      "url": "https://for-ward.vercel.app/Widgets/Move_lists.js",
-      "backup_url": "https://raw.githubusercontent.com/gr294949/Forward-widgets/main/widgets/move_lists.js"
-    },
-    {
-      "id": "baranwang.danmu.universe",
-      "title": "通用弹幕",
-      "description": "通用弹幕插件，支持腾讯、优酷、爱奇艺、哔哩哔哩、人人视频等平台",
-      "requiredVersion": "0.0.2",
-      "version": "0.15.1",
-      "author": "Baran",
-      "url": "https://for-ward.vercel.app/Widgets/danmu_universe.js",
-      "backup_url": "https://raw.githubusercontent.com/gr294949/Forward-widgets/main/widgets/baranwang.danmu.universe.js"
-    },
-    {
-      "id": "ONE",
-      "title": "ONE",
-      "description": "4K剧集综艺影视",
-      "requiredVersion": "0.0.1",
-      "version": "1.0.15",
-      "author": "匿名",
-      "url": "https://for-ward.vercel.app/Widgets/one_fwd.js",
-      "backup_url": "https://raw.githubusercontent.com/gr294949/Forward-widgets/main/widgets/one.js"
-    },
-    {
-      "id": "vod_sream",
-      "title": "VOD Stream",
-      "description": "聚合VOD资源",
-      "requiredVersion": "0.0.1",
-      "version": "1.2.1",
-      "author": "两块",
-      "url": "https://for-ward.vercel.app/Widgets/VodStream.js",
-      "backup_url": "https://raw.githubusercontent.com/gr294949/Forward-widgets/main/widgets/vod_sream.js"
-    },
-    {
-      "id": "rr_vod_full",
-      "title": "人人美剧",
-      "description": "获取人人美剧在线资源",
-      "requiredVersion": "0.0.1",
-      "version": "1.0.1",
-      "author": "两块",
-      "url": "https://for-ward.vercel.app/Widgets/rrmj.js",
-      "backup_url": "https://raw.githubusercontent.com/gr294949/Forward-widgets/main/widgets/rr_vod_full.js"
-    },
-    {
-      "id": "jp_vod_full",
-      "title": "金牌影院",
-      "description": "金牌影院在线资源获取",
-      "requiredVersion": "0.0.1",
-      "version": "1.1.0",
-      "author": "两块",
-      "url": "https://for-ward.vercel.app/Widgets/jpyy.js",
-      "backup_url": "https://raw.githubusercontent.com/gr294949/Forward-widgets/main/widgets/jp_vod_full.js"
-    },
-    {
-      "id": "tv_live",
-      "title": "电视台",
-      "description": "获取热门电视直播频道",
-      "requiredVersion": "0.0.1",
-      "version": "1.1.6",
-      "author": "两块",
-      "url": "https://for-ward.vercel.app/Widgets/TvLive.js",
-      "backup_url": "https://raw.githubusercontent.com/gr294949/Forward-widgets/main/widgets/tv_live.js"
-    },
-    {
-      "id": "wuming.VOD",
-      "title": "VOD",
-      "description": "根据Keyword,用于VOD",
-      "requiredVersion": "0.0.1",
-      "version": "1.0.0",
-      "author": "无名",
-      "url": "https://for-ward.vercel.app/Widgets/wuming.js",
-      "backup_url": "https://raw.githubusercontent.com/gr294949/Forward-widgets/main/widgets/wuming.vod.js"
-    },
-    {
-      "id": "JAVDB",
-      "title": "JAVDB",
-      "description": "JAVDB在线看",
-      "requiredVersion": "0.0.1",
-      "version": "1.0.0",
-      "author": "匿名",
-      "url": "https://for-ward.vercel.app/Widgets/jav_fwd.js",
-      "backup_url": "https://raw.githubusercontent.com/gr294949/Forward-widgets/main/widgets/javdb.js"
-    },
-    {
-      "id": "missav",
-      "title": "MissAV",
-      "description": "获取 MissAV 推荐",
-      "requiredVersion": "0.0.2",
-      "version": "1.0.0",
-      "author": "𝓑𝓾𝓽𝓽𝓮𝓻𝓯𝓵𝔂",
-      "url": "https://for-ward.vercel.app/Widgets/MissAV.js",
-      "backup_url": "https://raw.githubusercontent.com/gr294949/Forward-widgets/main/widgets/missav.js"
-    },
-    {
-      "id": "hanime1_me_style",
-      "title": "Hanime1",
-      "description": "获取 Hanime1 动画，折扣码gold",
-      "requiredVersion": "0.0.2",
-      "version": "2.2.0",
-      "author": "gr294949",
-      "url": "https://for-ward.vercel.app/Widgets/hanime1.js",
-      "backup_url": "https://raw.githubusercontent.com/gr294949/Forward-widgets/main/widgets/hanime1_me_style.js"
-    },
-    {
-      "id": "jable",
-      "title": "Jable",
-      "description": "获取 Jable 视频",
-      "requiredVersion": "0.0.2",
-      "version": "1.0.9",
-      "author": "𝓑𝓾𝓽𝓽𝓮𝓻𝓯𝓵𝔂",
-      "url": "https://for-ward.vercel.app/Widgets/Jable.js",
-      "backup_url": "https://raw.githubusercontent.com/gr294949/Forward-widgets/main/widgets/jable.js"
-    },
-    {
-      "id": "nsfw.91porn",
-      "title": "91porn",
-      "description": "🔞 91Porn 视频搜索",
-      "requiredVersion": "0.0.1",
-      "version": "0.10.2",
-      "author": "匿名",
-      "url": "https://for-ward.vercel.app/Widgets/91porn.js",
-      "backup_url": "https://raw.githubusercontent.com/gr294949/Forward-widgets/main/widgets/nsfw.91porn.js"
     },
     {
       "id": "Pornhub",
@@ -330,28 +200,18 @@
       "requiredVersion": "0.0.1",
       "version": "1.0.5",
       "author": "海带",
-      "url": "https://for-ward.vercel.app/Widgets/ph.js",
+      "url": "https://raw.githubusercontent.com/Madai-v/ForwardWidgets/refs/heads/main/Widgets/ph.js",
       "backup_url": "https://raw.githubusercontent.com/gr294949/Forward-widgets/main/widgets/pornhub.js"
     },
     {
-      "id": "ti.bemarkt.javday",
-      "title": "JAVDay",
-      "description": "获取 JAVDay 推荐",
-      "requiredVersion": "0.0.2",
-      "version": "1.1.0",
-      "author": "𝓑𝓾𝓽𝓽𝓮𝓻𝓯𝓵𝔂",
-      "url": "https://for-ward.vercel.app/Widgets/Javday.js",
-      "backup_url": "https://raw.githubusercontent.com/gr294949/Forward-widgets/main/widgets/ti.bemarkt.javday.js"
-    },
-    {
-      "id": "unknow.baranwang.xvideos",
-      "title": "XVideos",
-      "description": "Xvideos",
+      "id": "wuming.VOD",
+      "title": "VOD",
+      "description": "根据Keyword,用于VOD",
       "requiredVersion": "0.0.1",
-      "version": "0.9.4",
-      "author": "匿名",
-      "url": "https://for-ward.vercel.app/Widgets/xvideos.js",
-      "backup_url": "https://raw.githubusercontent.com/gr294949/Forward-widgets/main/widgets/unknow.baranwang.xvideos.js"
+      "version": "1.0.0",
+      "author": "无名",
+      "url": "https://raw.githubusercontent.com/xbzl/Forward/refs/heads/main/Widgets/wuming.js",
+      "backup_url": "https://raw.githubusercontent.com/gr294949/Forward-widgets/main/widgets/wuming.vod.js"
     },
     {
       "id": "yuanqi.wallpaper",
@@ -372,6 +232,16 @@
       "author": "Discount Code：VEUS",
       "url": "https://gist.githubusercontent.com/MrRegret/61a5cbf0637b95a0d800994a51860fb2/raw",
       "backup_url": "https://raw.githubusercontent.com/gr294949/Forward-widgets/main/widgets/bitch.js"
+    },
+    {
+      "id": "ti.bemarkt.javday",
+      "title": "JAVDay",
+      "description": "🔞 JAVDay Porn",
+      "requiredVersion": "0.0.1",
+      "version": "1.1.0",
+      "author": "Discount Code：VEUS",
+      "url": "https://raw.githubusercontent.com/pack1r/ForwardWidgets/refs/heads/main/widgets/javday.js",
+      "backup_url": "https://raw.githubusercontent.com/gr294949/Forward-widgets/main/widgets/ti.bemarkt.javday.js"
     },
     {
       "id": "ti.bemarkt.javrate",
@@ -395,13 +265,13 @@
     },
     {
       "id": "xtream_api_en",
-      "title": "Xtream API Live",
-      "description": "Fetch live channels via official Xtream-Codes REST API with keyword search",
-      "requiredVersion": "0.0.1",
-      "version": "2.1.2",
-      "author": "Discount Code：VEUS",
-      "url": "https://gist.githubusercontent.com/MrRegret/1b47fe77b505ef46893ca03cd1356b4f/raw",
-      "backup_url": "https://raw.githubusercontent.com/gr294949/Forward-widgets/main/widgets/xtream_api_en.js"
+      "title": "Hanime1",
+      "description": "获取 Hanime1 动画，折扣码gold",
+      "requiredVersion": "0.0.2",
+      "version": "2.2.0",
+      "author": "gr294949",
+      "url": "https://for-ward.vercel.app/Widgets/hanime1.js",
+      "backup_url": "https://raw.githubusercontent.com/gr294949/Forward-widgets/main/widgets/hanime1_me_style.js"
     }
   ]
 }
