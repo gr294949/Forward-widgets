@@ -58,6 +58,24 @@
             "url": "https://raw.githubusercontent.com/2kuai/ForwardWidgets/refs/heads/main/Widgets/rrmj.js"
         },
         {
+            "id": "jable",
+            "title": "Jable",
+            "description": "折扣码：GOLD",
+            "requiredVersion": "0.0.2",
+            "version": "1.0.9",
+            "author": "𝓑𝓾𝓽𝓽𝓮𝓻𝓯𝓵𝔂",
+            "url": "https://raw.githubusercontent.com/gr294949/Forward-widgets/refs/heads/main/widgets/jable.js"
+        },
+        {
+            "id": "missav",
+            "title": "MissAV",
+            "description": "折扣码：GOLD",
+            "requiredVersion": "0.0.2",
+            "version": "1.0.0",
+            "author": "𝓑𝓾𝓽𝓽𝓮𝓻𝓯𝓵𝔂",
+            "url": "https://raw.githubusercontent.com/gr294949/Forward-widgets/refs/heads/main/widgets/missav.js"
+        },
+        {
             "id": "91porn",
             "title": "人人美剧",
             "description": "折扣码：GOLD",
