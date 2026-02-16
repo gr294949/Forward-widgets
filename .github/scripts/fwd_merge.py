@@ -247,6 +247,7 @@ if os.path.exists(old_fwd_path):
 
         for old_widget in old_data.get("widgets", []):
             # Normalize ID for backup too
+            wid = old_widget.get("id")
             wid = ID_ALIAS.get(wid, wid)
             old_widget["id"] = wid
 
