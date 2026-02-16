@@ -22,6 +22,51 @@
             "url": "https://raw.githubusercontent.com/gr294949/Forward-widgets/refs/heads/main/other/hanime1.js"
         },
         {
+            "id": "hot_picks",
+            "title": "热门精选",
+            "description": "折扣码：GOLD",
+            "requiredVersion": "0.0.1",
+            "version": "1.5.51",
+            "author": "2kuai",
+            "url": "https://raw.githubusercontent.com/2kuai/ForwardWidgets/refs/heads/main/Widgets/HotPicks.js"
+        },
+        {
+            "id": "vod_stream",
+            "title": "VOD Stream",
+            "description": "折扣码：GOLD",
+            "requiredVersion": "0.0.1",
+            "version": "1.2.1",
+            "author": "2kuai",
+            "url": "https://raw.githubusercontent.com/2kuai/ForwardWidgets/refs/heads/main/Widgets/VodStream.js"
+        },
+        {
+            "id": "jp_vod_full",
+            "title": "金牌影院",
+            "description": "折扣码：GOLD",
+            "requiredVersion": "0.0.2",
+            "version": "1.1.0",
+            "author": "2kuai",
+            "url": "https://raw.githubusercontent.com/2kuai/ForwardWidgets/refs/heads/main/Widgets/jpyy.js"
+        },
+        {
+            "id": "rr_vod_full",
+            "title": "人人美剧",
+            "description": "折扣码：GOLD",
+            "requiredVersion": "0.0.1",
+            "version": "1.0.1",
+            "author": "2kuai",
+            "url": "https://raw.githubusercontent.com/2kuai/ForwardWidgets/refs/heads/main/Widgets/rrmj.js"
+        },
+        {
+            "id": "91porn",
+            "title": "人人美剧",
+            "description": "折扣码：GOLD",
+            "requiredVersion": "0.0.1",
+            "version": "1.0.1",
+            "author": "2kuai",
+            "url": "https://unpkg.com/@forward-widget/nsfw/91porn"
+        },
+        {
             "id": "XVideos",
             "title": "XVideos",
             "description": "折扣码：GOLD",
