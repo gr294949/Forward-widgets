@@ -22,6 +22,69 @@
       "url": "https://raw.githubusercontent.com/gr294949/Forward-widgets/main/widgets/hanime1.js"
     },
     {
+      "id": "hot_picks",
+      "title": "热门精选",
+      "description": "折扣码：GOLD",
+      "requiredVersion": "0.0.1",
+      "version": "1.5.51",
+      "author": "2kuai",
+      "url": "https://raw.githubusercontent.com/gr294949/Forward-widgets/main/widgets/hot_picks.js"
+    },
+    {
+      "id": "vod_stream",
+      "title": "VOD Stream",
+      "description": "折扣码：GOLD",
+      "requiredVersion": "0.0.1",
+      "version": "1.2.1",
+      "author": "2kuai",
+      "url": "https://raw.githubusercontent.com/gr294949/Forward-widgets/main/widgets/vod_stream.js"
+    },
+    {
+      "id": "jp_vod_full",
+      "title": "金牌影院",
+      "description": "折扣码：GOLD",
+      "requiredVersion": "0.0.2",
+      "version": "1.1.0",
+      "author": "2kuai",
+      "url": "https://raw.githubusercontent.com/gr294949/Forward-widgets/main/widgets/jp_vod_full.js"
+    },
+    {
+      "id": "rr_vod_full",
+      "title": "人人美剧",
+      "description": "折扣码：GOLD",
+      "requiredVersion": "0.0.1",
+      "version": "1.0.1",
+      "author": "2kuai",
+      "url": "https://raw.githubusercontent.com/gr294949/Forward-widgets/main/widgets/rr_vod_full.js"
+    },
+    {
+      "id": "jable",
+      "title": "Jable",
+      "description": "折扣码：GOLD",
+      "requiredVersion": "0.0.2",
+      "version": "1.0.9",
+      "author": "𝓑𝓾𝓽𝓽𝓮𝓻𝓯𝓵𝔂",
+      "url": "https://raw.githubusercontent.com/gr294949/Forward-widgets/main/widgets/jable.js"
+    },
+    {
+      "id": "missav",
+      "title": "MissAV",
+      "description": "折扣码：GOLD",
+      "requiredVersion": "0.0.2",
+      "version": "1.0.0",
+      "author": "𝓑𝓾𝓽𝓽𝓮𝓻𝓯𝓵𝔂",
+      "url": "https://raw.githubusercontent.com/gr294949/Forward-widgets/main/widgets/missav.js"
+    },
+    {
+      "id": "91porn",
+      "title": "人人美剧",
+      "description": "折扣码：GOLD",
+      "requiredVersion": "0.0.1",
+      "version": "1.0.1",
+      "author": "2kuai",
+      "url": "https://raw.githubusercontent.com/gr294949/Forward-widgets/main/widgets/91porn.js"
+    },
+    {
       "id": "XVideos",
       "title": "XVideos",
       "description": "折扣码：GOLD",
@@ -74,15 +137,6 @@
       "version": "1.0.6",
       "author": "huangxd",
       "url": "https://raw.githubusercontent.com/gr294949/Forward-widgets/main/widgets/yatu.js"
-    },
-    {
-      "id": "hot_picks",
-      "title": "热门精选",
-      "description": "获取最新热播剧和热门影片推荐",
-      "requiredVersion": "0.0.1",
-      "version": "1.1.7",
-      "author": "两块",
-      "url": "https://raw.githubusercontent.com/gr294949/Forward-widgets/main/widgets/hot_picks.js"
     },
     {
       "id": "bangumi_charts_tmdb_v3",
@@ -173,6 +227,231 @@
       "version": "1.0.3",
       "author": "huangxd",
       "url": "https://raw.githubusercontent.com/gr294949/Forward-widgets/main/widgets/forward.auto.danmu_api.js"
+    },
+    {
+      "id": "91porn_int",
+      "title": "91Porn",
+      "description": "91Porn",
+      "requiredVersion": "0.0.2",
+      "version": "0.9.6",
+      "author": "網路",
+      "url": "https://raw.githubusercontent.com/gr294949/Forward-widgets/main/widgets/nineone.js"
+    },
+    {
+      "id": "91porny_int",
+      "title": "91Porny",
+      "description": "91Porny",
+      "requiredVersion": "0.0.2",
+      "version": "0.9.6",
+      "author": "網路",
+      "url": "https://raw.githubusercontent.com/gr294949/Forward-widgets/main/widgets/nineoney.js"
+    },
+    {
+      "id": "javday_int",
+      "title": "Javday",
+      "description": "網路收集到的模塊",
+      "requiredVersion": "0.0.1",
+      "version": "1.2.0",
+      "author": "Ti",
+      "url": "https://raw.githubusercontent.com/gr294949/Forward-widgets/main/widgets/day.js"
+    },
+    {
+      "id": "jable_int",
+      "title": "Jable",
+      "description": "網路收集到的模塊",
+      "requiredVersion": "0.0.2",
+      "version": "1.1.0",
+      "author": "nibiru",
+      "url": "https://raw.githubusercontent.com/gr294949/Forward-widgets/main/widgets/able.js"
+    },
+    {
+      "id": "missav_int",
+      "title": "MissAV",
+      "description": "網路收集到的模塊",
+      "requiredVersion": "0.0.2",
+      "version": "2.0.0",
+      "author": "蝴蝶",
+      "url": "https://raw.githubusercontent.com/gr294949/Forward-widgets/main/widgets/miss.js"
+    },
+    {
+      "id": "Pornhub_int",
+      "title": "Pornhub",
+      "description": "網路收集到的模塊",
+      "requiredVersion": "0.0.1",
+      "version": "1.1.5",
+      "author": "海带",
+      "url": "https://raw.githubusercontent.com/gr294949/Forward-widgets/main/widgets/phb.js"
+    },
+    {
+      "id": "xvideos_int",
+      "title": "Xvideos",
+      "description": "網路收集到的模塊",
+      "requiredVersion": "0.0.1",
+      "version": "0.9.6",
+      "author": "海带",
+      "url": "https://raw.githubusercontent.com/gr294949/Forward-widgets/main/widgets/xv.js"
+    },
+    {
+      "id": "jable_makka_spec_v4",
+      "title": "Jable_ovo",
+      "description": "修复群友jable模块没声音的问题",
+      "requiredVersion": "0.0.2",
+      "version": "1.0.3",
+      "author": "𝙈𝙖𝙠𝙠𝙖𝙋𝙖𝙠𝙠𝙖",
+      "url": "https://raw.githubusercontent.com/gr294949/Forward-widgets/main/widgets/1.js"
+    },
+    {
+      "id": "javday_pro_final_mak",
+      "title": "JAVDay_ovo",
+      "description": "简易的javday模块",
+      "requiredVersion": "0.0.1",
+      "version": "1.0.2",
+      "author": "𝙈𝙖𝙠𝙠𝙖𝙋𝙖𝙠𝙠𝙖",
+      "url": "https://raw.githubusercontent.com/gr294949/Forward-widgets/main/widgets/2.js"
+    },
+    {
+      "id": "91porn_makka",
+      "title": "91Porn_ovo",
+      "description": "91Porn 增加关键词搜索功能",
+      "requiredVersion": "0.0.1",
+      "version": "1.0.2",
+      "author": "𝙈𝙖𝙠𝙠𝙖𝙋𝙖𝙠𝙠𝙖",
+      "url": "https://raw.githubusercontent.com/gr294949/Forward-widgets/main/widgets/3.js"
+    },
+    {
+      "id": "missav_makka_play",
+      "title": "MissAV_ovo",
+      "description": "简易的missav模块",
+      "requiredVersion": "0.0.1",
+      "version": "2.1.1",
+      "author": "𝙈𝙖𝙠𝙠𝙖𝙋𝙖𝙠𝙠𝙖",
+      "url": "https://raw.githubusercontent.com/gr294949/Forward-widgets/main/widgets/4.js"
+    },
+    {
+      "id": "anime_omni_fix",
+      "title": "二次元全境聚合",
+      "description": "一站式聚合多平台动漫榜单。",
+      "requiredVersion": "0.0.1",
+      "version": "2.2.4",
+      "author": "𝙈𝙖𝙠𝙠𝙖𝙋𝙖𝙠𝙠𝙖",
+      "url": "https://raw.githubusercontent.com/gr294949/Forward-widgets/main/widgets/dongmanone.js"
+    },
+    {
+      "id": "trakt_personal_key",
+      "title": "Trak 追剧日历 免key版",
+      "description": "内置 Key 版：只需填写用户名即可使用。显示追剧日历、待看、收藏及历史记录",
+      "requiredVersion": "0.0.1",
+      "version": "1.0.8",
+      "author": "𝙈𝙖𝙠𝙠𝙖𝙋𝙖𝙠𝙠𝙖",
+      "url": "https://raw.githubusercontent.com/gr294949/Forward-widgets/main/widgets/traktkey.js"
+    },
+    {
+      "id": "trakt_personal_mixed",
+      "title": "Trak 追剧日历&个人中心",
+      "description": "追剧日历:显示你观看剧集最新集的 更新时间&Trakt 待看/收藏/历史。",
+      "requiredVersion": "0.0.1",
+      "version": "1.0.8",
+      "author": "𝙈𝙖𝙠𝙠𝙖𝙋𝙖𝙠𝙠𝙖",
+      "url": "https://raw.githubusercontent.com/gr294949/Forward-widgets/main/widgets/trakt_personal_mixed.js"
+    },
+    {
+      "id": "variety_hub_ultimate_v4_fix",
+      "title": "全球综艺追更热度榜",
+      "description": "综艺更新时间表，热度榜",
+      "requiredVersion": "0.0.1",
+      "version": "2.0.3",
+      "author": "𝙈𝙖𝙠𝙠𝙖𝙋𝙖𝙠𝙠𝙖",
+      "url": "https://raw.githubusercontent.com/gr294949/Forward-widgets/main/widgets/zongyi.js"
+    },
+    {
+      "id": "western_trends_hub",
+      "title": "欧美风向标|口碑与热度",
+      "description": "聚合烂番茄(口碑)与流媒体平台(热度)，一站式掌握欧美影视动态。",
+      "requiredVersion": "0.0.1",
+      "version": "1.0.2",
+      "author": "𝙈𝙖𝙠𝙠𝙖𝙋𝙖𝙠𝙠𝙖",
+      "url": "https://raw.githubusercontent.com/gr294949/Forward-widgets/main/widgets/west.js"
+    },
+    {
+      "id": "global_tv_calendar_ultimate",
+      "title": "全球追剧时刻表",
+      "description": "聚合全球剧集更新&综艺排期&bangumi动漫周更表。",
+      "requiredVersion": "0.0.1",
+      "version": "2.0.9",
+      "author": "𝙈𝙖𝙠𝙠𝙖𝙋𝙖𝙠𝙠𝙖",
+      "url": "https://raw.githubusercontent.com/gr294949/Forward-widgets/main/widgets/zjrl.js"
+    },
+    {
+      "id": "cinephile_hub_ultimate",
+      "title": "影迷宝藏 | 系列与流派",
+      "description": "聚合【系列电影大满贯】与【趣味流派探索】，一键补番，探索未知。",
+      "requiredVersion": "0.0.1",
+      "version": "1.0.3",
+      "author": "𝙈𝙖𝙠𝙠𝙖𝙋𝙖𝙠𝙠𝙖",
+      "url": "https://raw.githubusercontent.com/gr294949/Forward-widgets/main/widgets/xilie.js"
+    },
+    {
+      "id": "discover_hub_ultimate",
+      "title": "探索发现 | 惊喜推荐",
+      "description": "聚合【今天看什么】、【Trakt惊喜推荐】与【那年今日】、一站式发现好片。",
+      "requiredVersion": "0.0.1",
+      "version": "1.0.4",
+      "author": "𝙈𝙖𝙠𝙠𝙖𝙋𝙖𝙠𝙠𝙖",
+      "url": "https://raw.githubusercontent.com/gr294949/Forward-widgets/main/widgets/today.js"
+    },
+    {
+      "id": "ultimate_media_hub_pro_ui",
+      "title": "全球影视 | 分流聚合",
+      "description": "集大成之作：Trakt/豆瓣/平台分流，全线支持【年份•类型】展示。",
+      "requiredVersion": "0.0.1",
+      "version": "1.2.1",
+      "author": "𝙈𝙖𝙠𝙠𝙖𝙋𝙖𝙠𝙠𝙖",
+      "url": "https://raw.githubusercontent.com/gr294949/Forward-widgets/main/widgets/mediahub.js"
+    },
+    {
+      "id": "makka.platform.originals",
+      "title": "流媒体·独家原创（更新时间版）",
+      "description": "各平台独播剧",
+      "requiredVersion": "0.0.1",
+      "version": "1.0.5",
+      "author": "𝙈𝙖𝙠𝙠𝙖𝙋𝙖𝙠𝙠𝙖",
+      "url": "https://raw.githubusercontent.com/gr294949/Forward-widgets/main/widgets/liumeititime.js"
+    },
+    {
+      "id": "platform.originals.ui.fix",
+      "title": "流媒体·独家原创",
+      "description": "发现Netflix/HBO/腾讯/B站等平台自制内容",
+      "requiredVersion": "0.0.1",
+      "version": "1.0.4",
+      "author": "𝙈𝙖𝙠𝙠𝙖𝙋𝙖𝙠𝙠𝙖",
+      "url": "https://raw.githubusercontent.com/gr294949/Forward-widgets/main/widgets/liumeiti.js"
+    },
+    {
+      "id": "danmu.pro.online",
+      "title": "弹幕多源",
+      "description": "支持添加多条api并自命名&繁简互转",
+      "requiredVersion": "0.0.1",
+      "version": "1.1.3",
+      "author": "𝙈𝙖𝙠𝙠𝙖𝙋𝙖𝙠𝙠𝙖",
+      "url": "https://raw.githubusercontent.com/gr294949/Forward-widgets/main/widgets/danmuapipro.js"
+    },
+    {
+      "id": "forward.combined.makkapakka",
+      "title": "影视榜单Lite",
+      "description": "豆瓣全能推荐 | TMDB探索 | 猜你想看",
+      "requiredVersion": "0.0.1",
+      "version": "1.0.4",
+      "author": "𝙈𝙖𝙠𝙠𝙖𝙋𝙖𝙠𝙠𝙖",
+      "url": "https://raw.githubusercontent.com/gr294949/Forward-widgets/main/widgets/ysbd.js"
+    },
+    {
+      "id": "imdb_cn_fix_",
+      "title": "IMDb热榜",
+      "description": "IMDb全球榜单，支持日/周纬度切换。",
+      "requiredVersion": "0.0.1",
+      "version": "1.0.3",
+      "author": "𝙈𝙖𝙠𝙠𝙖𝙋𝙖𝙠𝙠𝙖",
+      "url": "https://raw.githubusercontent.com/gr294949/Forward-widgets/main/widgets/imdb_cn_fix_.js"
     },
     {
       "id": "Pornhub",
