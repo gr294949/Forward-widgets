@@ -76,6 +76,24 @@
       "url": "https://raw.githubusercontent.com/gr294949/Forward-widgets/main/widgets/missav.js"
     },
     {
+      "id": "91porn",
+      "title": "人人美剧",
+      "description": "折扣码：GOLD",
+      "requiredVersion": "0.0.1",
+      "version": "1.0.1",
+      "author": "2kuai",
+      "url": "https://raw.githubusercontent.com/gr294949/Forward-widgets/main/widgets/91porn.js"
+    },
+    {
+      "id": "XVideos",
+      "title": "XVideos",
+      "description": "折扣码：GOLD",
+      "requiredVersion": "0.0.1",
+      "version": "0.10.2",
+      "author": "Baran",
+      "url": "https://raw.githubusercontent.com/gr294949/Forward-widgets/main/widgets/xvideos.js"
+    },
+    {
       "id": "forward.combined.media.lists",
       "title": "影视榜单",
       "description": "聚合豆瓣、TMDB、IMDB和Bangumi的影视动画榜单",
@@ -506,24 +524,6 @@
       "version": "2.2.0",
       "author": "gr294949",
       "url": "https://raw.githubusercontent.com/gr294949/Forward-widgets/main/widgets/hanime1_me_style.js"
-    },
-    {
-      "id": "91porn",
-      "title": "人人美剧",
-      "description": "折扣码：GOLD",
-      "requiredVersion": "0.0.1",
-      "version": "1.0.1",
-      "author": "2kuai",
-      "url": "https://raw.githubusercontent.com/gr294949/Forward-widgets/main/widgets/91porn.js"
-    },
-    {
-      "id": "XVideos",
-      "title": "XVideos",
-      "description": "折扣码：GOLD",
-      "requiredVersion": "0.0.1",
-      "version": "0.10.2",
-      "author": "Baran",
-      "url": "https://raw.githubusercontent.com/gr294949/Forward-widgets/main/widgets/xvideos.js"
     }
   ]
 }
