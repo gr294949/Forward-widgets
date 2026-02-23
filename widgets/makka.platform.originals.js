@@ -1,15 +1,15 @@
 WidgetMetadata = {
   id: "makka.platform.originals",
-  title: "流媒体·独家原创（更新时间版）",
+  title: "流媒体·独家原创Pro（更新时间版）",
   author: "𝙈𝙖𝙠𝙠𝙖𝙋𝙖𝙠𝙠𝙖",
   description: "各平台独播剧",
-  version: "1.0.5",
+  version: "1.0.9", // 修复 Forward 年份重复拼接问题
   requiredVersion: "0.0.1",
   modules: [
     {
       title: "独家原创 & 追更日历",
       functionName: "loadPlatformOriginals",
-      type: "list",
+      type: "video", // 可随意改为 list 横版
       requiresWebView: false,
       params: [
         // 1. 平台选择
@@ -136,7 +136,6 @@ async function loadPlatformOriginals(params) {
         queryParams["air_date.lte"] = today;
         queryParams.sort_by = "popularity.desc";
     } else if (sortBy === "next_episode") {
-        // 追更模式：先按热度取前20个，确保热门剧不漏，然后在本地重排
         queryParams.sort_by = "popularity.desc";
     } else {
         if (sortBy.includes("vote_average")) queryParams["vote_count.gte"] = 100;
@@ -153,92 +152,99 @@ async function loadPlatformOriginals(params) {
     }
 
     // === 2. 详情获取与格式化 ===
-    
-    // 判断是否需要查详细集数
-    const needDetails = (contentType !== "movie" && (sortBy === "next_episode" || sortBy === "daily_airing"));
-    // 增加处理数量，保证排序基数足够
+    const isUpdateMode = (sortBy === "next_episode" || sortBy === "daily_airing");
+    const needDetails = (contentType !== "movie" && isUpdateMode);
     const processCount = needDetails ? 20 : 20;
 
     const processedItems = await Promise.all(items.slice(0, processCount).map(async (item) => {
-        let displayStr = ""; 
-        let sortDate = "1900-01-01";
+        let fullDate = item.first_air_date || item.release_date || "";
+        let sortDate = fullDate || "1900-01-01";
+        const rawYear = fullDate ? fullDate.substring(0, 4) : "未知";
+
+        // 强力兜底类型
+        let fallbackGenre = "剧集";
+        if (contentType === "movie") fallbackGenre = "电影";
+        if (contentType === "anime") fallbackGenre = "动漫";
+        if (contentType === "variety") fallbackGenre = "综艺";
+        const genre = getGenreName(item.genre_ids) || fallbackGenre;
         
-        // 默认基础信息
-        sortDate = item.first_air_date || item.release_date || "2099-01-01";
-        const year = sortDate.substring(0, 4);
-        const genre = getGenreName(item.genre_ids);
-        
+        let displaySubtitle = ""; 
+        let finalYear = rawYear;
+
+        // 如果是追更或今日播出，且不是电影，则去查集数
         if (needDetails) {
-            // 调用 TMDB 详情接口
             try {
                 const detail = await Widget.tmdb.get(`/tv/${item.id}`, { params: { language: "zh-CN" } });
                 if (detail) {
                     const nextEp = detail.next_episode_to_air;
                     const lastEp = detail.last_episode_to_air;
-
-                    // 核心显示逻辑
-                    let targetEp = null;
+                    let targetEp = nextEp || lastEp;
                     
-                    if (nextEp) {
-                        targetEp = nextEp;
-                    } else if (lastEp) {
-                        targetEp = lastEp;
-                    }
-
                     if (targetEp) {
-                        sortDate = targetEp.air_date;
-                        const dateStr = formatShortDate(sortDate);
-                        const epStr = `S${String(targetEp.season_number).padStart(2,'0')}E${String(targetEp.episode_number).padStart(2,'0')}`;
-                        // 格式：01-31 S01E04 科幻
-                        displayStr = `${dateStr} ${epStr} ${genre}`;
-                    } else {
-                        // 只有首播信息
-                        displayStr = `${formatShortDate(item.first_air_date)} 首播 ${genre}`;
+                        sortDate = targetEp.air_date || sortDate; 
+                        fullDate = sortDate; 
+                        const shortDate = formatShortDate(sortDate);
+                        
+                        const s = String(targetEp.season_number).padStart(2,'0');
+                        const e = String(targetEp.episode_number).padStart(2,'0');
+                        
+                        // 组装格式: 02-23 S01-E03 动漫
+                        displaySubtitle = `${shortDate} S${s}-E${e} ${genre}`;
                     }
                 }
-            } catch(e) {
-                displayStr = `${year} ${genre}`;
+            } catch(e) {}
+        }
+
+        // 核心排版逻辑
+        if (isUpdateMode) {
+            // 【追更/今日播出 模式】
+            if (!displaySubtitle) {
+                if (contentType === "movie") {
+                    displaySubtitle = `${fullDate} ${genre}`; // 如: 2025-07-11 电影
+                } else {
+                    displaySubtitle = `${formatShortDate(fullDate)} 首播 ${genre}`; 
+                }
             }
+            // 🚨 关键：将年份强制设为空，防止 Forward 自动把年份加在前面！
+            finalYear = ""; 
         } else {
-            // 普通模式/电影
-            const rating = item.vote_average ? `${item.vote_average.toFixed(1)}分` : "";
-            displayStr = `${year} ${genre} ${rating}`;
+            // 【常规榜单 模式】(综合热度等)
+            // 🚨 关键：只传类型，保留年份，Forward 会自动拼成: 年份 • 类型 (如 2026 • 科幻)
+            displaySubtitle = genre; 
+            finalYear = rawYear; 
         }
 
         return {
             ...item,
-            _displayStr: displayStr,
-            _sortDate: sortDate
+            _fullDate: fullDate,
+            _year: finalYear,          // 给内核用的无重复年份
+            _genre: genre,
+            _sortDate: sortDate,
+            _displaySubtitle: displaySubtitle // 给副标题用的文字
         };
     }));
 
-    // === 3. 严谨的本地排序 (关键修复) ===
+    // === 3. 严谨的本地排序 ===
     let finalItems = processedItems;
     
     if (sortBy === "next_episode" && contentType !== "movie") {
-        const today = new Date().toISOString().split("T")[0]; // 获取今天日期 "2024-05-20"
+        const today = new Date().toISOString().split("T")[0];
 
         finalItems.sort((a, b) => {
             const dateA = a._sortDate;
             const dateB = b._sortDate;
 
-            // 判断是否是未来/今天
             const isAFuture = dateA >= today;
             const isBFuture = dateB >= today;
 
-            // 1. 未来/今天的 排在 过去/完结的 前面
             if (isAFuture && !isBFuture) return -1; 
             if (!isAFuture && isBFuture) return 1;
 
-            // 2. 如果都是未来/今天：按时间正序 (最近的在前: 明天 -> 后天)
             if (isAFuture && isBFuture) {
                 if (dateA === dateB) return 0;
                 return dateA > dateB ? 1 : -1;
             }
 
-            // 3. 如果都是过去：按时间倒序 (刚播完的在前: 昨天 -> 上周)
-            // 或者是按照综艺榜的逻辑，也是正序？
-            // 既然是“追更”，通常想看最新的。这里为了整洁，我们把刚播完的放在未来列表的紧下方。
             if (dateA === dateB) return 0;
             return dateB > dateA ? 1 : -1; 
         });
@@ -253,15 +259,8 @@ async function loadPlatformOriginals(params) {
 
 function buildCard(item, contentType) {
     const isMovie = contentType === "movie";
+    const scoreNum = item.vote_average ? item.vote_average.toFixed(1) : "0.0";
     
-    // 图片
-    let imagePath = "";
-    if (item.backdrop_path) imagePath = `https://image.tmdb.org/t/p/w780${item.backdrop_path}`;
-    else if (item.poster_path) imagePath = `https://image.tmdb.org/t/p/w500${item.poster_path}`;
-
-    // 使用拼接好的字符串
-    const displayStr = item._displayStr || "";
-
     return {
         id: String(item.id),
         tmdbId: parseInt(item.id),
@@ -269,12 +268,18 @@ function buildCard(item, contentType) {
         mediaType: isMovie ? "movie" : "tv",
         title: item.name || item.title || item.original_name,
         
-        // 左下角：01-31 S01E04 科幻
-        subTitle: displayStr, 
-        // 右上角：01-31 S01E04 科幻
-        genreTitle: displayStr, 
+        // 赋予副标题
+        genreTitle: item._displaySubtitle, 
+        subTitle: item._displaySubtitle,
         
-        description: item.overview || "暂无简介",
-        posterPath: imagePath
+        description: `${item._displaySubtitle} · ⭐ ${scoreNum}\n${item.overview || "暂无简介"}`,
+        
+        posterPath: item.poster_path ? `https://image.tmdb.org/t/p/w500${item.poster_path}` : "",
+        backdropPath: item.backdrop_path ? `https://image.tmdb.org/t/p/w780${item.backdrop_path}` : "",
+        
+        // ✨ 底层年份字段，这里已做严格区分处理
+        rating: parseFloat(scoreNum) || 0,
+        year: item._year || "",
+        releaseDate: item._fullDate || ""
     };
 }
