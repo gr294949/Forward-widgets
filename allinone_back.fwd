@@ -215,7 +215,7 @@
       "title": "自动链接弹幕v2",
       "description": "自动获取播放链接并从服务器获取弹幕【30% off code：CHEAP】",
       "requiredVersion": "0.0.2",
-      "version": "1.14.3",
+      "version": "1.15.0",
       "author": "huangxd",
       "url": "https://raw.githubusercontent.com/gr294949/Forward-widgets/main/widgets/forward.auto.danmu.js"
     },
@@ -326,6 +326,15 @@
       "version": "2.2.4",
       "author": "𝙈𝙖𝙠𝙠𝙖𝙋𝙖𝙠𝙠𝙖",
       "url": "https://raw.githubusercontent.com/gr294949/Forward-widgets/main/widgets/anime_omni_fix.js"
+    },
+    {
+      "id": " global_series_makka",
+      "title": "全球影视专区",
+      "description": "自由切换全球十几个国家与地区，探索纯正的本土电影与剧集",
+      "requiredVersion": "0.0.1",
+      "version": "1.0.0",
+      "author": "𝙈𝙖𝙠𝙠𝙖𝙋𝙖𝙠𝙠𝙖",
+      "url": "https://raw.githubusercontent.com/gr294949/Forward-widgets/main/widgets/globalseries.js"
     },
     {
       "id": "movie_ultimate_makka_v2",
@@ -461,6 +470,15 @@
       "version": "1.0.0",
       "author": "𝙈𝙖𝙠𝙠𝙖𝙋𝙖𝙠𝙠𝙖",
       "url": "https://raw.githubusercontent.com/gr294949/Forward-widgets/main/widgets/vod_max_engine_makka.js"
+    },
+    {
+      "id": "makka_global_networks",
+      "title": "全球影视平台ALL IN ONE",
+      "description": "全网最全的频道聚合：覆盖爱优腾、网飞、HBO、韩国tvN及各大卫视",
+      "requiredVersion": "0.0.1",
+      "version": "1.2.3",
+      "author": "𝙈𝙖𝙠𝙠𝙖𝙋𝙖𝙠𝙠𝙖",
+      "url": "https://raw.githubusercontent.com/gr294949/Forward-widgets/main/widgets/allinone.js"
     },
     {
       "id": "imdb_cn_fix_",
