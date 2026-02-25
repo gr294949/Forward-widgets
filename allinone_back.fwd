@@ -332,9 +332,9 @@
       "title": "全球影视专区",
       "description": "自由切换全球十几个国家与地区，探索纯正的本土电影与剧集",
       "requiredVersion": "0.0.1",
-      "version": "1.0.0",
+      "version": "1.1.0",
       "author": "𝙈𝙖𝙠𝙠𝙖𝙋𝙖𝙠𝙠𝙖",
-      "url": "https://raw.githubusercontent.com/gr294949/Forward-widgets/main/widgets/globalseries.js"
+      "url": "https://raw.githubusercontent.com/gr294949/Forward-widgets/main/widgets/ global_series_makka.js"
     },
     {
       "id": "movie_ultimate_makka_v2",
@@ -478,7 +478,7 @@
       "requiredVersion": "0.0.1",
       "version": "1.2.3",
       "author": "𝙈𝙖𝙠𝙠𝙖𝙋𝙖𝙠𝙠𝙖",
-      "url": "https://raw.githubusercontent.com/gr294949/Forward-widgets/main/widgets/allinone.js"
+      "url": "https://raw.githubusercontent.com/gr294949/Forward-widgets/main/widgets/makka_global_networks.js"
     },
     {
       "id": "imdb_cn_fix_",
