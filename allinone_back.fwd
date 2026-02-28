@@ -215,7 +215,7 @@
       "title": "自动链接弹幕v2",
       "description": "自动获取播放链接并从服务器获取弹幕【30% off code：CHEAP】",
       "requiredVersion": "0.0.2",
-      "version": "1.15.0",
+      "version": "1.15.2",
       "author": "huangxd",
       "url": "https://raw.githubusercontent.com/gr294949/Forward-widgets/main/widgets/forward.auto.danmu.js"
     },
@@ -258,10 +258,10 @@
     {
       "id": "jable_int",
       "title": "Jable",
-      "description": "網路收集到的模塊",
+      "description": "修复声音&恢复大量模块",
       "requiredVersion": "0.0.2",
-      "version": "1.1.0",
-      "author": "nibiru",
+      "version": "1.3.0",
+      "author": "nibiru|MakkaPakka|蝴蝶",
       "url": "https://raw.githubusercontent.com/gr294949/Forward-widgets/main/widgets/jable_int.js"
     },
     {
@@ -323,7 +323,7 @@
       "title": "二次元全境聚合",
       "description": "一站式聚合多平台动漫榜单。",
       "requiredVersion": "0.0.1",
-      "version": "2.2.4",
+      "version": "2.2.5",
       "author": "𝙈𝙖𝙠𝙠𝙖𝙋𝙖𝙠𝙠𝙖",
       "url": "https://raw.githubusercontent.com/gr294949/Forward-widgets/main/widgets/anime_omni_fix.js"
     },
@@ -332,7 +332,7 @@
       "title": "全球影视专区",
       "description": "自由切换全球十几个国家与地区，探索纯正的本土电影与剧集",
       "requiredVersion": "0.0.1",
-      "version": "2.1.0",
+      "version": "2.1.1",
       "author": "𝙈𝙖𝙠𝙠𝙖𝙋𝙖𝙠𝙠𝙖",
       "url": "https://raw.githubusercontent.com/gr294949/Forward-widgets/main/widgets/ global_series_makka.js"
     },
@@ -341,7 +341,7 @@
       "title": "全能电影榜",
       "description": "提供流行、高分、年度最佳以及按类型探索电影",
       "requiredVersion": "0.0.1",
-      "version": "1.3.0",
+      "version": "1.4.0",
       "author": "𝙈𝙖𝙠𝙠𝙖𝙋𝙖𝙠𝙠𝙖",
       "url": "https://raw.githubusercontent.com/gr294949/Forward-widgets/main/widgets/movie_ultimate_makka_v2.js"
     },
@@ -386,7 +386,7 @@
       "title": "欧美风向标|口碑与热度",
       "description": "聚合烂番茄(口碑)与流媒体平台(热度)，一站式掌握欧美影视动态。",
       "requiredVersion": "0.0.1",
-      "version": "1.0.2",
+      "version": "1.0.3",
       "author": "𝙈𝙖𝙠𝙠𝙖𝙋𝙖𝙠𝙠𝙖",
       "url": "https://raw.githubusercontent.com/gr294949/Forward-widgets/main/widgets/western_trends_hub.js"
     },
@@ -404,7 +404,7 @@
       "title": "影迷宝藏 | 系列与流派",
       "description": "聚合【系列电影大满贯】与【趣味流派探索】，一键补番，探索未知。",
       "requiredVersion": "0.0.1",
-      "version": "1.0.4",
+      "version": "1.0.5",
       "author": "𝙈𝙖𝙠𝙠𝙖𝙋𝙖𝙠𝙠𝙖",
       "url": "https://raw.githubusercontent.com/gr294949/Forward-widgets/main/widgets/cinephile_hub_ultimate.js"
     },
@@ -413,7 +413,7 @@
       "title": "探索发现 | 惊喜推荐",
       "description": "聚合【今天看什么】、【Trakt惊喜推荐】与【那年今日】、一站式发现好片。",
       "requiredVersion": "0.0.1",
-      "version": "1.0.5",
+      "version": "1.0.6",
       "author": "𝙈𝙖𝙠𝙠𝙖𝙋𝙖𝙠𝙠𝙖",
       "url": "https://raw.githubusercontent.com/gr294949/Forward-widgets/main/widgets/discover_hub_ultimate.js"
     },
@@ -422,16 +422,25 @@
       "title": "全球影视 | 分流聚合",
       "description": "集大成之作：Trakt/豆瓣/平台分流，全线支持【日期•类型】展示。",
       "requiredVersion": "0.0.1",
-      "version": "1.3.0",
+      "version": "1.3.4",
       "author": "𝙈𝙖𝙠𝙠𝙖𝙋𝙖𝙠𝙠𝙖",
       "url": "https://raw.githubusercontent.com/gr294949/Forward-widgets/main/widgets/ultimate_media_hub_pro_ui.js"
+    },
+    {
+      "id": "ultimate_media_repair_ui",
+      "title": "全球影视 | 分流聚合（防风控版）",
+      "description": "防风控版本，提供给这个模块的普通版有问题的人使用。",
+      "requiredVersion": "0.0.1",
+      "version": "1.3.6",
+      "author": "𝙈𝙖𝙠𝙠𝙖𝙋𝙖𝙠𝙠𝙖",
+      "url": "https://raw.githubusercontent.com/gr294949/Forward-widgets/main/widgets/mediahubrepair.js"
     },
     {
       "id": "makka.platform.originals",
       "title": "流媒体·独家原创Pro（更新时间版）",
       "description": "各平台独播剧",
       "requiredVersion": "0.0.1",
-      "version": "1.0.9",
+      "version": "1.1.0",
       "author": "𝙈𝙖𝙠𝙠𝙖𝙋𝙖𝙠𝙠𝙖",
       "url": "https://raw.githubusercontent.com/gr294949/Forward-widgets/main/widgets/makka.platform.originals.js"
     },
@@ -440,7 +449,7 @@
       "title": "流媒体·独家原创",
       "description": "发现Netflix/HBO/腾讯/B站等平台自制内容",
       "requiredVersion": "0.0.1",
-      "version": "1.0.5",
+      "version": "1.0.6",
       "author": "𝙈𝙖𝙠𝙠𝙖𝙋𝙖𝙠𝙠𝙖",
       "url": "https://raw.githubusercontent.com/gr294949/Forward-widgets/main/widgets/platform.originals.ui.fix.js"
     },
@@ -458,9 +467,18 @@
       "title": "影视榜单Lite",
       "description": "豆瓣全能推荐 | TMDB探索 | 猜你想看",
       "requiredVersion": "0.0.1",
-      "version": "1.1.0",
+      "version": "1.2.0",
       "author": "𝙈𝙖𝙠𝙠𝙖𝙋𝙖𝙠𝙠𝙖",
       "url": "https://raw.githubusercontent.com/gr294949/Forward-widgets/main/widgets/forward.combined.makkapakka.js"
+    },
+    {
+      "id": "ysbd.media.makka",
+      "title": "影视榜单Pro",
+      "description": "聚合豆瓣、TMDB、IMDB & Bangumi",
+      "requiredVersion": "0.0.1",
+      "version": "1.0.0",
+      "author": "阿米诺斯｜𝙈𝙖𝙠𝙠𝙖𝙋𝙖𝙠𝙠𝙖",
+      "url": "https://raw.githubusercontent.com/gr294949/Forward-widgets/main/widgets/ysbdpro.js"
     },
     {
       "id": "vod_max_engine_makka",
@@ -476,7 +494,7 @@
       "title": "全球影视平台ALL IN ONE",
       "description": "全网最全的频道聚合：覆盖爱优腾、网飞、HBO、韩国tvN及各大卫视",
       "requiredVersion": "0.0.1",
-      "version": "1.2.3",
+      "version": "1.2.4",
       "author": "𝙈𝙖𝙠𝙠𝙖𝙋𝙖𝙠𝙠𝙖",
       "url": "https://raw.githubusercontent.com/gr294949/Forward-widgets/main/widgets/makka_global_networks.js"
     },
@@ -485,7 +503,7 @@
       "title": "IMDb热榜",
       "description": "IMDb全球榜单，支持日/周纬度切换。",
       "requiredVersion": "0.0.1",
-      "version": "1.0.4",
+      "version": "1.0.5",
       "author": "𝙈𝙖𝙠𝙠𝙖𝙋𝙖𝙠𝙠𝙖",
       "url": "https://raw.githubusercontent.com/gr294949/Forward-widgets/main/widgets/imdb_cn_fix_.js"
     },
