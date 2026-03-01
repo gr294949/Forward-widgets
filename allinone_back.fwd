@@ -323,7 +323,7 @@
       "title": "二次元全境聚合",
       "description": "一站式聚合多平台动漫榜单。",
       "requiredVersion": "0.0.1",
-      "version": "2.2.5",
+      "version": "2.4.2",
       "author": "𝙈𝙖𝙠𝙠𝙖𝙋𝙖𝙠𝙠𝙖",
       "url": "https://raw.githubusercontent.com/gr294949/Forward-widgets/main/widgets/anime_omni_fix.js"
     },
@@ -433,7 +433,7 @@
       "requiredVersion": "0.0.1",
       "version": "1.3.6",
       "author": "𝙈𝙖𝙠𝙠𝙖𝙋𝙖𝙠𝙠𝙖",
-      "url": "https://raw.githubusercontent.com/gr294949/Forward-widgets/main/widgets/mediahubrepair.js"
+      "url": "https://raw.githubusercontent.com/gr294949/Forward-widgets/main/widgets/ultimate_media_repair_ui.js"
     },
     {
       "id": "makka.platform.originals",
@@ -478,7 +478,7 @@
       "requiredVersion": "0.0.1",
       "version": "1.0.0",
       "author": "阿米诺斯｜𝙈𝙖𝙠𝙠𝙖𝙋𝙖𝙠𝙠𝙖",
-      "url": "https://raw.githubusercontent.com/gr294949/Forward-widgets/main/widgets/ysbdpro.js"
+      "url": "https://raw.githubusercontent.com/gr294949/Forward-widgets/main/widgets/ysbd.media.makka.js"
     },
     {
       "id": "vod_max_engine_makka",
@@ -497,6 +497,15 @@
       "version": "1.2.4",
       "author": "𝙈𝙖𝙠𝙠𝙖𝙋𝙖𝙠𝙠𝙖",
       "url": "https://raw.githubusercontent.com/gr294949/Forward-widgets/main/widgets/makka_global_networks.js"
+    },
+    {
+      "id": "Letterboxd_makka",
+      "title": "Letterboxd电影爱好者平台",
+      "description": "解析Letterboxd片单内的影片【修复404】",
+      "requiredVersion": "0.0.1",
+      "version": "1.1.1",
+      "author": "huangxd|𝙈𝙖𝙠𝙠𝙖𝙋𝙖𝙠𝙠𝙖",
+      "url": "https://raw.githubusercontent.com/gr294949/Forward-widgets/main/widgets/letterboxd_makka.js"
     },
     {
       "id": "imdb_cn_fix_",
