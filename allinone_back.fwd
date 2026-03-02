@@ -215,7 +215,7 @@
       "title": "自动链接弹幕v2",
       "description": "自动获取播放链接并从服务器获取弹幕【30% off code：CHEAP】",
       "requiredVersion": "0.0.2",
-      "version": "1.15.2",
+      "version": "1.15.3",
       "author": "huangxd",
       "url": "https://raw.githubusercontent.com/gr294949/Forward-widgets/main/widgets/forward.auto.danmu.js"
     },
@@ -456,9 +456,9 @@
     {
       "id": "danmu.pro.online",
       "title": "弹幕多源",
-      "description": "支持添加多条api并自命名&繁简互转",
+      "description": "支持多api、繁简互转、数量限制、关键词屏蔽、颜色重写",
       "requiredVersion": "0.0.1",
-      "version": "1.1.3",
+      "version": "1.1.5",
       "author": "𝙈𝙖𝙠𝙠𝙖𝙋𝙖𝙠𝙠𝙖",
       "url": "https://raw.githubusercontent.com/gr294949/Forward-widgets/main/widgets/danmu.pro.online.js"
     },
