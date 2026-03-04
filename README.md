@@ -7,7 +7,6 @@
 
 ## 原始来源仓库
 - [GOLD's Widgets](https://github.com/gr294949/Forward-Widgets)
-- [pack1r's Widgets](https://github.com/pack1r/ForwardWidgets)
 - [huangxd's Widgets](https://github.com/huangxd-/ForwardWidgets)
 - [𝙈𝙖𝙠𝙠𝙖𝙋𝙖𝙠𝙠𝙖's 𝙒𝙞𝙙𝙜𝙚𝙩𝙨](https://github.com/MakkaPakka518/FW)
 - [Madai-v's Widgets](https://github.com/Madai-v/ForwardWidgets)
